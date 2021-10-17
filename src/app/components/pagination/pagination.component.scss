@@ -1,0 +1,59 @@
+@import '../../../styles/variables';
+
+// .pages
+.pages {
+  padding: 19px 20px;
+  .pagination-dropdown {
+    ::ng-deep {
+      .dropdown {
+        width: 140px;
+      }
+    }
+  }
+  .rights {
+    .btn-page {
+      width: 16px;
+      height: 16px;
+      &.btn-lefts {
+        background: url(/assets/i/page-prev.svg) left center no-repeat;
+        background-size: 6px 11px;
+      }
+      &.btn-rights {
+        background: url(/assets/i/page-next.svg) left center no-repeat;
+        background-size: 6px 11px;
+        margin-left: 7px;
+      }
+      &.disabled {
+        opacity: 0.6;
+        cursor: default;
+        pointer-events: none;
+      }
+    }
+    ul {
+      li {
+        margin: 0;
+        .page-link {
+          color: #194d8d;
+          font-size: 12px;
+          font-weight: 400;
+          letter-spacing: -0.2px;
+          line-height: 20px;
+          display: block;
+          background-color: transparent;
+          width: 23px;
+          height: 23px;
+          line-height: 23px;
+          text-align: center;
+          padding: 0;
+          &.current {
+            border: 1px solid #c4c4c4;
+            background-color: #ffffff;
+            border-radius: 100%;
+            color: #404040;
+            margin-top: -2px;
+          }
+        }
+      }
+    }
+  }
+}

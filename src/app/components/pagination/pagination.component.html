@@ -1,0 +1,39 @@
+<div class="pages flex-grid">
+  <div class="lefts">
+    <app-sd-base-dropdown
+      [class]="'pagination-dropdown'"
+      [selectedOption]="pageData.pagePerNumber"
+      [options]="pagePerNumberDropdownOptions"
+      (changeDropdown)="changeDropdown($event)"
+    >
+    </app-sd-base-dropdown>
+  </div>
+  <div class="rights flex" *ngIf="pagerLinks.length > 0">
+    <a
+      href="javascript:;"
+      class="btn-page btn-lefts"
+      [class.disabled]="pageData.pageIndex === 0 || totalPage === 0"
+      (click)="clickPrev()"
+    >
+    </a>
+    <ul class="flex">
+      <li *ngFor="let item of pagerLinks; let i = index">
+        <a
+          href="javascript:;"
+          class="btn page-link"
+          [class.current]="pageData.pageIndex === item"
+          (click)="clickPageLink(item)"
+        >
+          {{ item + 1 }}
+        </a>
+      </li>
+    </ul>
+    <a
+      href="javascript:;"
+      class="btn-page btn-rights"
+      [class.disabled]="pageData.pageIndex === totalPage - 1 || totalPage === 0"
+      (click)="clickNext()"
+    >
+    </a>
+  </div>
+</div>

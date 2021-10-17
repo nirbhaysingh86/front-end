@@ -1,0 +1,102 @@
+<div class="content" [class.open-left]="!menuCollapsed">
+  <app-sd-left-sidebar [menuCollapsed]="menuCollapsed"> </app-sd-left-sidebar>
+
+  <app-sd-view-administration-menu
+    [menuCollapsed]="menuCollapsed"
+    [hasData]="dataListViewAdministration?.length !== 0"
+    [hasSelection]="!!selectedView"
+    (clickMenu)="clickMenu()"
+    (clickNewView)="clickNewView()"
+    (clickLogout)="clickLogout()"
+    (clickDelete)="clickDelete()"
+    (clickEdit)="clickEdit()"
+  >
+  </app-sd-view-administration-menu>
+
+  <div class="padding-main">
+    <div style="width: 100%; height: 800px">
+      <as-split direction="vertical">
+        <as-split-area [minSize]="20" [size]="70">
+          <app-sd-view-administration-default
+            [activeMenu]="''"
+            (clickNewView)="clickNewView()"
+            *ngIf="dataListViewAdministration?.length === 0"
+          >
+          </app-sd-view-administration-default>
+
+          <ng-container *ngIf="dataListViewAdministration?.length !== 0">
+            <app-sd-common-table
+              [dataList]="pagedDataListViewAdministration"
+              *ngIf="pagedDataListViewAdministration.length"
+              (clickRow)="toggleView($event)"
+            >
+            </app-sd-common-table>
+
+            <app-sd-pagination
+              *ngIf="dataListViewAdministration"
+              [pagePerNumberDropdownOptions]="pagePerNumberDropdownOptions"
+              [pageData]="pageData"
+              (changePagination)="changePagination($event)"
+            >
+            </app-sd-pagination>
+          </ng-container>
+        </as-split-area>
+        <as-split-area [visible]="dataListViewAdministrationFacility && !!selectedView" [minSize]="20" [size]="30">
+          <app-sd-common-table
+            [dataList]="dataListViewAdministrationFacility"
+            (clickRow)="toggleRule($event)"
+            [popupToShow]="'view-rule-popup'"
+            [header]="ruleTableHeader"
+            (clickTableOptions)="clickTableOptions($event)"
+            *ngIf="!!selectedView && !collapsedDraggableLine"
+          >
+          </app-sd-common-table>
+        </as-split-area>
+      </as-split>
+    </div>
+
+    <app-sd-draggable-line
+      [collapsedDraggableLine]="collapsedDraggableLine"
+      (clickDraggableLine)="clickDraggableLine()"
+      *ngIf="dataListViewAdministrationFacility.length > 0 && !!selectedView && false"
+    >
+    </app-sd-draggable-line>
+  </div>
+</div>
+
+<app-sd-modal-windows-new-view
+  *ngIf="modalData['name'] === 'modal-windows-new-view' || modalData['name'] === 'modal-windows-edit-view'"
+  [modalData]="modalData"
+  [limitOptions]="viewLimitOptions"
+  [initialValue]="initialView"
+  (closeModalWindow)="closeModalWindowNewView()"
+  (clickCreateView)="saveView($event)"
+>
+</app-sd-modal-windows-new-view>
+
+<app-sd-modal-windows-filter-administration-wizard
+  [modalData]="modalData"
+  [dataListFilterAdministrationWizard]="dataListFilterAdministrationWizard"
+  [initialValue]="initialRule"
+  [initialRuleCategory]="initialRuleCategory"
+  [initialRuleType]="initialRuleType"
+  [valuesOptions]="valuesOptions"
+  (loadValues)="loadValues($event)"
+  (closeModalWindow)="closeModalWindowFilterAdministrationWizard()"
+  (clickSave)="saveRules($event)"
+  *ngIf="
+    dataListFilterAdministrationWizard.length > 0 &&
+    (modalData['name'] === 'modal-windows-filter-administration-wizard' ||
+      modalData['name'] === 'modal-windows-filter-administration-wizard-edit' ||
+      modalData['name'] === 'modal-windows-filter-administration-wizard-add')
+  "
+>
+</app-sd-modal-windows-filter-administration-wizard>
+<app-sd-modal-windows-confirm
+  *ngIf="modalData['name'] === 'modal-windows-confirm'"
+  [modalData]="modalData"
+  [confirmModalData]="confirmModalData"
+  (closeModalWindow)="closeModalWindowConfirm($event)"
+>
+</app-sd-modal-windows-confirm>
+<app-sd-spinner *ngIf="spinnerService.loading"></app-sd-spinner>

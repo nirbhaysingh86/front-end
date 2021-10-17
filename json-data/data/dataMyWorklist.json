@@ -1,0 +1,629 @@
+{
+  "dataMyWorklist": [
+    {
+      "id": 1,
+      "fieldList": [
+        {
+          "fieldType": "label-checkbox",
+          "fieldName": "A/C Number",
+          "fieldValue": "23210312",
+          "hasCheckAll": true,
+          "columnWidth": 133,
+          "footerContent": "TOTAL"
+        },
+        {
+          "fieldType": "label",
+          "fieldName": "Patient Name",
+          "fieldValue": "Jackson Harper",
+          "hasCheckAll": false,
+          "columnWidth": 133,
+          "footerContent": ""
+        },
+        {
+          "fieldType": "label-payment-status",
+          "fieldName": "Payment Status",
+          "fieldValue": "Over Paid",
+          "hasCheckAll": false,
+          "columnWidth": 133,
+          "footerContent": ""
+        },
+        {
+          "fieldType": "label",
+          "fieldName": "Contract Name",
+          "fieldValue": "Contract_abc",
+          "hasCheckAll": false,
+          "columnWidth": 133,
+          "footerContent": ""
+        },
+        {
+          "fieldType": "label",
+          "fieldName": "Payer ID",
+          "fieldValue": "30997",
+          "hasCheckAll": false,
+          "columnWidth": 133,
+          "footerContent": ""
+        },
+        {
+          "fieldType": "label",
+          "fieldName": "Service Category",
+          "fieldValue": "Outpatient",
+          "hasCheckAll": false,
+          "columnWidth": 133,
+          "footerContent": ""
+        },
+        {
+          "fieldType": "label",
+          "fieldName": "AI Score",
+          "fieldValue": "34",
+          "hasCheckAll": false,
+          "columnWidth": 133,
+          "footerContent": ""
+        },
+        {
+          "fieldType": "label",
+          "fieldName": "Admission Date",
+          "fieldValue": "04/25/2021",
+          "hasCheckAll": false,
+          "columnWidth": 133,
+          "footerContent": ""
+        },
+        {
+          "fieldType": "label",
+          "fieldName": "Discharge Date",
+          "fieldValue": "04/30/2021",
+          "hasCheckAll": false,
+          "columnWidth": 133,
+          "footerContent": ""
+        },
+        {
+          "fieldType": "label-right",
+          "fieldName": "Adj Total Charges",
+          "fieldValue": "$1000.00",
+          "hasCheckAll": false,
+          "columnWidth": 133,
+          "footerContent": "currency"
+        },
+        {
+          "fieldType": "label-right",
+          "fieldName": "Exp Reimburse",
+          "fieldValue": "$340.43",
+          "hasCheckAll": false,
+          "columnWidth": 133,
+          "footerContent": "currency"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "fieldList": [
+        {
+          "fieldValue": "23210314"
+        },
+        {
+          "fieldValue": "Johnathan Doe"
+        },
+        {
+          "fieldValue": "Awaiting Payment"
+        },
+        {
+          "fieldValue": "Contract_abc"
+        },
+        {
+          "fieldValue": "30998"
+        },
+        {
+          "fieldValue": "Outpatient"
+        },
+        {
+          "fieldValue": "34"
+        },
+        {
+          "fieldValue": "04/25/2021"
+        },
+        {
+          "fieldValue": "04/30/2021"
+        },
+        {
+          "fieldValue": "$800.00"
+        },
+        {
+          "fieldValue": "$500.00"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "fieldList": [
+        {
+          "fieldValue": "23210312"
+        },
+        {
+          "fieldValue": "Paul Vasser"
+        },
+        {
+          "fieldValue": "Paid"
+        },
+        {
+          "fieldValue": "Contract_abc"
+        },
+        {
+          "fieldValue": "30991"
+        },
+        {
+          "fieldValue": "Outpatient"
+        },
+        {
+          "fieldValue": "34"
+        },
+        {
+          "fieldValue": "04/25/2021"
+        },
+        {
+          "fieldValue": "04/30/2021"
+        },
+        {
+          "fieldValue": "$1000.00"
+        },
+        {
+          "fieldValue": "$340.43"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "fieldList": [
+        {
+          "fieldValue": "23210312"
+        },
+        {
+          "fieldValue": "Jackson Harper"
+        },
+        {
+          "fieldValue": "Over Paid"
+        },
+        {
+          "fieldValue": "Contract_abc"
+        },
+        {
+          "fieldValue": "30997"
+        },
+        {
+          "fieldValue": "Outpatient"
+        },
+        {
+          "fieldValue": "34"
+        },
+        {
+          "fieldValue": "04/25/2021"
+        },
+        {
+          "fieldValue": "04/30/2021"
+        },
+        {
+          "fieldValue": "$1000.00"
+        },
+        {
+          "fieldValue": "$340.43"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "fieldList": [
+        {
+          "fieldValue": "23210314"
+        },
+        {
+          "fieldValue": "Johnathan Doe"
+        },
+        {
+          "fieldValue": "Awaiting Payment"
+        },
+        {
+          "fieldValue": "Contract_abc"
+        },
+        {
+          "fieldValue": "30998"
+        },
+        {
+          "fieldValue": "Outpatient"
+        },
+        {
+          "fieldValue": "34"
+        },
+        {
+          "fieldValue": "04/25/2021"
+        },
+        {
+          "fieldValue": "04/30/2021"
+        },
+        {
+          "fieldValue": "$800.00"
+        },
+        {
+          "fieldValue": "$500.00"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "fieldList": [
+        {
+          "fieldValue": "23210312"
+        },
+        {
+          "fieldValue": "Paul Vasser"
+        },
+        {
+          "fieldValue": "Paid"
+        },
+        {
+          "fieldValue": "Contract_abc"
+        },
+        {
+          "fieldValue": "30991"
+        },
+        {
+          "fieldValue": "Outpatient"
+        },
+        {
+          "fieldValue": "34"
+        },
+        {
+          "fieldValue": "04/25/2021"
+        },
+        {
+          "fieldValue": "04/30/2021"
+        },
+        {
+          "fieldValue": "$1000.00"
+        },
+        {
+          "fieldValue": "$340.43"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "fieldList": [
+        {
+          "fieldValue": "23210312"
+        },
+        {
+          "fieldValue": "Jackson Harper"
+        },
+        {
+          "fieldValue": "Over Paid"
+        },
+        {
+          "fieldValue": "Contract_abc"
+        },
+        {
+          "fieldValue": "30997"
+        },
+        {
+          "fieldValue": "Outpatient"
+        },
+        {
+          "fieldValue": "34"
+        },
+        {
+          "fieldValue": "04/25/2021"
+        },
+        {
+          "fieldValue": "04/30/2021"
+        },
+        {
+          "fieldValue": "$1000.00"
+        },
+        {
+          "fieldValue": "$340.43"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "fieldList": [
+        {
+          "fieldValue": "23210314"
+        },
+        {
+          "fieldValue": "Johnathan Doe"
+        },
+        {
+          "fieldValue": "Awaiting Payment"
+        },
+        {
+          "fieldValue": "Contract_abc"
+        },
+        {
+          "fieldValue": "30998"
+        },
+        {
+          "fieldValue": "Outpatient"
+        },
+        {
+          "fieldValue": "34"
+        },
+        {
+          "fieldValue": "04/25/2021"
+        },
+        {
+          "fieldValue": "04/30/2021"
+        },
+        {
+          "fieldValue": "$800.00"
+        },
+        {
+          "fieldValue": "$500.00"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "fieldList": [
+        {
+          "fieldValue": "23210314"
+        },
+        {
+          "fieldValue": "Johnathan Doe"
+        },
+        {
+          "fieldValue": "Awaiting Payment"
+        },
+        {
+          "fieldValue": "Contract_abc"
+        },
+        {
+          "fieldValue": "30998"
+        },
+        {
+          "fieldValue": "Outpatient"
+        },
+        {
+          "fieldValue": "34"
+        },
+        {
+          "fieldValue": "04/25/2021"
+        },
+        {
+          "fieldValue": "04/30/2021"
+        },
+        {
+          "fieldValue": "$800.00"
+        },
+        {
+          "fieldValue": "$500.00"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "fieldList": [
+        {
+          "fieldValue": "23210314"
+        },
+        {
+          "fieldValue": "Johnathan Doe"
+        },
+        {
+          "fieldValue": "Awaiting Payment"
+        },
+        {
+          "fieldValue": "Contract_abc"
+        },
+        {
+          "fieldValue": "30998"
+        },
+        {
+          "fieldValue": "Outpatient"
+        },
+        {
+          "fieldValue": "34"
+        },
+        {
+          "fieldValue": "04/25/2021"
+        },
+        {
+          "fieldValue": "04/30/2021"
+        },
+        {
+          "fieldValue": "$800.00"
+        },
+        {
+          "fieldValue": "$500.00"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "fieldList": [
+        {
+          "fieldValue": "23210314"
+        },
+        {
+          "fieldValue": "Johnathan Doe"
+        },
+        {
+          "fieldValue": "Awaiting Payment"
+        },
+        {
+          "fieldValue": "Contract_abc"
+        },
+        {
+          "fieldValue": "30998"
+        },
+        {
+          "fieldValue": "Outpatient"
+        },
+        {
+          "fieldValue": "34"
+        },
+        {
+          "fieldValue": "04/25/2021"
+        },
+        {
+          "fieldValue": "04/30/2021"
+        },
+        {
+          "fieldValue": "$800.00"
+        },
+        {
+          "fieldValue": "$500.00"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "fieldList": [
+        {
+          "fieldValue": "23210314"
+        },
+        {
+          "fieldValue": "Johnathan Doe"
+        },
+        {
+          "fieldValue": "Awaiting Payment"
+        },
+        {
+          "fieldValue": "Contract_abc"
+        },
+        {
+          "fieldValue": "30998"
+        },
+        {
+          "fieldValue": "Outpatient"
+        },
+        {
+          "fieldValue": "34"
+        },
+        {
+          "fieldValue": "04/25/2021"
+        },
+        {
+          "fieldValue": "04/30/2021"
+        },
+        {
+          "fieldValue": "$800.00"
+        },
+        {
+          "fieldValue": "$500.00"
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "fieldList": [
+        {
+          "fieldValue": "23210314"
+        },
+        {
+          "fieldValue": "Johnathan Doe"
+        },
+        {
+          "fieldValue": "Awaiting Payment"
+        },
+        {
+          "fieldValue": "Contract_abc"
+        },
+        {
+          "fieldValue": "30998"
+        },
+        {
+          "fieldValue": "Outpatient"
+        },
+        {
+          "fieldValue": "34"
+        },
+        {
+          "fieldValue": "04/25/2021"
+        },
+        {
+          "fieldValue": "04/30/2021"
+        },
+        {
+          "fieldValue": "$800.00"
+        },
+        {
+          "fieldValue": "$500.00"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "fieldList": [
+        {
+          "fieldValue": "23210314"
+        },
+        {
+          "fieldValue": "Johnathan Doe"
+        },
+        {
+          "fieldValue": "Awaiting Payment"
+        },
+        {
+          "fieldValue": "Contract_abc"
+        },
+        {
+          "fieldValue": "30998"
+        },
+        {
+          "fieldValue": "Outpatient"
+        },
+        {
+          "fieldValue": "34"
+        },
+        {
+          "fieldValue": "04/25/2021"
+        },
+        {
+          "fieldValue": "04/30/2021"
+        },
+        {
+          "fieldValue": "$800.00"
+        },
+        {
+          "fieldValue": "$500.00"
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "fieldList": [
+        {
+          "fieldValue": "23210312"
+        },
+        {
+          "fieldValue": "Jackson Harper"
+        },
+        {
+          "fieldValue": "Over Paid"
+        },
+        {
+          "fieldValue": "Contract_abc"
+        },
+        {
+          "fieldValue": "30997"
+        },
+        {
+          "fieldValue": "Outpatient"
+        },
+        {
+          "fieldValue": "34"
+        },
+        {
+          "fieldValue": "04/25/2021"
+        },
+        {
+          "fieldValue": "04/30/2021"
+        },
+        {
+          "fieldValue": "$1000.00"
+        },
+        {
+          "fieldValue": "$340.43"
+        }
+      ]
+    }
+  ]
+}

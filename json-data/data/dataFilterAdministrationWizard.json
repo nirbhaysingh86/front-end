@@ -1,0 +1,144 @@
+{
+  "dataFilterAdministrationWizard": [
+    {
+      "id": 0,
+      "ruleCategory": "Select a Category",
+      "ruleTypeOptions": []
+    },
+    {
+      "id": 1,
+      "ruleCategory": "Audit Tracking",
+      "ruleTypeOptions": []
+    },
+    {
+      "id": 2,
+      "ruleCategory": "Billing Info",
+      "ruleTypeOptions": []
+    },
+    {
+      "id": 3,
+      "ruleCategory": "Calculations",
+      "ruleTypeOptions": []
+    },
+    {
+      "id": 4,
+      "ruleCategory": "Cost",
+      "ruleTypeOptions": [
+        {
+          "ruleType": "Direct Fix Cost",
+          "ruleSubCategory": "Cost"
+        },
+        {
+          "ruleType": "Direct Var Cost",
+          "ruleSubCategory": "Cost"
+        },
+        {
+          "ruleType": "Indirect Fix Cost",
+          "ruleSubCategory": "Cost"
+        },
+        {
+          "ruleType": "Indirect Var Cost",
+          "ruleSubCategory": "Cost"
+        },
+        {
+          "ruleType": "Total Cost",
+          "ruleSubCategory": "Cost"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "ruleCategory": "Demographics",
+      "ruleTypeOptions": []
+    },
+    {
+      "id": 6,
+      "ruleCategory": "Payment/Adjustment",
+      "ruleTypeOptions": []
+    },
+    {
+      "id": 7,
+      "ruleCategory": "Date",
+      "ruleTypeOptions": [
+        {
+          "ruleType": "Acme Date 1",
+          "ruleSubCategory": "Date"
+        },
+        {
+          "ruleType": "Acme Date 2",
+          "ruleSubCategory": "Date"
+        },
+        {
+          "ruleType": "Acme Date 3",
+          "ruleSubCategory": "Date"
+        },
+        {
+          "ruleType": "Acme Date 4",
+          "ruleSubCategory": "Date"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "ruleCategory": "Date Time",
+      "ruleTypeOptions": [
+        {
+          "ruleType": "Acme Date Time 1",
+          "ruleSubCategory": "Date Time"
+        },
+        {
+          "ruleType": "Acme Date Time 2",
+          "ruleSubCategory": "Date Time"
+        },
+        {
+          "ruleType": "Acme Date Time 3",
+          "ruleSubCategory": "Date Time"
+        },
+        {
+          "ruleType": "Acme Date Time 4",
+          "ruleSubCategory": "Date Time"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "ruleCategory": "Percent",
+      "ruleTypeOptions": [
+        {
+          "ruleType": "Acme Percent 1",
+          "ruleSubCategory": "Percent"
+        },
+        {
+          "ruleType": "Acme Percent 2",
+          "ruleSubCategory": "Percent"
+        },
+        {
+          "ruleType": "Acme Percent 3",
+          "ruleSubCategory": "Percent"
+        },
+        {
+          "ruleType": "Acme Percent 4",
+          "ruleSubCategory": "Percent"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "ruleCategory": "Text",
+      "ruleTypeOptions": [
+        {
+          "ruleType": "Last Name",
+          "ruleSubCategory": "Text"
+        },
+        {
+          "ruleType": "First Name",
+          "ruleSubCategory": "Text"
+        },
+        {
+          "ruleType": "State",
+          "ruleSubCategory": "Text"
+        }
+      ]
+    }
+  ]
+}

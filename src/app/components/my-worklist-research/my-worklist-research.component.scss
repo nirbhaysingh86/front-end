@@ -1,0 +1,98 @@
+@import '../../../styles/variables';
+
+// .tab-more
+.tab-more {
+  background: #fff;
+  border-radius: 6px;
+  width: 100%;
+  position: initial !important;
+  .resize-bar {
+    width: 100%;
+    height: 20px;
+    cursor: n-resize;
+  }
+  .tab-bar {
+    border-bottom: 2px solid #e6e9f4;
+    padding-left: 16px;
+    .lefts {
+      max-width: calc(100% - 80px);
+      overflow-y: hidden;
+      overflow-x: auto;
+      &::-webkit-scrollbar {
+        width: 7px;
+        height: 7px;
+        background-color: transparent;
+      }
+      &::-webkit-scrollbar-track {
+        border-radius: 10px;
+        background-color: transparent;
+      }
+      &::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background-color: #edeff2;
+      }
+    }
+    .tab-items {
+      color: #5a607f;
+      font-size: 12px;
+      font-weight: 400;
+      letter-spacing: -0.2px;
+      line-height: 18px;
+      margin-right: 15px;
+      padding: 10px 0;
+      display: block;
+      width: max-content;
+      &.current {
+        color: #194d8d;
+        font-weight: 500;
+        position: relative;
+        &:after {
+          height: 3px;
+          background-color: #194d8d;
+          content: '';
+          display: block;
+          position: absolute;
+          left: 0;
+          bottom: -1px;
+          width: 100%;
+          z-index: 888;
+        }
+      }
+    }
+    .page-two {
+      margin-right: 20px;
+      margin-top: -5px;
+      border: 1px solid #7f7f7f;
+      height: 28px;
+      line-height: 28px;
+      width: 50px;
+      display: flex;
+      border-radius: 14px;
+      .btn {
+        flex: 1;
+        &.btn-prev {
+          background: url(/assets/i/tab-left.svg) center center no-repeat;
+          background-size: 6px 10px;
+          &.disabled {
+            background: url(/assets/i/tab-left-disabled.svg) center center no-repeat;
+            background-size: 6px 10px;
+            pointer-events: none;
+          }
+        }
+        &.btn-next {
+          background: url(/assets/i/page-next.svg) center center no-repeat;
+          background-size: 6px 10px;
+          &.disabled {
+            background: url(/assets/i/page-next-gray.svg) center center no-repeat;
+            background-size: 6px 10px;
+            pointer-events: none;
+          }
+        }
+      }
+    }
+  }
+  .tab-content {
+    min-height: 100px;
+    padding-bottom: 10px;
+  }
+}

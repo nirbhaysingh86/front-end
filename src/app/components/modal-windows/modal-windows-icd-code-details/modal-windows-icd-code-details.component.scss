@@ -1,0 +1,54 @@
+@import '../../../../styles/variables';
+
+// .modal-windows-icd-code-details
+.modal-windows-icd-code-details {
+  .modal-mains {
+    width: 770px;
+    padding: 0;
+    .title {
+      padding: 12px 28px 0;
+      margin-bottom: 0;
+    }
+    .scroll-box {
+      padding: 22px 28px 10px;
+      max-height: 542px;
+      min-height: 242px;
+    }
+    .form-title {
+      color: #2f4259;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 28px;
+      text-decoration: underline;
+      margin-bottom: 10px;
+      display: block;
+    }
+    .form-area {
+      .data-row {
+        margin-bottom: 16px;
+        .right-area {
+          flex: 0 0 200px;
+          max-width: 200px;
+        }
+      }
+    }
+    .btn-search {
+      position: absolute;
+      right: 0;
+      top: 0;
+      background: url(/assets/i/search.svg) center center no-repeat;
+      background-size: 16px 16px;
+      width: 30px;
+      height: 30px;
+    }
+    .date-inputs {
+      width: auto;
+    }
+    .bottom-btns {
+      padding: 9px 31px;
+      box-shadow: 0 -1px 4px rgba(38, 44, 71, 0.16);
+      border-radius: 0 0 4px 4px;
+      background-color: #f8f8f8;
+    }
+  }
+}

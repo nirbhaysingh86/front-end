@@ -1,0 +1,223 @@
+{
+  "dataMyWorklistResearchRevCPTDetailTab": [
+    {
+      "id": 1,
+      "fieldList": [
+        {
+          "fieldType": "label",
+          "fieldName": "RCT Code",
+          "fieldValue": "0145",
+          "hasCheckAll": false,
+          "columnWidth": 100,
+          "footerContent": "TOTAL"
+        },
+        {
+          "fieldType": "label",
+          "fieldName": "Rev Code Descr",
+          "fieldValue": "Radiology - Diagnostic Chest X-Ray",
+          "hasCheckAll": false,
+          "columnWidth": 166,
+          "footerContent": ""
+        },
+        {
+          "fieldType": "label",
+          "fieldName": "CPT Code",
+          "fieldValue": "30997",
+          "hasCheckAll": false,
+          "columnWidth": 100,
+          "footerContent": ""
+        },
+        {
+          "fieldType": "label",
+          "fieldName": "Modifier One",
+          "fieldValue": "00",
+          "hasCheckAll": false,
+          "columnWidth": 90,
+          "footerContent": ""
+        },
+        {
+          "fieldType": "label",
+          "fieldName": "Modifier Two",
+          "fieldValue": "",
+          "hasCheckAll": false,
+          "columnWidth": 90,
+          "footerContent": ""
+        },
+        {
+          "fieldType": "label",
+          "fieldName": "CPT Description",
+          "fieldValue": "X-Ray exam chest 2 views",
+          "hasCheckAll": false,
+          "columnWidth": 166,
+          "footerContent": ""
+        },
+        {
+          "fieldType": "label",
+          "fieldName": "Service Date",
+          "fieldValue": "01/04/2021",
+          "hasCheckAll": false,
+          "columnWidth": 90,
+          "footerContent": ""
+        },
+        {
+          "fieldType": "label-right",
+          "fieldName": "Units",
+          "fieldValue": "1",
+          "hasCheckAll": false,
+          "columnWidth": 100,
+          "footerContent": "number"
+        },
+        {
+          "fieldType": "label-right",
+          "fieldName": "Charges",
+          "fieldValue": "$500.00",
+          "hasCheckAll": false,
+          "columnWidth": 100,
+          "footerContent": "currency"
+        },
+        {
+          "fieldType": "label-right",
+          "fieldName": "Denied Charges",
+          "fieldValue": "$0.00",
+          "hasCheckAll": false,
+          "columnWidth": 100,
+          "footerContent": "currency"
+        },
+        {
+          "fieldType": "label-right",
+          "fieldName": "Non-Covered Charges",
+          "fieldValue": "$0.00",
+          "hasCheckAll": false,
+          "columnWidth": 160,
+          "footerContent": "currency"
+        },
+        {
+          "fieldType": "label-right",
+          "fieldName": "Non-Billed Charges",
+          "fieldValue": "$0.00",
+          "hasCheckAll": false,
+          "columnWidth": 145,
+          "footerContent": "currency"
+        },
+        {
+          "fieldType": "label-right",
+          "fieldName": "Cost",
+          "fieldValue": "$0.00",
+          "hasCheckAll": false,
+          "columnWidth": 133,
+          "footerContent": "currency"
+        },
+        {
+          "fieldType": "label-right",
+          "fieldName": "Transaction ID",
+          "fieldValue": "8616464200H20171010",
+          "hasCheckAll": false,
+          "columnWidth": 133,
+          "footerContent": ""
+        },
+        {
+          "fieldType": "label-right",
+          "fieldName": "Service Type",
+          "fieldValue": "H",
+          "hasCheckAll": false,
+          "columnWidth": 133,
+          "footerContent": ""
+        },
+        {
+          "fieldType": "label-right",
+          "fieldName": "Physician ID",
+          "fieldValue": "123",
+          "hasCheckAll": false,
+          "columnWidth": 133,
+          "footerContent": ""
+        },
+        {
+          "fieldType": "label-right",
+          "fieldName": "Point of Service",
+          "fieldValue": "",
+          "hasCheckAll": false,
+          "columnWidth": 133,
+          "footerContent": ""
+        },
+        {
+          "fieldType": "label-right",
+          "fieldName": "Column 3",
+          "fieldValue": "$0.00",
+          "hasCheckAll": false,
+          "columnWidth": 133,
+          "footerContent": "currency"
+        },
+        {
+          "fieldType": "label-right",
+          "fieldName": "Column 3",
+          "fieldValue": "$0.00",
+          "hasCheckAll": false,
+          "columnWidth": 133,
+          "footerContent": "currency"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "fieldList": [
+        {
+          "fieldValue": "0146"
+        },
+        {
+          "fieldValue": "CT-Scan"
+        },
+        {
+          "fieldValue": "30957"
+        },
+        {
+          "fieldValue": "02"
+        },
+        {
+          "fieldValue": "03"
+        },
+        {
+          "fieldValue": "CT-Scan"
+        },
+        {
+          "fieldValue": "01/05/2021"
+        },
+        {
+          "fieldValue": "2"
+        },
+        {
+          "fieldValue": "$600.00"
+        },
+        {
+          "fieldValue": "$1.00"
+        },
+        {
+          "fieldValue": "$2.00"
+        },
+        {
+          "fieldValue": "$3.00"
+        },
+        {
+          "fieldValue": "$4.00"
+        },
+        {
+          "fieldValue": "8616464200H20171012"
+        },
+        {
+          "fieldValue": "L"
+        },
+        {
+          "fieldValue": "456"
+        },
+        {
+          "fieldValue": "Option 1"
+        },
+        {
+          "fieldValue": "$7.00"
+        },
+        {
+          "fieldValue": "$7.00"
+        }
+      ]
+    }
+  ]
+}

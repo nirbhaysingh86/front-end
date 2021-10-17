@@ -1,0 +1,351 @@
+{
+  "dataMyWorklistResearchChargeCodeDetailTab": [
+    {
+      "id": 1,
+      "fieldList": [
+        {
+          "fieldType": "label-link",
+          "fieldName": "Charge Code",
+          "fieldValue": "3600202",
+          "hasCheckAll": false,
+          "columnWidth": 105,
+          "footerContent": "TOTAL"
+        },
+        {
+          "fieldType": "label",
+          "fieldName": "Description",
+          "fieldValue": "Spirometry Pre/Post BD360",
+          "hasCheckAll": false,
+          "columnWidth": 183,
+          "footerContent": ""
+        },
+        {
+          "fieldType": "label",
+          "fieldName": "Transaction ID",
+          "fieldValue": "30997",
+          "hasCheckAll": false,
+          "columnWidth": 115,
+          "footerContent": ""
+        },
+        {
+          "fieldType": "label",
+          "fieldName": "Service Date",
+          "fieldValue": "04/25/2021",
+          "hasCheckAll": false,
+          "columnWidth": 125,
+          "footerContent": ""
+        },
+        {
+          "fieldType": "label",
+          "fieldName": "Revenue Code",
+          "fieldValue": "0331",
+          "hasCheckAll": false,
+          "columnWidth": 123,
+          "footerContent": ""
+        },
+        {
+          "fieldType": "label-right",
+          "fieldName": "Units",
+          "fieldValue": "4",
+          "hasCheckAll": false,
+          "columnWidth": 60,
+          "footerContent": "number"
+        },
+        {
+          "fieldType": "label-right",
+          "fieldName": "Charges",
+          "fieldValue": "$500.00",
+          "hasCheckAll": false,
+          "columnWidth": 93,
+          "footerContent": "currency"
+        },
+        {
+          "fieldType": "label-right",
+          "fieldName": "Denied Charges",
+          "fieldValue": "$0.00",
+          "hasCheckAll": false,
+          "columnWidth": 134,
+          "footerContent": "currency"
+        },
+        {
+          "fieldType": "label-right",
+          "fieldName": "Non-Covered Charges",
+          "fieldValue": "$0.00",
+          "hasCheckAll": false,
+          "columnWidth": 153,
+          "footerContent": "currency"
+        },
+        {
+          "fieldType": "label-right",
+          "fieldName": "Cost",
+          "fieldValue": "$0.00",
+          "hasCheckAll": false,
+          "columnWidth": 80,
+          "footerContent": "currency"
+        },
+        {
+          "fieldType": "label",
+          "fieldName": "Posting Date",
+          "fieldValue": "04/25/2021",
+          "hasCheckAll": false,
+          "columnWidth": 132,
+          "footerContent": ""
+        },
+        {
+          "fieldType": "label",
+          "fieldName": "Charge Posted By",
+          "fieldValue": "John Doe",
+          "hasCheckAll": false,
+          "columnWidth": 150,
+          "footerContent": ""
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "fieldList": [
+        {
+          "fieldValue": "3600333"
+        },
+        {
+          "fieldValue": "Diffusing Capacity"
+        },
+        {
+          "fieldValue": "30999"
+        },
+        {
+          "fieldValue": "04/25/2021"
+        },
+        {
+          "fieldValue": "0331"
+        },
+        {
+          "fieldValue": "4"
+        },
+        {
+          "fieldValue": "$1500.00"
+        },
+        {
+          "fieldValue": "$0.00"
+        },
+        {
+          "fieldValue": "$0.00"
+        },
+        {
+          "fieldValue": "$0.00"
+        },
+        {
+          "fieldValue": "04/25/2021"
+        },
+        {
+          "fieldValue": "John Doe"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "fieldList": [
+        {
+          "fieldValue": "3600202"
+        },
+        {
+          "fieldValue": "Spirometry Pre/Post BD360"
+        },
+        {
+          "fieldValue": "30997"
+        },
+        {
+          "fieldValue": "04/25/2021"
+        },
+        {
+          "fieldValue": "0331"
+        },
+        {
+          "fieldValue": "4"
+        },
+        {
+          "fieldValue": "$500.00"
+        },
+        {
+          "fieldValue": "$0.00"
+        },
+        {
+          "fieldValue": "$0.00"
+        },
+        {
+          "fieldValue": "$0.00"
+        },
+        {
+          "fieldValue": "04/25/2021"
+        },
+        {
+          "fieldValue": "John Doe"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "fieldList": [
+        {
+          "fieldValue": "3600333"
+        },
+        {
+          "fieldValue": "Diffusing Capacity"
+        },
+        {
+          "fieldValue": "30999"
+        },
+        {
+          "fieldValue": "04/25/2021"
+        },
+        {
+          "fieldValue": "0331"
+        },
+        {
+          "fieldValue": "4"
+        },
+        {
+          "fieldValue": "$1500.00"
+        },
+        {
+          "fieldValue": "$0.00"
+        },
+        {
+          "fieldValue": "$0.00"
+        },
+        {
+          "fieldValue": "$0.00"
+        },
+        {
+          "fieldValue": "04/25/2021"
+        },
+        {
+          "fieldValue": "John Doe"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "fieldList": [
+        {
+          "fieldValue": "3600333"
+        },
+        {
+          "fieldValue": "Diffusing Capacity"
+        },
+        {
+          "fieldValue": "30999"
+        },
+        {
+          "fieldValue": "04/25/2021"
+        },
+        {
+          "fieldValue": "0331"
+        },
+        {
+          "fieldValue": "4"
+        },
+        {
+          "fieldValue": "$1500.00"
+        },
+        {
+          "fieldValue": "$0.00"
+        },
+        {
+          "fieldValue": "$0.00"
+        },
+        {
+          "fieldValue": "$0.00"
+        },
+        {
+          "fieldValue": "04/25/2021"
+        },
+        {
+          "fieldValue": "John Doe"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "fieldList": [
+        {
+          "fieldValue": "3600333"
+        },
+        {
+          "fieldValue": "Diffusing Capacity"
+        },
+        {
+          "fieldValue": "30999"
+        },
+        {
+          "fieldValue": "04/25/2021"
+        },
+        {
+          "fieldValue": "0331"
+        },
+        {
+          "fieldValue": "4"
+        },
+        {
+          "fieldValue": "$1500.00"
+        },
+        {
+          "fieldValue": "$0.00"
+        },
+        {
+          "fieldValue": "$0.00"
+        },
+        {
+          "fieldValue": "$0.00"
+        },
+        {
+          "fieldValue": "04/25/2021"
+        },
+        {
+          "fieldValue": "John Doe"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "fieldList": [
+        {
+          "fieldValue": "3600333"
+        },
+        {
+          "fieldValue": "Diffusing Capacity"
+        },
+        {
+          "fieldValue": "30999"
+        },
+        {
+          "fieldValue": "04/25/2021"
+        },
+        {
+          "fieldValue": "0331"
+        },
+        {
+          "fieldValue": "4"
+        },
+        {
+          "fieldValue": "$1500.00"
+        },
+        {
+          "fieldValue": "$0.00"
+        },
+        {
+          "fieldValue": "$0.00"
+        },
+        {
+          "fieldValue": "$0.00"
+        },
+        {
+          "fieldValue": "04/25/2021"
+        },
+        {
+          "fieldValue": "John Doe"
+        }
+      ]
+    }
+  ]
+}

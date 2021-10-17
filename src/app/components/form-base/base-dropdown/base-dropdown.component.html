@@ -1,0 +1,15 @@
+<div ngbDropdown [ngClass]="'d-inline-block ' + className">
+  <button class="btn btn-outline-primary" ngbDropdownToggle>
+    {{ selectedOption ? (fieldName ? selectedOption[fieldName] : selectedOption) : placeholder }}
+  </button>
+  <div ngbDropdownMenu>
+    <button
+      ngbDropdownItem
+      *ngFor="let item of options; let i = index"
+      [class.current]="item === selectedOption"
+      (click)="changeDropdown.emit(item)"
+    >
+      {{ fieldName ? item[fieldName] : item }}
+    </button>
+  </div>
+</div>

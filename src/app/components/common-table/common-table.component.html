@@ -1,0 +1,387 @@
+<div class="table-data" [style.padding-bottom]="shownPopupIndex !== -1 ? '70px' : '20px'">
+  <div class="table-wrap">
+    <div class="table-head">
+      <div class="row-th">
+        <div
+          class="col-th"
+          [class.default-min-width]="hasWidthSetting"
+          [style.minWidth]="hasWidthSetting ? columnItem.columnWidth + (transform[columnIndex] || 0) + 'px' : '0'"
+          [class.w94-percentage]="hasWidthSetting && last"
+          (mousedown)="stopDrag()"
+          (mouseup)="stopDrag()"
+          (clickOutside)="stopDrag()"
+          *ngFor="let columnItem of header.fieldList; let columnIndex = index; let last = last"
+        >
+          <div class="spacing" (click)="clickSort(columnItem)">
+            <div class="checkbox-wrap blue-check" *ngIf="columnItem.hasCheckAll">
+              <input
+                type="checkbox"
+                id="check-all-{{ columnIndex }}"
+                [(ngModel)]="checkAll"
+                (click)="clickCheckAll()"
+              />
+              <label for="check-all-{{ columnIndex }}">
+                {{ columnItem.fieldName }}
+              </label>
+            </div>
+            <ng-container *ngIf="!columnItem.hasCheckAll">
+              {{ columnItem.fieldName }}
+            </ng-container>
+            <a
+              href="javascript:;"
+              class="btn-sort"
+              [class.asc]="sortData.sortOrder === 'asc'"
+              [class.desc]="sortData.sortOrder === 'desc'"
+              *ngIf="sortData.sortColumn === columnItem.sortField"
+            >
+            </a>
+            <span
+              class="btn-resize"
+              (mousedown)="setDragStatus($event, columnIndex); $event.stopPropagation()"
+              (click)="$event.stopPropagation()"
+              *ngIf="hasWidthSetting && !last"
+            >
+            </span>
+            <div class="inputs" *ngIf="isShownFilter">
+              <input type="text" placeholder="Find..." [(ngModel)]="filteredArray[columnIndex]" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end .row-th -->
+    </div>
+    <div class="no-data" *ngIf="dataList.length === 0" (contextmenu)="shownPopupIndex = 0; $event.preventDefault()">
+      <span>There is no data available yet...</span>
+    </div>
+    <div class="table-body" (clickOutside)="shownPopupIndex = -1">
+      <div
+        class="row-td"
+        [class.active]="item.checked"
+        [class.hide]="!isFiltered(item) || item.hidden"
+        (click)="clickSingleSelection(rowIndex)"
+        (contextmenu)="shownPopupIndex = rowIndex; $event.preventDefault()"
+        (dblclick)="clickFirstColumnCell.emit(rowIndex)"
+        *ngFor="let item of dataList; let rowIndex = index"
+      >
+        <div class="col-td" *ngFor="let columnItem of item.fieldList; let columnIndex = index">
+          <div class="spacing">
+            <container-element [ngSwitch]="header.fieldList[columnIndex].fieldType">
+              <ng-container *ngSwitchCase="'label-checkbox'">
+                <div class="spacing">
+                  <div class="checkbox-wrap" (click)="$event.stopPropagation()">
+                    <input
+                      type="checkbox"
+                      id="check-row-{{ rowIndex }}"
+                      [(ngModel)]="item.checked"
+                      (click)="clickSingleSelection(rowIndex)"
+                    />
+                    <label for="check-row-{{ rowIndex }}">{{ columnItem.fieldValue }}</label>
+                  </div>
+                </div>
+              </ng-container>
+
+              <ng-container *ngSwitchCase="'label-payment-status'">
+                <div class="spacing">
+                  <span
+                    class="status-txt"
+                    [class.red]="columnItem.fieldValue === 'Over Paid'"
+                    [class.green]="columnItem.fieldValue === 'Paid'"
+                  >
+                    {{ columnItem.fieldValue }}
+                  </span>
+                </div>
+              </ng-container>
+
+              <ng-container *ngSwitchCase="'label-audit-status'">
+                <div class="spacing">
+                  <span class="status-txt" [class.orange]="columnItem.fieldValue === 'Pending'">
+                    {{ columnItem.fieldValue }}
+                  </span>
+                </div>
+              </ng-container>
+
+              <ng-container *ngSwitchCase="'action-checkbox'">
+                <div class="spacing center">
+                  <div class="checkbox-wrap no-txt" (click)="!columnItem.readonly && $event.stopPropagation()">
+                    <input
+                      type="checkbox"
+                      id="check-row-{{ rowIndex }}"
+                      disabled="columnItem.readonly"
+                      [(ngModel)]="columnItem.fieldValue"
+                      (click)="clickSingleCheck(rowIndex, columnIndex)"
+                    />
+                    <label for="check-row-{{ rowIndex }}">&nbsp;</label>
+                  </div>
+                </div>
+              </ng-container>
+
+              <ng-container *ngSwitchCase="'label-center'">
+                <div class="spacing align-center">
+                  {{ columnItem.fieldValue }}
+                </div>
+              </ng-container>
+
+              <ng-container *ngSwitchCase="'label-info-right'">
+                <div class="spacing align-right">
+                  {{ columnItem.fieldValue }}
+                  <a href="javascript:;" class="icons icon-info"></a>
+                </div>
+              </ng-container>
+
+              <ng-container *ngSwitchCase="'label-info-right-payment-details-popup'">
+                <div class="spacing align-right">
+                  {{ columnItem.fieldValue }}
+                  <a
+                    href="javascript:;"
+                    class="icons icon-info"
+                    (click)="clickTableOptions.emit({ action: 'Payment Details Popup', data: item })"
+                  >
+                  </a>
+                </div>
+              </ng-container>
+
+              <ng-container *ngSwitchCase="'label-info-right-other-payer-popup'">
+                <div class="spacing align-right">
+                  {{ columnItem.fieldValue }}
+                  <a
+                    href="javascript:;"
+                    class="icons icon-info"
+                    (click)="clickTableOptions.emit({ action: 'Other Payer Popup', data: item })"
+                  >
+                  </a>
+                </div>
+              </ng-container>
+
+              <ng-container *ngSwitchCase="'label-right'">
+                <div class="spacing align-right">
+                  {{ columnItem.fieldValue }}
+                </div>
+              </ng-container>
+
+              <ng-container *ngSwitchCase="'label-link'">
+                <a href="javascript:;" class="spacing">
+                  {{ columnItem.fieldValue }}
+                </a>
+              </ng-container>
+
+              <ng-container *ngSwitchCase="'label-expand-arrow'">
+                <div class="spacing" (click)="clickExpandArrow(rowIndex)">
+                  <i class="expand-icon" [class.expanded]="item.expanded">&nbsp;</i>
+                  {{ columnItem.fieldValue }}
+                </div>
+              </ng-container>
+
+              <ng-container *ngSwitchCase="'label-editable-input'">
+                <div class="spacing" *ngIf="!columnItem.edited" (dblclick)="columnItem.edited = true">
+                  {{ columnItem.fieldValue }}
+                </div>
+                <div class="spacing" *ngIf="columnItem.edited">
+                  <div class="inputs">
+                    <input type="text" [(ngModel)]="columnItem.fieldValue" />
+                  </div>
+                </div>
+              </ng-container>
+
+              <ng-container *ngSwitchCase="'label-editable-payer-dropdown'">
+                <div class="spacing" *ngIf="!columnItem.edited" (dblclick)="columnItem.edited = true">
+                  {{ columnItem.fieldValue }}
+                </div>
+                <div class="spacing" *ngIf="columnItem.edited">
+                  <app-sd-base-dropdown
+                    [selectedOption]="columnItem.fieldValue"
+                    [options]="payerIDDropdownOptions"
+                    [placeholder]="'Select'"
+                    (changeDropdown)="columnItem.fieldValue = $event"
+                  >
+                  </app-sd-base-dropdown>
+                </div>
+              </ng-container>
+
+              <ng-container *ngSwitchCase="'label'">
+                <div class="spacing">
+                  {{ columnItem.fieldValue }}
+                </div>
+              </ng-container>
+
+              <ng-container *ngSwitchDefault>
+                <div class="spacing">
+                  {{ columnItem.fieldValue }}
+                </div>
+              </ng-container>
+            </container-element>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="table-footer">
+      <div class="row-td" *ngIf="!!header?.fieldList[0]?.footerContent && dataList.length > 0">
+        <div class="col-td" *ngFor="let columnItem of header?.fieldList; let columnIndex = index">
+          <div
+            class="spacing"
+            [class.align-center]="columnItem.fieldType === 'label-center'"
+            [class.align-right]="
+              columnItem.fieldType === 'label-right' ||
+              columnItem.fieldType === 'label-info-right' ||
+              columnItem.fieldType === 'label-info-right-payment-details-popup' ||
+              columnItem.fieldType === 'label-info-right-other-payer-popup'
+            "
+          >
+            <ng-container *ngIf="columnItem.footerContent === 'TOTAL'">
+              {{ columnItem.footerContent }}
+            </ng-container>
+
+            <ng-container *ngIf="columnItem.footerContent === 'currency'">
+              {{ getTotalValue(columnIndex, columnItem.footerContent) | currency }}
+            </ng-container>
+
+            <ng-container *ngIf="columnItem.footerContent === 'number'">
+              {{ getTotalValue(columnIndex, columnItem.footerContent) | number }}
+            </ng-container>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="row-popup"
+    [style.top]="shownPopupIndex * 40 + 'px'"
+    *ngIf="popupToShow === 'revenue-cpt-popup' && shownPopupIndex !== -1"
+  >
+    <div class="icon-txt-list">
+      <ul>
+        <li>
+          <a href="javascript:;" class="icon-txt" (click)="clickCopy()">
+            <i class="icons icon-copy"></i>
+            <span class="txt"> Copy Cell Value </span>
+          </a>
+        </li>
+        <li>
+          <a href="javascript:;" class="icon-txt" (click)="clickFilter()">
+            <i class="icons icon-file-record"></i>
+            <span class="txt"> Filter Records </span>
+          </a>
+        </li>
+        <li>
+          <a href="javascript:;" class="icon-txt">
+            <i class="icons icon-restore"></i>
+            <span class="txt"> Restore Default Layout </span>
+          </a>
+        </li>
+      </ul>
+      <div class="line"></div>
+      <ul>
+        <li>
+          <a
+            href="javascript:;"
+            class="icon-txt"
+            (click)="clickTableOptions.emit({ action: 'Add Revenue/CPT', data: dataList[shownPopupIndex] })"
+          >
+            <i class="icons icon-add"></i>
+            <span class="txt"> Add New </span>
+          </a>
+        </li>
+        <li>
+          <a
+            href="javascript:;"
+            class="icon-txt red"
+            (click)="clickTableOptions.emit({ action: 'Remove Revenue/CPT', data: dataList[shownPopupIndex] })"
+          >
+            <i class="icons icon-del"></i>
+            <span class="txt"> Delete </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div
+    class="row-popup"
+    [style.top]="shownPopupIndex * 40 + 'px'"
+    *ngIf="popupToShow === 'charge-code-popup' && shownPopupIndex !== -1"
+  >
+    <div class="icon-txt-list">
+      <ul>
+        <li>
+          <a href="javascript:;" class="icon-txt" (click)="clickCopy()">
+            <i class="icons icon-copy"></i>
+            <span class="txt"> Copy Cell Value </span>
+          </a>
+        </li>
+        <li>
+          <a href="javascript:;" class="icon-txt" (click)="clickFilter()">
+            <i class="icons icon-file-record"></i>
+            <span class="txt"> Filter Records </span>
+          </a>
+        </li>
+        <li>
+          <a href="javascript:;" class="icon-txt">
+            <i class="icons icon-restore"></i>
+            <span class="txt"> Restore Default Layout </span>
+          </a>
+        </li>
+      </ul>
+      <div class="line"></div>
+      <ul>
+        <li>
+          <a
+            href="javascript:;"
+            class="icon-txt"
+            (click)="clickTableOptions.emit({ action: 'Add Charge Code', data: dataList[shownPopupIndex] })"
+          >
+            <i class="icons icon-add"></i>
+            <span class="txt"> Add New </span>
+          </a>
+        </li>
+        <li>
+          <a
+            href="javascript:;"
+            class="icon-txt red"
+            (click)="clickTableOptions.emit({ action: 'Remove Charge Code', data: dataList[shownPopupIndex] })"
+          >
+            <i class="icons icon-del"></i>
+            <span class="txt"> Delete </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div
+    class="row-popup"
+    [style.top]="shownPopupIndex * 40 + 'px'"
+    *ngIf="popupToShow === 'view-rule-popup' && shownPopupIndex !== -1"
+  >
+    <div class="icon-txt-list">
+      <ul>
+        <li>
+          <a
+            href="javascript:;"
+            class="icon-txt"
+            (click)="clickTableOptions.emit({ action: 'Add View Rule', data: dataList[shownPopupIndex] })"
+          >
+            <i class="icons icon-add"></i>
+            <span class="txt"> Add New </span>
+          </a>
+        </li>
+        <li *ngIf="dataList.length !== 0">
+          <a
+            href="javascript:;"
+            class="icon-txt"
+            (click)="clickTableOptions.emit({ action: 'Edit View Rule', data: dataList[shownPopupIndex] })"
+          >
+            <i class="icons icon-edit"></i>
+            <span class="txt"> Edit </span>
+          </a>
+        </li>
+        <li *ngIf="dataList.length !== 0">
+          <a
+            href="javascript:;"
+            class="icon-txt red"
+            (click)="clickTableOptions.emit({ action: 'Remove View Rule', data: dataList[shownPopupIndex] })"
+          >
+            <i class="icons icon-del"></i>
+            <span class="txt"> Delete </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,522 @@
+<div class="modal-default modal-windows-contact-information">
+  <div class="modal-mains">
+    <a href="javascript:;" class="btn-close" (click)="closeModal(false)"> </a>
+    <div class="blue-bg">
+      <div class="top-bar flex-grid">
+        <div class="title">Contact Information</div>
+        <div class="right-page">
+          <a href="javascript:;" class="btn-arrow btn-prev"></a>
+          <span class="circle-num">1</span>
+          <a href="javascript:;" class="btn-arrow btn-next"></a>
+        </div>
+      </div>
+    </div>
+    <div class="contact-info-area">
+      <div class="scroll-box" *ngIf="dataListContactInformation && dataListLookups">
+        <div class="group-wrap">
+          <div class="form-title">Insurance Information</div>
+          <div class="row">
+            <div class="col col-md-4">
+              <div class="group">
+                <div class="form-area">
+                  <div class="data-row flex">
+                    <div class="left-txt">Facility Name</div>
+                    <div class="right-area">
+                      <div class="inputs">
+                        <input type="text" [(ngModel)]="dataListContactInformation.insuranceInformation.facilityName" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="data-row flex">
+                    <div class="left-txt">Tax ID</div>
+                    <div class="right-area">
+                      <div class="inputs">
+                        <input type="text" [(ngModel)]="dataListContactInformation.insuranceInformation.taxID" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="data-row flex">
+                    <div class="left-txt">NPI</div>
+                    <div class="right-area">
+                      <div class="inputs">
+                        <input type="text" [(ngModel)]="dataListContactInformation.insuranceInformation.npi" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col col-md-4">
+              <div class="group">
+                <div class="form-area">
+                  <div class="data-row flex">
+                    <div class="left-txt">Payee Name</div>
+                    <div class="right-area">
+                      <div class="inputs">
+                        <input type="text" [(ngModel)]="dataListContactInformation.insuranceInformation.payeeName" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="data-row flex">
+                    <div class="left-txt">Payer Phone</div>
+                    <div class="right-area">
+                      <div class="inputs">
+                        <input type="text" [(ngModel)]="dataListContactInformation.insuranceInformation.payerPhone" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="data-row flex">
+                    <div class="left-txt">Subscriber ID</div>
+                    <div class="right-area">
+                      <div class="inputs">
+                        <input
+                          type="text"
+                          appPositiveNumberOnly
+                          [(ngModel)]="dataListContactInformation.insuranceInformation.subscriberID"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col col-md-4">
+              <div class="group">
+                <div class="form-area">
+                  <div class="data-row flex">
+                    <div class="left-txt">Insured SSN</div>
+                    <div class="right-area">
+                      <div class="inputs">
+                        <input type="text" [(ngModel)]="dataListContactInformation.insuranceInformation.insuredSSN" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="data-row flex">
+                    <div class="left-txt">Insured Group Name</div>
+                    <div class="right-area">
+                      <div class="inputs">
+                        <input
+                          type="text"
+                          [(ngModel)]="dataListContactInformation.insuranceInformation.insuredGroupName"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="group-wrap">
+          <div class="form-title">Visit Information</div>
+          <div class="row">
+            <div class="col col-md-4">
+              <div class="group">
+                <div class="form-area">
+                  <div class="data-row flex">
+                    <div class="left-txt">Patient Name</div>
+                    <div class="right-area">
+                      <div class="inputs">
+                        <input type="text" [(ngModel)]="dataListContactInformation.visitInformation.patientName" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="data-row flex">
+                    <div class="left-txt">Date of Birth</div>
+                    <div class="right-area">
+                      <div class="inputs">
+                        <input type="text" [(ngModel)]="dataListContactInformation.visitInformation.dateOfBirth" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="data-row flex">
+                    <div class="left-txt">Account Number</div>
+                    <div class="right-area">
+                      <div class="inputs">
+                        <input type="text" [(ngModel)]="dataListContactInformation.visitInformation.accountNumber" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="data-row flex">
+                    <div class="left-txt">Total Charges</div>
+                    <div class="right-area">
+                      <div class="inputs">
+                        <input
+                          type="text"
+                          appPositiveNumberPriceOnly
+                          [(ngModel)]="dataListContactInformation.visitInformation.totalCharges"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col col-md-4">
+              <div class="group">
+                <div class="form-area">
+                  <div class="data-row flex">
+                    <div class="left-txt">Insured Name</div>
+                    <div class="right-area">
+                      <div class="inputs">
+                        <input type="text" [(ngModel)]="dataListContactInformation.visitInformation.insuredName" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="data-row flex">
+                    <div class="left-txt">Admit Date</div>
+                    <div class="right-area">
+                      <div class="inputs">
+                        <input type="text" [(ngModel)]="dataListContactInformation.visitInformation.admitDate" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="data-row flex">
+                    <div class="left-txt">Discharge Date</div>
+                    <div class="right-area">
+                      <div class="inputs">
+                        <input type="text" [(ngModel)]="dataListContactInformation.visitInformation.dischargeDate" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="data-row flex">
+                    <div class="left-txt">Patient Type</div>
+                    <div class="right-area">
+                      <div class="inputs">
+                        <input
+                          type="text"
+                          appPositiveNumberOnly
+                          [(ngModel)]="dataListContactInformation.visitInformation.patientType"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col col-md-4">
+              <div class="group">
+                <div class="form-area">
+                  <div class="data-row flex">
+                    <div class="left-txt">Medical Record No</div>
+                    <div class="right-area">
+                      <div class="inputs">
+                        <input type="text" [(ngModel)]="dataListContactInformation.visitInformation.medicalRecordNo" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="data-row flex">
+                    <div class="left-txt">Social Security No</div>
+                    <div class="right-area">
+                      <div class="inputs">
+                        <input type="text" [(ngModel)]="dataListContactInformation.visitInformation.socialSecurityNo" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="group-wrap">
+          <div class="form-title">Recovery Information</div>
+          <div class="row">
+            <div class="col col-md-4">
+              <div class="group">
+                <div class="form-area">
+                  <div class="data-row flex">
+                    <div class="left-txt">Audit Status</div>
+                    <div class="right-area">
+                      <app-sd-base-dropdown
+                        [selectedOption]="dataListContactInformation.recoveryInformation.auditStatus"
+                        [options]="auditStatusDropdownOptions"
+                        (changeDropdown)="dataListContactInformation.recoveryInformation.auditStatus = $event"
+                      >
+                      </app-sd-base-dropdown>
+                    </div>
+                  </div>
+                  <div class="data-row flex">
+                    <div class="left-txt">Review Cateogry</div>
+                    <div class="right-area">
+                      <app-sd-base-dropdown
+                        [className]="'disabled'"
+                        [selectedOption]="dataListContactInformation.recoveryInformation.reviewCateogry"
+                        [options]="[]"
+                        (changeDropdown)="($event)"
+                      >
+                      </app-sd-base-dropdown>
+                    </div>
+                  </div>
+                  <div class="data-row flex">
+                    <div class="left-txt">Variance Category</div>
+                    <div class="right-area">
+                      <app-sd-base-dropdown
+                        [className]="'disabled'"
+                        [selectedOption]="dataListContactInformation.recoveryInformation.varianceCategory"
+                        [options]="[]"
+                        (changeDropdown)="($event)"
+                      >
+                      </app-sd-base-dropdown>
+                    </div>
+                  </div>
+                  <div class="data-row flex">
+                    <div class="left-txt">Closed Result</div>
+                    <div class="right-area">
+                      <app-sd-base-dropdown
+                        [className]="'disabled'"
+                        [selectedOption]="dataListContactInformation.recoveryInformation.closedResult"
+                        [options]="[]"
+                        (changeDropdown)="($event)"
+                      >
+                      </app-sd-base-dropdown>
+                    </div>
+                  </div>
+                  <div class="data-row flex">
+                    <div class="left-txt">Committed Amount</div>
+                    <div class="right-area">
+                      <div class="inputs w63">
+                        <input
+                          type="text"
+                          [(ngModel)]="dataListContactInformation.recoveryInformation.committedAmount"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="data-row flex">
+                    <div class="left-txt">Assigned Reviewer</div>
+                    <div class="right-area">
+                      <app-sd-base-dropdown
+                        [className]="'disabled'"
+                        [selectedOption]="dataListContactInformation.recoveryInformation.assignedReviewer"
+                        [options]="[]"
+                        (changeDropdown)="($event)"
+                      >
+                      </app-sd-base-dropdown>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col col-md-4">
+              <div class="group">
+                <div class="form-area">
+                  <div class="data-row flex">
+                    <div class="left-txt">Auditor</div>
+                    <div class="right-area">
+                      <app-sd-base-dropdown
+                        [selectedOption]="dataListContactInformation.recoveryInformation.auditor"
+                        [options]="dataListLookups['auditor']"
+                        (changeDropdown)="dataListContactInformation.recoveryInformation.auditor = $event"
+                      >
+                      </app-sd-base-dropdown>
+                    </div>
+                  </div>
+                  <div class="data-row flex">
+                    <div class="left-txt">Review Reason</div>
+                    <div class="right-area">
+                      <app-sd-base-dropdown
+                        [className]="'disabled'"
+                        [selectedOption]="dataListContactInformation.recoveryInformation.reviewReason"
+                        [options]="[]"
+                        (changeDropdown)="($event)"
+                      >
+                      </app-sd-base-dropdown>
+                    </div>
+                  </div>
+                  <div class="data-row flex">
+                    <div class="left-txt">Var Cat Suggestion</div>
+                    <div class="right-area">
+                      <div class="inputs">
+                        <input
+                          type="text"
+                          [(ngModel)]="dataListContactInformation.recoveryInformation.varCatSuggestion"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="data-row flex">
+                    <div class="left-txt">Closed Reason</div>
+                    <div class="right-area">
+                      <app-sd-base-dropdown
+                        [className]="'disabled'"
+                        [selectedOption]="dataListContactInformation.recoveryInformation.closedReason"
+                        [options]="[]"
+                        (changeDropdown)="($event)"
+                      >
+                      </app-sd-base-dropdown>
+                    </div>
+                  </div>
+                  <div class="data-row flex">
+                    <div class="left-txt">Pursuing Reason</div>
+                    <div class="right-area">
+                      <div class="inputs">
+                        <input
+                          type="text"
+                          appPositiveNumberPriceOnly
+                          [(ngModel)]="dataListContactInformation.recoveryInformation.pursuingReason"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col col-md-4">
+              <div class="group">
+                <div class="form-area">
+                  <div class="data-row flex">
+                    <div class="left-txt">Follw-Up Date</div>
+                    <div class="right-area">
+                      <div class="inputs">
+                        <input type="text" [(ngModel)]="dataListContactInformation.recoveryInformation.follwUpDate" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="data-row flex">
+                    <div class="left-txt">Event Date</div>
+                    <div class="right-area">
+                      <div class="inputs">
+                        <input type="text" [(ngModel)]="dataListContactInformation.recoveryInformation.eventDate" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="data-row flex">
+                    <div class="left-txt">Start Date</div>
+                    <div class="right-area">
+                      <div class="inputs">
+                        <input type="text" [(ngModel)]="dataListContactInformation.recoveryInformation.startDate" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="data-row flex">
+                    <div class="left-txt">Agency</div>
+                    <div class="right-area">
+                      <app-sd-base-dropdown
+                        [selectedOption]="dataListContactInformation.recoveryInformation.agency"
+                        [options]="dataListLookups['agency']"
+                        (changeDropdown)="dataListContactInformation.recoveryInformation.agency = $event"
+                      >
+                      </app-sd-base-dropdown>
+                    </div>
+                  </div>
+                  <div class="data-row flex">
+                    <div class="left-txt">Review Stage</div>
+                    <div class="right-area">
+                      <app-sd-base-dropdown
+                        [className]="'disabled'"
+                        [selectedOption]="dataListContactInformation.recoveryInformation.reviewStage"
+                        [options]="[]"
+                        (changeDropdown)="($event)"
+                      >
+                      </app-sd-base-dropdown>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col col-md-8">
+              <div class="group">
+                <div class="form-area">
+                  <div class="data-row flex">
+                    <div class="left-txt">Argument</div>
+                    <div class="right-area width-full">
+                      <div class="textareas small height61">
+                        <textarea [(ngModel)]="dataListContactInformation.recoveryInformation.argument"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="group-wrap">
+          <div class="form-title">Contact Log</div>
+          <div class="row">
+            <div class="col col-md-4">
+              <div class="group">
+                <div class="form-area">
+                  <div class="data-row flex">
+                    <div class="left-txt">Responsibility</div>
+                    <div class="right-area">
+                      <app-sd-base-dropdown
+                        [selectedOption]="dataListContactInformation.contactLog.responsibility"
+                        [options]="dataListLookups['responsibility']"
+                        (changeDropdown)="dataListContactInformation.contactLog.responsibility = $event"
+                      >
+                      </app-sd-base-dropdown>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col col-md-4">
+              <div class="group">
+                <div class="form-area">
+                  <div class="data-row flex">
+                    <div class="left-txt">Type</div>
+                    <div class="right-area">
+                      <app-sd-base-dropdown
+                        [selectedOption]="dataListContactInformation.contactLog.type"
+                        [options]="contactTypeDropdownOptions"
+                        (changeDropdown)="dataListContactInformation.contactLog.type = $event"
+                      >
+                      </app-sd-base-dropdown>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col col-md-4">
+              <div class="group">
+                <div class="form-area">
+                  <div class="data-row flex">
+                    <div class="left-txt">Duration (mins)</div>
+                    <div class="right-area">
+                      <div class="tool-inputs">
+                        <div class="inputs">
+                          <a href="javascript:;" class="btn-minu" (click)="clickMinuDuration()"> </a>
+                          <input type="text" [(ngModel)]="dataListContactInformation.contactLog.duration" />
+                          <a href="javascript:;" class="btn-add" (click)="clickAddDuration()"> </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col col-md-8">
+              <div class="group">
+                <div class="form-area">
+                  <div class="data-row flex">
+                    <div class="left-txt">Note</div>
+                    <div class="right-area width-full">
+                      <div class="textareas small height61">
+                        <textarea [(ngModel)]="dataListContactInformation.contactLog.note"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="bottom-btns flex-end">
+        <a href="javascript:;" class="btn blue-links" (click)="closeModal(false)"> Close </a>
+        <a href="javascript:;" class="btn btn-blue" [class.disabled]="!isFormValid()" (click)="closeModal(true)">
+          Save
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end .modal-windows-contact-information -->

@@ -1,0 +1,99 @@
+<div class="modal-default modal-windows-edit-layout">
+  <div class="modal-mains">
+    <a href="javascript:;" class="btn-close" (click)="closeModal()"> </a>
+    <div class="title">{{ initialValue.id ? 'Edit Layout' : 'New Layout' }}</div>
+    <div class="group">
+      <div class="top-title">Layout Description</div>
+      <div class="form-area">
+        <div class="data-row flex">
+          <div class="left-txt">Layout Name</div>
+          <div class="right-area">
+            <div class="inputs">
+              <input type="text" maxlength="100" [(ngModel)]="layoutName" />
+            </div>
+          </div>
+        </div>
+        <div class="data-row flex">
+          <div class="left-txt flex-start">Description</div>
+          <div class="right-area">
+            <div class="textareas small">
+              <textarea maxlength="500" [(ngModel)]="description"></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="line"></div>
+    </div>
+    <div class="group">
+      <div class="top-title">Configure Columns</div>
+      <div class="form-area columns-form">
+        <div class="search-select-box flex">
+          <div class="left-search">
+            <div class="search-inputs inputs">
+              <input type="text" placeholder="Search..." [ngModel]="searchKeyword" (ngModelChange)="onSearch($event)" />
+              <a href="javascript:;" class="icons btn-search"></a>
+            </div>
+            <div class="search-auto">
+              <div class="select-all">
+                <div class="checkbox-wrap modal-checkbox select-all-check">
+                  <input
+                    type="checkbox"
+                    id="text-state-select-all"
+                    [ngModel]="allChecked"
+                    (ngModelChange)="checkAll($event)"
+                  />
+                  <label for="text-state-select-all">Select all</label>
+                </div>
+              </div>
+              <div class="search-list">
+                <ul>
+                  <ng-container *ngFor="let item of filteredColumns; let i = index">
+                    <li>
+                      <div class="checkbox-wrap modal-checkbox">
+                        <input type="checkbox" id="state-check-{{ i }}" [(ngModel)]="item.checked" />
+                        <label for="state-check-{{ i }}">{{ item.fieldName }}</label>
+                      </div>
+                    </li>
+                  </ng-container>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="right-selected">
+            <div class="top-line flex-grid">
+              <div class="left-txt">
+                {{ selectedColumns.length > 0 ? selectedColumns.length + ' selected' : 'None selected' }}
+              </div>
+              <a href="javascript:;" class="blue-link" (click)="clearAll()"> Clear all </a>
+            </div>
+            <div class="selected-list">
+              <ul>
+                <li *ngFor="let item of selectedColumns; let i = index">
+                  <div class="new-york flex-grid">
+                    <div class="left-txt">
+                      {{ item.fieldName }}
+                    </div>
+                    <a href="javascript:;" class="icons icon-del" (click)="item.checked = false"> </a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="data-row flex">
+          <div class="checkbox-wrap modal-checkbox">
+            <input type="checkbox" id="checkUseThisAsMyDefaultLayout" [(ngModel)]="checkUseThisAsMyDefaultLayout" />
+            <label for="checkUseThisAsMyDefaultLayout">Use this as my default layout</label>
+          </div>
+        </div>
+        <div class="bottom-btns flex-end">
+          <a href="javascript:;" class="btn blue-links" (click)="closeModal()"> Cancel </a>
+          <a href="javascript:;" class="btn btn-blue" [class.disabled]="!isFormValid()" (click)="saveLayout()">
+            {{ initialValue.id ? 'Save Layout' : 'Create Layout' }}
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end .modal-windows-edit-layout -->

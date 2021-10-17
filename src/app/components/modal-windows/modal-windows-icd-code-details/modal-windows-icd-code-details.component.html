@@ -1,0 +1,125 @@
+<div class="modal-default modal-windows-icd-code-details">
+  <div class="modal-mains">
+    <a href="javascript:;" class="btn-close" (click)="closeModal(false)"> </a>
+    <div class="title">ICD Code Details</div>
+    <div class="contact-info-area">
+      <div class="scroll-box">
+        <div class="group-wrap">
+          <a href="javascript:;" class="form-title">Add/Edit ICD Code</a>
+          <div class="row">
+            <div class="col col-md-6">
+              <div class="group">
+                <div class="form-area">
+                  <div class="data-row flex">
+                    <div class="left-txt">ICD Version</div>
+                    <div class="right-area">
+                      <app-sd-base-dropdown
+                        [className]="'disabled'"
+                        [selectedOption]="dataListDetails.fieldList[1]['fieldValue']"
+                        [options]="[]"
+                        (changeDropdown)="dataListDetails.fieldList[1]['fieldValue'] = $event"
+                      >
+                      </app-sd-base-dropdown>
+                    </div>
+                  </div>
+                  <div class="data-row flex">
+                    <div class="left-txt">ICD Code</div>
+                    <div class="right-area">
+                      <div class="search-inputs inputs">
+                        <input
+                          type="text"
+                          placeholder="Type code..."
+                          [(ngModel)]="dataListDetails.fieldList[0]['fieldValue']"
+                        />
+                        <a href="javascript:;" class="icons btn-search"></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="data-row flex">
+                    <div class="left-txt flex-start">Description</div>
+                    <div class="right-area">
+                      <div class="textareas small">
+                        <textarea [(ngModel)]="dataListDetails.fieldList[2]['fieldValue']"> </textarea>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col col-md-6">
+              <div class="group">
+                <div class="form-area">
+                  <div class="data-row flex">
+                    <div class="left-txt">Service Date</div>
+                    <div class="right-area">
+                      <div class="inputs date-inputs">
+                        <input
+                          type="text"
+                          readonly
+                          [(ngModel)]="serviceData"
+                          ngbDatepicker
+                          #serviceDate="ngbDatepicker"
+                          (click)="serviceDate.toggle()"
+                        />
+                        <a href="javascript:;" class="icons btn-calender" (click)="serviceDate.toggle()"></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="data-row flex">
+                    <div class="left-txt">Rank</div>
+                    <div class="right-area">
+                      <div class="tool-inputs">
+                        <div class="inputs">
+                          <a href="javascript:;" class="btn-minu" (click)="clickMinuRank()"> </a>
+                          <input
+                            type="text"
+                            appPositiveNumberOnly
+                            [(ngModel)]="dataListDetails.fieldList[4]['fieldValue']"
+                          />
+                          <a href="javascript:;" class="btn-add" (click)="clickAddRank()"> </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="data-row flex">
+                    <div class="left-txt">Transaction ID</div>
+                    <div class="right-area">
+                      <div class="inputs">
+                        <input
+                          type="text"
+                          appPositiveNumberOnly
+                          [(ngModel)]="dataListDetails.fieldList[6]['fieldValue']"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="data-row flex">
+                    <div class="left-txt">POA</div>
+                    <div class="right-area">
+                      <div class="checkbox-wrap modal-checkbox">
+                        <input
+                          type="checkbox"
+                          id="check-poa"
+                          [checked]="dataListDetails.fieldList[5]['fieldValue'] === 'Y'"
+                        />
+                        <label for="check-poa">&nbsp;</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="bottom-btns flex-end">
+        <a href="javascript:;" class="btn blue-links" (click)="closeModal(false)"> Close </a>
+        <a href="javascript:;" class="btn btn-blue" [class.disabled]="!isFormValid()" (click)="closeModal(true)">
+          Save
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end .modal-windows-icd-code-details -->

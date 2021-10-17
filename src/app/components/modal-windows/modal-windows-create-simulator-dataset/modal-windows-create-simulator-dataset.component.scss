@@ -1,0 +1,29 @@
+@import '../../../../styles/variables';
+
+// .modal-windows-create-simulator-dataset
+.modal-windows-create-simulator-dataset {
+  .modal-mains {
+    width: 430px;
+    padding: 24px 20px;
+    .title {
+      line-height: 24px;
+    }
+    .sub-txt {
+      color: #2f4259;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 14px;
+      margin-top: 1px;
+    }
+    .form-area {
+      .data-row {
+        margin-bottom: 45px;
+      }
+    }
+    .bottom-btns {
+      .btn {
+        min-width: 100px;
+      }
+    }
+  }
+}

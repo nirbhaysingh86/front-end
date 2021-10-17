@@ -1,0 +1,28 @@
+<div class="modal-default modal-windows-create-simulator-dataset">
+  <div class="modal-mains">
+    <a href="javascript:;" class="btn-close" (click)="closeModal(false)"> </a>
+    <div class="title">
+      Create Simulator Dataset
+      <div class="sub-txt">1 accounts included</div>
+    </div>
+    <div class="group">
+      <div class="form-area">
+        <div class="data-row">
+          <div class="label-txt">Please enter a name for your Dataset</div>
+          <div class="right-area">
+            <div class="inputs">
+              <input type="text" [(ngModel)]="formData.name" />
+            </div>
+          </div>
+        </div>
+        <div class="bottom-btns flex-end">
+          <a href="javascript:;" class="btn btn-blue-border" (click)="closeModal(false)"> Cancel </a>
+          <a href="javascript:;" class="btn btn-blue" [class.disabled]="!isFormValid()" (click)="closeModal(true)">
+            Yes
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end .modal-windows-create-simulator-dataset -->

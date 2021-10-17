@@ -1,0 +1,535 @@
+<div class="modal-default modal-windows-combined-rev-cpt-code-details">
+  <div class="modal-mains">
+    <a href="javascript:;" class="btn-close" (click)="closeModal(false)"> </a>
+    <div class="title">Contact Infomation</div>
+    <div class="contact-info-area">
+      <div class="scroll-box">
+        <div class="group-wrap">
+          <a href="javascript:;" class="form-title">Insurance Information</a>
+          <div class="row">
+            <div class="col col-md-4">
+              <div class="group">
+                <div class="form-area">
+                  <div class="data-row flex">
+                    <div class="left-txt">Facility Name</div>
+                    <div class="right-area">
+                      <div class="inputs border">
+                        <input type="text" [(ngModel)]="dataListDetails.fieldList[1]['fieldValue']" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="data-row flex">
+                    <div class="left-txt flex-start">Tax ID</div>
+                    <div class="right-area">
+                      <div class="inputs">
+                        <input type="text"  appPositiveNumberPriceOnly [(ngModel)]="dataListDetails.fieldList[2]['fieldValue']" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="data-row flex">
+                    <div class="left-txt">NPI</div>
+                    <div class="right-area">
+                      <div class="inputs border">
+                        <input type="text" [(ngModel)]="dataListDetails.fieldList[3]['fieldValue']" />
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+            <div class="col col-md-4">
+              <div class="group">
+                <div class="form-area">
+                  <div class="data-row flex">
+                    <div class="left-txt">Payee Name</div>
+                    <div class="right-area">
+                      <div class="inputs border">
+                        <input type="text" [(ngModel)]="dataListDetails.fieldList[4]['fieldValue']" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="data-row flex">
+                    <div class="left-txt">Payer Phone</div>
+                    <div class="right-area">
+                      <div class="inputs border">
+                        <input type="text"  appPositiveNumberPriceOnly [(ngModel)]="dataListDetails.fieldList[5]['fieldValue']" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="data-row flex">
+                    <div class="left-txt">Subscriber ID</div>
+                    <div class="right-area">
+                      <div class="inputs border">
+                        <input type="text" [(ngModel)]="dataListDetails.fieldList[6]['fieldValue']" />
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+            <div class="col col-md-4">
+              <div class="group">
+                <div class="form-area">
+                  <div class="data-row flex">
+                    <div class="left-txt">Insured Ssn</div>
+                    <div class="right-area">
+                      <div class="inputs border">
+                        <input type="text"
+                               appPositiveNumberPriceOnly
+                               [(ngModel)]="dataListDetails.fieldList[7]['fieldValue']" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="data-row flex">
+                    <div class="left-txt">Insured Group Name</div>
+                    <div class="right-area">
+                      <div class="inputs border">
+                        <input type="text"
+                               
+                               [(ngModel)]="dataListDetails.fieldList[8]['fieldValue']" />
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="contact-info-area">
+              <div class="scroll-box">
+                <div class="group-wrap">
+                  <a href="javascript:;" class="form-title">Visit Information</a>
+                  <div class="row">
+                    <div class="col col-md-4">
+                      <div class="group">
+                        <div class="form-area">
+                          <div class="data-row flex">
+                            <div class="left-txt">Patient Name</div>
+                            <div class="right-area">
+                              <div class="inputs border">
+                                <input type="text" [(ngModel)]="dataListDetails.fieldList[9]['fieldValue']" />
+                              </div>
+                            </div>
+                          </div>
+                          <div class="data-row flex">
+                            <div class="left-txt flex-start">Date Of Birth</div>
+                            <div class="right-area">
+                              <div class="inputs">
+                                <input type="text" [(ngModel)]="dataListDetails.fieldList[10]['fieldValue']" />
+                              </div>
+                            </div>
+                          </div>
+                          <div class="data-row flex">
+                            <div class="left-txt">Account Number</div>
+                            <div class="right-area">
+                              <div class="inputs border">
+                                <input type="text" [(ngModel)]="dataListDetails.fieldList[11]['fieldValue']" />
+                              </div>
+                            </div>
+                          </div>
+                          <div class="data-row flex">
+                            <div class="left-txt">Total Charges</div>
+                            <div class="right-area">
+                              <div class="inputs border">
+                                <input type="text" [(ngModel)]="dataListDetails.fieldList[12]['fieldValue']" />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col col-md-4">
+                      <div class="group">
+                        <div class="form-area">
+                          <div class="data-row flex">
+                            <div class="left-txt">Insured Name</div>
+                            <div class="right-area">
+                              <div class="inputs border">
+                                <input type="text" [(ngModel)]="dataListDetails.fieldList[13]['fieldValue']" />
+                              </div>
+                            </div>
+                          </div>
+                          <div class="data-row flex">
+                            <div class="left-txt">Admit Date</div>
+                            <div class="right-area">
+                              <div class="inputs border">
+                                <input type="text" [(ngModel)]="dataListDetails.fieldList[14]['fieldValue']" />
+                              </div>
+                            </div>
+                          </div>
+                          <div class="data-row flex">
+                            <div class="left-txt">Discharge Date</div>
+                            <div class="right-area">
+                              <div class="inputs border">
+                                <input type="text" [(ngModel)]="dataListDetails.fieldList[15]['fieldValue']" />
+                              </div>
+                            </div>
+                          </div>
+                          <div class="data-row flex">
+                            <div class="left-txt">Patient Type</div>
+                            <div class="right-area">
+                              <div class="inputs border">
+                                <input type="text" [(ngModel)]="dataListDetails.fieldList[16]['fieldValue']" />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col col-md-4">
+                      <div class="group">
+                        <div class="form-area">
+                          <div class="data-row flex">
+                            <div class="left-txt">Medical Record No</div>
+                            <div class="right-area">
+                              <div class="inputs">
+                                <input type="text"
+                                       
+                                       [(ngModel)]="dataListDetails.fieldList[17]['fieldValue']" />
+                              </div>
+                            </div>
+                          </div>
+                          <div class="data-row flex">
+                            <div class="left-txt">Social SecurityNo</div>
+                            <div class="right-area">
+                              <div class="inputs">
+                                <input type="text"
+                                       appPositiveNumberPriceOnly
+                                       [(ngModel)]="dataListDetails.fieldList[18]['fieldValue']" />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="contact-info-area">
+              <div class="scroll-box">
+                <div class="group-wrap">
+                  <a href="javascript:;" class="form-title">Recovery Information</a>
+                  <div class="row">
+                    <div class="col col-md-4">
+                      <div class="group">
+                        <div class="form-area">
+                          <div class="data-row flex">
+                            <div class="left-txt">Audit Status</div>
+                            <div class="right-area">
+                              <app-sd-base-dropdown [selectedOption]="
+                          dataListDetails.fieldList[19]['fieldValue'] === ''
+                            ? 'Select'
+                            : dataListDetails.fieldList[19]['fieldValue']
+                        "
+                                                    [options]="auditStatusDropdownOptions"
+                                                    (changeDropdown)="dataListDetails.fieldList[19]['fieldValue'] = $event">
+                              </app-sd-base-dropdown>
+                            </div>
+                          </div>
+                          <div class="data-row flex">
+                            <div class="left-txt flex-start">Review Category</div>
+                            <div class="right-area">
+                              <app-sd-base-dropdown [selectedOption]="
+                          dataListDetails.fieldList[20]['fieldValue'] === ''
+                            ? 'Select'
+                            : dataListDetails.fieldList[20]['fieldValue']
+                        "
+                                                    [options]="reviewCatDropdownOptions"
+                                                    (changeDropdown)="dataListDetails.fieldList[20]['fieldValue'] = $event">
+                              </app-sd-base-dropdown>
+                            </div>
+                          </div>
+                          <div class="data-row flex">
+                            <div class="left-txt">Variance Category</div>
+                            <div class="right-area">
+                              <app-sd-base-dropdown [selectedOption]="
+                          dataListDetails.fieldList[21]['fieldValue'] === ''
+                            ? 'Select'
+                            : dataListDetails.fieldList[21]['fieldValue']
+                        "
+                                                    [options]="varianceCatDropdownOptions"
+                                                    (changeDropdown)="dataListDetails.fieldList[21]['fieldValue'] = $event">
+                              </app-sd-base-dropdown>
+                            </div>
+                          </div>
+                          <div class="data-row flex">
+                            <div class="left-txt">Closed Result</div>
+                            <div class="right-area">
+                              <app-sd-base-dropdown [selectedOption]="
+                          dataListDetails.fieldList[22]['fieldValue'] === ''
+                            ? 'Select'
+                            : dataListDetails.fieldList[22]['fieldValue']
+                        "
+                                                    [options]="auditStatusDropdownOptions"
+                                                    (changeDropdown)="dataListDetails.fieldList[22]['fieldValue'] = $event">
+                              </app-sd-base-dropdown>
+                            </div>
+                          </div>
+                          <div class="data-row flex">
+                            <div class="left-txt">Committed Amount</div>
+                            <div class="right-area">
+                              <div class="inputs">
+                                <input type="text"
+                                       appPositiveNumberPriceOnly
+                                       [(ngModel)]="dataListDetails.fieldList[23]['fieldValue']" />
+                              </div>
+                            </div>
+                          </div>
+                          <div class="data-row flex">
+                            <div class="left-txt">Assigned Reviewer</div>
+                            <div class="right-area">
+                              <app-sd-base-dropdown [selectedOption]="
+                          dataListDetails.fieldList[24]['fieldValue'] === ''
+                            ? 'Select'
+                            : dataListDetails.fieldList[24]['fieldValue']
+                        "
+                                                    [options]="auditorDropdownOptions"
+                                                    (changeDropdown)="dataListDetails.fieldList[24]['fieldValue'] = $event">
+                              </app-sd-base-dropdown>
+                            </div>
+                          </div>
+                          <div class="data-row flex">
+                            <div class="left-txt flex-start">Argument</div>
+                            <div class="right-area">
+                              <div class="textareas small ">
+                                <textarea [(ngModel)]="dataListDetails.fieldList[25]['fieldValue']"></textarea>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col col-md-4">
+                      <div class="group">
+                        <div class="form-area">
+                          <div class="data-row flex">
+                            <div class="left-txt">Auditor</div>
+                            <div class="right-area">
+                              <app-sd-base-dropdown [selectedOption]="
+                          dataListDetails.fieldList[26]['fieldValue'] === ''
+                            ? 'Select'
+                            : dataListDetails.fieldList[26]['fieldValue']
+                        "
+                                                    [options]="auditorDropdownOptions"
+                                                    (changeDropdown)="dataListDetails.fieldList[26]['fieldValue'] = $event">
+                              </app-sd-base-dropdown>
+                            </div>
+                          </div>
+                          <div class="data-row flex">
+                            <div class="left-txt">Review Reason</div>
+                            <div class="right-area">
+                              <app-sd-base-dropdown [selectedOption]="
+                          dataListDetails.fieldList[27]['fieldValue'] === ''
+                            ? 'Select'
+                            : dataListDetails.fieldList[27]['fieldValue']
+                        "
+                                                    [options]="pointOfServiceDropdownOptions"
+                                                    (changeDropdown)="dataListDetails.fieldList[27]['fieldValue'] = $event">
+                              </app-sd-base-dropdown>
+                            </div>
+                          </div>
+                          <div class="data-row flex">
+                            <div class="left-txt">Var Cat Suggestion</div>
+                            <div class="right-area">
+                              <div class="inputs border">
+                                <input type="text" [(ngModel)]="dataListDetails.fieldList[28]['fieldValue']" />
+                              </div>
+                            </div>
+                          </div>
+                          <div class="data-row flex">
+                            <div class="left-txt">Closed Reason</div>
+                            <div class="right-area">
+                              <app-sd-base-dropdown [selectedOption]="
+                          dataListDetails.fieldList[29]['fieldValue'] === ''
+                            ? 'Select'
+                            : dataListDetails.fieldList[29]['fieldValue']
+                        "
+                                                    [options]="pointOfServiceDropdownOptions"
+                                                    (changeDropdown)="dataListDetails.fieldList[29]['fieldValue'] = $event">
+                              </app-sd-base-dropdown>
+                            </div>
+                          </div>
+                          <div class="data-row flex">
+                            <div class="left-txt">Pursuing Reason</div>
+                            <div class="right-area">
+                              <div class="inputs">
+                                <input type="text"
+                                       
+                                       [(ngModel)]="dataListDetails.fieldList[30]['fieldValue']" />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col col-md-4">
+                      <div class="group">
+                        <div class="form-area">
+                          <div class="data-row flex">
+                            <div class="left-txt">Follow-Up-Date</div>
+                            <div class="right-area">
+                              <div class="inputs">
+                                <input type="text"
+                                       
+                                       [(ngModel)]="dataListDetails.fieldList[31]['fieldValue']" />
+                              </div>
+                            </div>
+                          </div>
+                          <div class="data-row flex">
+                            <div class="left-txt">Event Date</div>
+                            <div class="right-area">
+                              <div class="inputs">
+                                <input type="text"
+                                       
+                                       [(ngModel)]="dataListDetails.fieldList[32]['fieldValue']" />
+                              </div>
+                            </div>
+                          </div>
+                          <div class="data-row flex">
+                            <div class="left-txt">Start Date</div>
+                            <div class="right-area">
+                              <div class="inputs">
+                                <input type="text"
+                                       
+                                       [(ngModel)]="dataListDetails.fieldList[33]['fieldValue']" />
+                              </div>
+                            </div>
+                          </div>
+                          <div class="data-row flex">
+                            <div class="left-txt">Agency</div>
+                            <div class="right-area">
+                              <div class="inputs">
+                                <input type="text"
+                                       
+                                       [(ngModel)]="dataListDetails.fieldList[34]['fieldValue']" />
+                              </div>
+                            </div>
+                          </div>
+                          <div class="data-row flex">
+                            <div class="left-txt">Review Stage</div>
+                            <div class="right-area">
+                              <app-sd-base-dropdown [selectedOption]="
+                          dataListDetails.fieldList[35]['fieldValue'] === ''
+                            ? 'Select'
+                            : dataListDetails.fieldList[35]['fieldValue']
+                        "
+                                                    [options]="pointOfServiceDropdownOptions"
+                                                    (changeDropdown)="dataListDetails.fieldList[35]['fieldValue'] = $event">
+                              </app-sd-base-dropdown>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a href="javascript:;" class="form-title">Contact Log</a>
+          <div class="row">
+            <div class="col col-md-4">
+              <div class="group">
+                <div class="form-area">
+                  <div class="data-row flex">
+                    <div class="left-txt">Responsibility</div>
+                    <div class="right-area">
+                      <app-sd-base-dropdown [selectedOption]="
+                          dataListDetails.fieldList[36]['fieldValue'] === ''
+                            ? 'Select'
+                            : dataListDetails.fieldList[36]['fieldValue']
+                        "
+                                            [options]="resposibilityDropdownOptions"
+                                            (changeDropdown)="dataListDetails.fieldList[36]['fieldValue'] = $event">
+                      </app-sd-base-dropdown>
+                    </div>
+                  </div>
+
+
+                </div>
+              </div>
+            </div>
+
+            <div class="col col-md-4">
+              <div class="group">
+                <div class="form-area">
+                  <div class="data-row flex">
+                    <div class="left-txt">Type</div>
+                    <div class="right-area">
+                      <app-sd-base-dropdown [selectedOption]="
+                          dataListDetails.fieldList[37]['fieldValue'] === ''
+                            ? 'Select'
+                            : dataListDetails.fieldList[37]['fieldValue']
+                        "
+                                            [options]="pointOfServiceDropdownOptions"
+                                            (changeDropdown)="dataListDetails.fieldList[37]['fieldValue'] = $event">
+                      </app-sd-base-dropdown>
+                    </div>
+                  </div>
+
+
+                </div>
+              </div>
+            </div>
+            <div class="col col-md-4">
+              <div class="group">
+                <div class="form-area">
+                  <div class="data-row flex">
+                    <div class="left-txt">Duration</div>
+                    <div class="right-area">
+                      <div class="tool-inputs">
+                        <div class="inputs">
+                          <a href="javascript:;" class="btn-minu" (click)="clickMinuDuration()"> </a>
+                          <input type="text"
+                                 appPositiveNumberOnly
+                                 [(ngModel)]="dataListDetails.fieldList[38]['fieldValue']" />
+                          <a href="javascript:;" class="btn-add" (click)="clickAddDuration()"> </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col col-md-6">
+              <div class="group">
+                <div class="form-area">
+                  <div class="data-row flex">
+                    <div class="left-txt flex-start">Note</div>
+                    <div class="right-area">
+                      <div class="textareas small ">
+                        <textarea [(ngModel)]="dataListDetails.fieldList[39]['fieldValue']"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+             
+          </div>
+          <div class="bottom-btns flex-end">
+            <a href="javascript:;" class="btn blue-links" (click)="closeModal(false)"> Close </a>
+            <a href="javascript:;" class="btn btn-blue" [class.disabled]="!isFormValid()" (click)="closeModal(true)">
+              Save
+            </a>
+          </div>
+        </div>
+        </div>
+
+    </div>
+  </div>
+</div>
+<!-- end .modal-windows-combined-rev-cpt-code-details -->

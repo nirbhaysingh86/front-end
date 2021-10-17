@@ -1,0 +1,181 @@
+<!-- ngxResize [ngxResizeLockAxis]="'x'" [ngxResizeMinHeight]="300" -->
+<div class="tab-more">
+  <div class="tab-bar flex-grid">
+    <div class="lefts">
+      <ul class="tab-list flex">
+        <li *ngFor="let item of researchTabArray; let i = index">
+          <a href="javascript:;" class="tab-items" [class.current]="researchTabIndex === i" (click)="clickTab.emit(i)">
+            {{ item }}
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="rights">
+      <div class="page-two">
+        <a href="javascript:;" class="btn btn-prev" [class.disabled]="researchTabIndex === 0" (click)="clickPrev()">
+        </a>
+        <a
+          href="javascript:;"
+          class="btn btn-next"
+          [class.disabled]="researchTabIndex === researchTabArray.length - 1"
+          (click)="clickNext()"
+        >
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="tab-content">
+    <app-sd-common-table
+      [dataList]="data.revCpt"
+      [header]="headers.revCpt"
+      [popupToShow]="'revenue-cpt-popup'"
+      [hasWidthSetting]="true"
+      (clickTableOptions)="clickTableOptions($event)"
+      (clickFirstColumnCell)="showRevCPTDetailModal(data.revCpt, $event)"
+      *ngIf="researchTabIndex === 0"
+    >
+    </app-sd-common-table>
+
+    <app-sd-common-table
+      [dataList]="data.chargeCodes"
+      [header]="headers.chargeCodes"
+      [popupToShow]="'charge-code-popup'"
+      [hasWidthSetting]="true"
+      (clickTableOptions)="clickTableOptions($event)"
+      (clickFirstColumnCell)="showChargeCodeDetailModal(data.chargeCodes, $event)"
+      *ngIf="researchTabIndex === 1"
+    >
+    </app-sd-common-table>
+
+    <app-sd-tab-claims-history
+      [dataListClaims]="data.claimsHistory.claims"
+      [headerClaims]="headers.claimsHistory.claims"
+      [dataListRemits]="data.claimsHistory.remits"
+      [headerRemits]="headers.claimsHistory.remits"
+      *ngIf="researchTabIndex === 2"
+    >
+    </app-sd-tab-claims-history>
+
+    <app-sd-common-table-expandable
+      [dataList]="data.professionalClaims"
+      [header]="headers.professionalClaims"
+      [expandedType]="'ProfessionalClaims'"
+      *ngIf="researchTabIndex === 3"
+    >
+    </app-sd-common-table-expandable>
+
+    <app-sd-common-table
+      [dataList]="data.payments"
+      [header]="headers.payments"
+      [hasWidthSetting]="true"
+      (clickTableOptions)="clickTableOptions($event)"
+      *ngIf="researchTabIndex === 4 && data.payments.length > 0"
+    >
+    </app-sd-common-table>
+
+    <app-sd-common-table
+      [dataList]="data.icdCodes"
+      [header]="headers.icdCodes"
+      [hasWidthSetting]="true"
+      (clickFirstColumnCell)="showIcdCodesDetailModal(data.icdCodes, $event)"
+      *ngIf="researchTabIndex === 5 && data.icdCodes.length > 0"
+    >
+    </app-sd-common-table>
+
+    <app-sd-tab-eor [dataList]="data.eor" *ngIf="researchTabIndex === 10 && data.eor.length>0"></app-sd-tab-eor>
+    <app-sd-tab-detail-reimb  [dataList]="data.detailReimb"   [header]="headers.detailReimb" *ngIf="researchTabIndex === 11 && data.detailReimb.length>0"></app-sd-tab-detail-reimb>
+    <app-sd-tab-audit-status-history  [dataList]="data.auditStatusHistory"   [header]="headers.auditStatusHistory" *ngIf="researchTabIndex === 15 && data.auditStatusHistory.length>0"></app-sd-tab-audit-status-history>
+    <app-sd-common-table [dataList]="data.contactInfo"
+                         [header]="headers.contactInfo"
+                          
+                         [hasWidthSetting]="true"
+                         (clickTableOptions)="clickTableOptions($event)"
+                         (clickFirstColumnCell)="showContactInfoModal(data.contactInfo, $event)"
+                         *ngIf="researchTabIndex === 19">
+    </app-sd-common-table>
+  </div>
+</div>
+<app-sd-modal-windows-contact-info-details *ngIf="modalData['name'] === 'modal-windows-contact-info-details'"
+                                                    [modalData]="modalData"
+                                                    [dataListDetails]="dataListDetails"
+                                                    [modifier]="dataListLookups['modifier']"
+                                                    (closeModalWindow)="closeModalWindow($event, 'modal-windows-contact-info-details')">
+</app-sd-modal-windows-contact-info-details>
+<app-sd-modal-windows-add-revenue-cpt
+  *ngIf="modalData['name'] === 'modal-windows-add-revenue-cpt'"
+  [modalData]="modalData"
+  [revenueCPTCode]="dataListLookups['revenueCPTCode']"
+  (closeModalWindow)="closeModalWindow($event, 'modal-windows-add-revenue-cpt')"
+>
+</app-sd-modal-windows-add-revenue-cpt>
+
+<app-sd-modal-windows-charge-code-details
+  *ngIf="modalData['name'] === 'modal-windows-charge-code-details'"
+  [modalData]="modalData"
+  [dataListDetails]="dataListDetails"
+  (closeModalWindow)="closeModalWindow($event, 'modal-windows-charge-code-details')"
+>
+</app-sd-modal-windows-charge-code-details>
+
+<app-sd-modal-windows-combined-rev-cpt-code-details
+  *ngIf="modalData['name'] === 'modal-windows-combined-rev-cpt-code-details'"
+  [modalData]="modalData"
+  [dataListDetails]="dataListDetails"
+  [modifier]="dataListLookups['modifier']"
+  (closeModalWindow)="closeModalWindow($event, 'modal-windows-combined-rev-cpt-code-details')"
+>
+</app-sd-modal-windows-combined-rev-cpt-code-details>
+
+<app-sd-modal-windows-icd-code-details
+  *ngIf="modalData['name'] === 'modal-windows-icd-code-details'"
+  [modalData]="modalData"
+  [dataListDetails]="dataListDetails"
+  [icdVersion]="dataListLookups['icdVersion']"
+  (closeModalWindow)="closeModalWindow($event, 'modal-windows-icd-code-details')"
+>
+</app-sd-modal-windows-icd-code-details>
+
+<app-sd-modal-windows-other-payer-transactions
+  *ngIf="modalData['name'] === 'modal-windows-other-payer-transactions'"
+  [modalData]="modalData"
+  [paymentModalData]="paymentModalData.paymentData"
+  [selectedForDeleteRowData]="selectedForDeleteRowData"
+  [isSuccessModalClicked]="isSuccessModalClicked"
+  [isSaveTransEnable]="isSaveTransEnable"
+  (clickDeleteTransactions)="clickDeleteTransactions($event)"
+  (clickCommitTransactions)="clickCommitTransactions($event)"
+
+  (saveOtherTransactions)="saveOtherTransactions($event)"
+  (closeModalWindow)="closeModalWindow($event, 'modal-windows-other-payer-transactions')"
+>
+</app-sd-modal-windows-other-payer-transactions>
+
+<app-sd-modal-windows-payment-detail
+  *ngIf="modalData['name'] === 'modal-windows-payment-detail'"
+  [modalData]="modalData"
+  [paymentModalData]="paymentModalData.paymentData"
+  [isSuccessModalClicked]="isSuccessModalClicked"
+  [paidBy]="dataListLookups['paidBy']"
+  [selectedForDeleteRowData]="selectedForDeleteRowData"
+  [paymentType]="dataListLookups['paymentType']"
+  (clickDeletePayment)="clickDeletePayment($event)"
+  (closeModalWindow)="closeModalWindow($event, 'modal-windows-payment-detail')"
+>
+</app-sd-modal-windows-payment-detail>
+
+<app-sd-modal-windows-add-charge-code
+  *ngIf="modalData['name'] === 'modal-windows-add-charge-code'"
+  [modalData]="modalData"
+  [chargeCode]="dataListLookups['chargeCode']"
+  (closeModalWindow)="closeModalWindow($event, 'modal-windows-add-charge-code')"
+>
+</app-sd-modal-windows-add-charge-code>
+
+<app-sd-modal-windows-confirm
+  *ngIf="modalData['name'] === 'modal-windows-confirm'"
+  [modalData]="modalData"
+  
+  [confirmModalData]="confirmModalData"
+  (closeModalWindow)="closeModalWindow($event, 'modal-windows-confirm')"
+>
+</app-sd-modal-windows-confirm>

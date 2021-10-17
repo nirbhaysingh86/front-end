@@ -1,0 +1,109 @@
+{
+  "dataViewAdministrationFacility": [
+    {
+      "id": 1,
+      "fieldList": [
+        {
+          "fieldType": "label",
+          "fieldName": "Facility Name",
+          "fieldValue": "All Facilities",
+          "hasCheckAll": false,
+          "columnWidth": null,
+          "footerContent": ""
+        },
+        {
+          "fieldType": "label",
+          "fieldName": "Rule Type",
+          "fieldValue": "Payer Balance Due",
+          "hasCheckAll": false,
+          "columnWidth": null,
+          "footerContent": ""
+        },
+        {
+          "fieldType": "label",
+          "fieldName": "Operand",
+          "fieldValue": "GREATER THAN",
+          "hasCheckAll": false,
+          "columnWidth": null,
+          "footerContent": ""
+        },
+        {
+          "fieldType": "label",
+          "fieldName": "Code",
+          "fieldValue": "",
+          "hasCheckAll": false,
+          "columnWidth": null,
+          "footerContent": ""
+        },
+        {
+          "fieldType": "label",
+          "fieldName": "Rule",
+          "fieldValue": "5",
+          "hasCheckAll": false,
+          "columnWidth": null,
+          "footerContent": ""
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "fieldList": [
+        {
+          "fieldValue": "All Facilities"
+        },
+        {
+          "fieldValue": "Payer Contractual"
+        },
+        {
+          "fieldValue": "NO EQUAL TO"
+        },
+        {
+          "fieldValue": ""
+        },
+        {
+          "fieldValue": "0"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "fieldList": [
+        {
+          "fieldValue": "All Facilities"
+        },
+        {
+          "fieldValue": "Calculation Status"
+        },
+        {
+          "fieldValue": "INCLUDE"
+        },
+        {
+          "fieldValue": "1"
+        },
+        {
+          "fieldValue": "New/Modified Calculater Record"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "fieldList": [
+        {
+          "fieldValue": "All Facilities"
+        },
+        {
+          "fieldValue": "Claim Adjustment"
+        },
+        {
+          "fieldValue": "INCLUDE"
+        },
+        {
+          "fieldValue": "29"
+        },
+        {
+          "fieldValue": "The time limit for filling has expired"
+        }
+      ]
+    }
+  ]
+}

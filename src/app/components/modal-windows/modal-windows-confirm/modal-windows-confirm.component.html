@@ -1,0 +1,23 @@
+<div class="modal-default modal-windows-confirm">
+  <div class="modal-mains">
+    <a href="javascript:;" class="btn-close" (click)="closeModal(false)"> </a>
+    <div class="title">{{ confirmModalData.title }}</div>
+    <div class="group">
+      <div class="form-area">
+        <div class="confirmation-main flex">
+          <i class="icons icon-question"></i>
+          <p class="txt">
+            {{ confirmModalData.description }}
+          </p>
+        </div>
+        <div class="bottom-btns flex-end">
+          <a href="javascript:;" class="btn btn-blue-border" (click)="closeModal(false)"> No </a>
+          <a href="javascript:;" class="btn btn-blue" [class.disabled]="!isFormValid()" (click)="closeModal(true)">
+            Yes
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end .modal-windows-confirm -->

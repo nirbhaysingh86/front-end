@@ -1,0 +1,151 @@
+{
+  "dataMyWorklistColumnSettings": [
+    {
+      "configureName": "Saved View 1",
+      "settings": [
+        {
+          "fieldName": "A/C Number",
+          "isShown": true
+        },
+        {
+          "fieldName": "Patient Name",
+          "isShown": true
+        },
+        {
+          "fieldName": "Payment Status",
+          "isShown": true
+        },
+        {
+          "fieldName": "Contract Name",
+          "isShown": true
+        },
+        {
+          "fieldName": "Payer ID",
+          "isShown": true
+        },
+        {
+          "fieldName": "Service Category",
+          "isShown": true
+        },
+        {
+          "fieldName": "AI Score",
+          "isShown": true
+        },
+        {
+          "fieldName": "Admission Date",
+          "isShown": true
+        },
+        {
+          "fieldName": "Discharge Date",
+          "isShown": true
+        },
+        {
+          "fieldName": "Adj Total Charges",
+          "isShown": true
+        },
+        {
+          "fieldName": "Exp Reimburse",
+          "isShown": true
+        }
+      ]
+    },
+    {
+      "configureName": "Saved View 2",
+      "settings": [
+        {
+          "fieldName": "Patient Name",
+          "isShown": false
+        },
+        {
+          "fieldName": "Payment Status",
+          "isShown": true
+        },
+        {
+          "fieldName": "A/C Number",
+          "isShown": true
+        },
+        {
+          "fieldName": "Contract Name",
+          "isShown": true
+        },
+        {
+          "fieldName": "Payer ID",
+          "isShown": false
+        },
+        {
+          "fieldName": "Service Category",
+          "isShown": false
+        },
+        {
+          "fieldName": "AI Score",
+          "isShown": false
+        },
+        {
+          "fieldName": "Admission Date",
+          "isShown": true
+        },
+        {
+          "fieldName": "Discharge Date",
+          "isShown": true
+        },
+        {
+          "fieldName": "Adj Total Charges",
+          "isShown": true
+        },
+        {
+          "fieldName": "Exp Reimburse",
+          "isShown": true
+        }
+      ]
+    },
+    {
+      "configureName": "Saved View 3",
+      "settings": [
+        {
+          "fieldName": "Payer ID",
+          "isShown": true
+        },
+        {
+          "fieldName": "Service Category",
+          "isShown": false
+        },
+        {
+          "fieldName": "AI Score",
+          "isShown": false
+        },
+        {
+          "fieldName": "Admission Date",
+          "isShown": false
+        },
+        {
+          "fieldName": "Discharge Date",
+          "isShown": true
+        },
+        {
+          "fieldName": "Adj Total Charges",
+          "isShown": true
+        },
+        {
+          "fieldName": "Exp Reimburse",
+          "isShown": true
+        },
+        {
+          "fieldName": "A/C Number",
+          "isShown": true
+        },
+        {
+          "fieldName": "Patient Name",
+          "isShown": true
+        },
+        {
+          "fieldName": "Payment Status",
+          "isShown": true
+        },
+        {
+          "fieldName": "Contract Name",
+          "isShown": true
+        }
+      ]
+    }
+  ]
+}

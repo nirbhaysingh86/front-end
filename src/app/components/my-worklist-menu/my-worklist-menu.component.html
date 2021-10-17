@@ -1,0 +1,368 @@
+<header class="header flex-grid">
+  <div class="lefts flex">
+    <div class="logo-area" [class.show-logo]="!menuCollapsed">
+      <a href="javascript:;" class="btn-logo flex">
+        <img src="/assets/i/logo.svg" alt="img" />
+        <span class="txt"> LogoName </span>
+      </a>
+    </div>
+  </div>
+  <div class="right-areas flex">
+    <a href="javascript:;" class="btn-menu flex" (click)="clickMenu.emit()">
+      <i class="icons icon-menu"></i>
+      Menu
+    </a>
+    <div class="dropdown-list">
+      <ul class="flex">
+        <li>
+          <div class="dropdown flex">
+            <span class="blue-txt">View</span>
+            <app-sd-base-dropdown
+              [selectedOption]="selectedView"
+              [options]="viewOptions"
+              [fieldName]="'name'"
+              (changeDropdown)="selectedViewChange.emit($event)"
+            >
+            </app-sd-base-dropdown>
+          </div>
+        </li>
+        <li>
+          <div class="dropdown flex">
+            <span class="blue-txt">Type</span>
+            <app-sd-base-dropdown
+              [selectedOption]="typeDropdown"
+              [options]="typeOptions"
+              (changeDropdown)="typeDropdown = $event"
+            >
+            </app-sd-base-dropdown>
+          </div>
+        </li>
+        <li>
+          <div class="dropdown flex">
+            <span class="blue-txt">Layouts</span>
+            <app-sd-base-dropdown
+              [selectedOption]="selectedLayout"
+              [options]="layoutOptions"
+              [fieldName]="'name'"
+              (changeDropdown)="selectedLayoutChange.emit($event)"
+            >
+            </app-sd-base-dropdown>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <!--end .btn-list-->
+    <div class="tip-module-list">
+      <ul class="flex">
+        <li>
+          <div class="tip-module" [class.open]="isOpenedModify" (clickOutside)="isOpenedModify = false">
+            <a href="javascript:;" class="tip-title" (click)="clickModify()">
+              <i class="icons icon-modify"></i>
+              Modify
+              <span class="icons btn-down"></span>
+            </a>
+            <div class="tip-panel">
+              <i class="top-trans"></i>
+              <ul>
+                <li>
+                  <a href="javascript:;" class="tab-items">Select All Filtered Records</a>
+                </li>
+                <li>
+                  <a href="javascript:;" class="tab-items">Unselect All Filtered Records</a>
+                </li>
+                <li>
+                  <a href="javascript:;" class="tab-items borders mb1">
+                    View Maintenance
+                    <i class="icons icon-arrow"></i>
+                  </a>
+                  <ul class="next-nav">
+                    <li>
+                      <a [routerLink]="['/view-administration-page/new-view']" class="tab-items">
+                        Create View in Admin
+                      </a>
+                    </li>
+                    <li>
+                      <a href="javascript:;" class="tab-items"> Open View in Admin </a>
+                    </li>
+                    <li>
+                      <a href="javascript:;" class="tab-items"> Copy View </a>
+                    </li>
+                    <li>
+                      <a href="javascript:;" class="tab-items"> Modify View Settings </a>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="javascript:;" class="tab-items borders">
+                    Layout Maintenance
+                    <i class="icons icon-arrow"></i>
+                  </a>
+                  <ul class="next-nav">
+                    <li>
+                      <a href="javascript:;" class="tab-items" (click)="createLayout.emit()"> Create New Layout </a>
+                    </li>
+                    <li>
+                      <a
+                        href="javascript:;"
+                        class="tab-items"
+                        [class.disabled]="!layoutBelongsToUser()"
+                        (click)="editLayout.emit()"
+                      >
+                        Edit Current Layout
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="javascript:;"
+                        class="tab-items"
+                        [class.disabled]="!defaultLayoutEnabled()"
+                        (click)="setDefaultLayout.emit()"
+                      >
+                        Set Current Layout as Default
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="javascript:;"
+                        class="tab-items"
+                        [class.disabled]="!layoutBelongsToUser()"
+                        (click)="deleteLayout.emit()"
+                      >
+                        Delete Current Layout
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+              <ul class="bottom-border">
+                <li>
+                  <a href="javascript:;" class="tab-items" (click)="toggleResearch.emit()">
+                    {{ isShownResearch ? 'Hide' : 'Show' }} Research Section
+                  </a>
+                </li>
+                <li>
+                  <a href="javascript:;" class="tab-items">Hide Toolbar Captions</a>
+                </li>
+              </ul>
+              <ul class="bottom-border">
+                <li>
+                  <a href="javascript:;" class="tab-items">Zoom In</a>
+                </li>
+                <li>
+                  <a href="javascript:;" class="tab-items">Zoom Out</a>
+                </li>
+              </ul>
+              <ul>
+                <li>
+                  <a href="javascript:;" class="tab-items" (click)="clickMenuOptions.emit('Create New Account')">
+                    Create New Account
+                  </a>
+                </li>
+                <li>
+                  <a href="javascript:;" class="tab-items" (click)="clickMenuOptions.emit('Create Simulation DataSet')">
+                    Create Simulation DataSet
+                  </a>
+                </li>
+                <li>
+                  <a href="javascript:;" class="tab-items">Open New Tab</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="tip-module">
+            <a href="javascript:;" class="tip-title">
+              <i class="icons icon-filter"></i>
+              Filter
+              <span class="icons btn-down"></span>
+            </a>
+            <div class="tip-panel">
+              <i class="top-trans"></i>
+              <ul>
+                <li>
+                  <a href="javascript:;" class="tab-items active">Placeholder</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div
+            class="tip-module action-tip-module"
+            [class.open]="isOpenedAction"
+            (clickOutside)="isOpenedAction = false"
+          >
+            <a href="javascript:;" class="tip-title" [class.disabled]="!hasSelectedAccounts" (click)="clickAction()">
+              <i class="icons icon-action"></i>
+              Action
+              <span class="icons btn-down"></span>
+            </a>
+            <div class="tip-panel">
+              <i class="top-trans"></i>
+              <ul>
+                <li>
+                  <a href="javascript:;" class="tab-items">Adjust Payer Affiliations</a>
+                </li>
+                <li>
+                  <a href="javascript:;" class="tab-items">Delete Patient Records</a>
+                </li>
+                <li>
+                  <a href="javascript:;" class="tab-items">Export Patient Records</a>
+                </li>
+                <li class="open">
+                  <a href="javascript:;" class="tab-items">
+                    Financial Exports
+                    <i class="icons icon-arrow"></i>
+                  </a>
+                  <ul class="next-nav">
+                    <li>
+                      <a href="javascript:;" class="tab-items"> Option 1 </a>
+                    </li>
+                    <li>
+                      <a href="javascript:;" class="tab-items"> Option 2 </a>
+                    </li>
+                    <li>
+                      <a href="javascript:;" class="tab-items"> Option 3 </a>
+                    </li>
+                    <li>
+                      <a href="javascript:;" class="tab-items"> Option 4 </a>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="javascript:;" class="tab-items">Generate Forms/Letters</a>
+                </li>
+                <li>
+                  <a href="javascript:;" class="tab-items">Hide/Show Selected Records</a>
+                </li>
+                <li>
+                  <a href="javascript:;" class="tab-items">Recalculate Patient Records</a>
+                </li>
+                <li>
+                  <a href="javascript:;" class="tab-items">Update Audit/Recovery Information</a>
+                </li>
+                <li>
+                  <a href="javascript:;" class="tab-items" (click)="clickMenuOptions.emit('View Contact Information')">
+                    View Contact Information
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div
+            class="tip-module search-tip-module"
+            [class.open]="isOpenedSearch"
+            (clickOutside)="isOpenedSearch = false"
+          >
+            <a href="javascript:;" class="tip-title" (click)="clickSearch()">
+              <i class="icons icon-search"></i>
+              Search
+              <span class="icons btn-down"></span>
+            </a>
+            <div class="tip-panel">
+              <i class="top-trans"></i>
+              <ul>
+                <li>
+                  <a
+                    href="javascript:;"
+                    class="point-list"
+                    [class.current]="searchType === 'Patient Number'"
+                    (click)="searchType = 'Patient Number'"
+                  >
+                    <span class="points"></span>
+                    <span class="txt"> Patient Number </span>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="javascript:;"
+                    class="point-list"
+                    [class.current]="searchType === 'Patient Last Name'"
+                    (click)="searchType = 'Patient Last Name'"
+                  >
+                    <span class="points"></span>
+                    <span class="txt"> Patient Last Name </span>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="javascript:;"
+                    class="point-list"
+                    [class.current]="searchType === 'Medical Record Number'"
+                    (click)="searchType = 'Medical Record Number'"
+                  >
+                    <span class="points"></span>
+                    <span class="txt"> Medical Record Number </span>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="javascript:;"
+                    class="point-list"
+                    [class.current]="searchType === 'Patient Number (From Clipboard)'"
+                    (click)="searchType = 'Patient Number (From Clipboard)'"
+                  >
+                    <span class="points"></span>
+                    <span class="txt"> Patient Number (From Clipboard) </span>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="javascript:;"
+                    class="point-list"
+                    [class.current]="searchType === 'Quick Search'"
+                    (click)="searchType = 'Quick Search'"
+                  >
+                    <span class="points"></span>
+                    <span class="txt"> Quick Search </span>
+                  </a>
+                </li>
+              </ul>
+              <div class="inputs search-input">
+                <input type="text" placeholder="Enter Patient Number" [(ngModel)]="searchText" />
+                <a href="javascript:;" class="icons btn-search"></a>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="tip-module help-tip-module" [class.open]="isOpenedHelp" (clickOutside)="isOpenedHelp = false">
+            <a href="javascript:;" class="tip-title" (click)="clickHelp()">
+              <i class="icons icon-help"></i>
+              Help
+              <span class="icons btn-down"></span>
+            </a>
+            <div class="tip-panel">
+              <i class="top-trans"></i>
+              <ul class="bottom-border">
+                <li>
+                  <a href="javascript:;" class="tab-items">Contents</a>
+                </li>
+                <li>
+                  <a href="javascript:;" class="tab-items">Overview</a>
+                </li>
+              </ul>
+              <ul class="bottom-border">
+                <li>
+                  <a href="javascript:;" class="tab-items">Technical Support</a>
+                </li>
+                <li>
+                  <a href="javascript:;" class="tab-items">About</a>
+                </li>
+              </ul>
+              <ul>
+                <li>
+                  <a (click)="clickLogout.emit()" class="tab-items">Logout</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!--end .right-users-->
+</header>

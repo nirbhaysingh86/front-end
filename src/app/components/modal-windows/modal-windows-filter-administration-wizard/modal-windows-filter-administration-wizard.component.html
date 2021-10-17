@@ -1,0 +1,478 @@
+<div class="modal-default modal-windows-filter-administration-wizard">
+  <div class="modal-mains">
+    <a href="javascript:;" class="btn-close" (click)="closeModal()"> </a>
+    <div class="title">
+      Filter Administration Wizard
+      <div class="gray-sub" *ngIf="ruleArray.length > 0">{{ ruleArray.length }} rules added</div>
+    </div>
+    <div class="group">
+      <div class="top-title">Select Rule to add to your view</div>
+      <div class="form-area">
+        <div class="data-row flex">
+          <div class="left-txt">Rule Category</div>
+          <div class="right-area">
+            <app-sd-base-dropdown
+              [selectedOption]="ruleCategory"
+              [placeholder]="'Select a Category'"
+              [options]="dataListFilterAdministrationWizard"
+              [fieldName]="'ruleCategory'"
+              [className]="'height-dropdown'"
+              (changeDropdown)="updateRuleCategory($event)"
+            >
+            </app-sd-base-dropdown>
+          </div>
+        </div>
+        <div class="data-row flex">
+          <div class="left-txt">Rule Type</div>
+          <div class="right-area">
+            <app-sd-base-dropdown
+              [selectedOption]="ruleType"
+              [placeholder]="'Select Type'"
+              [options]="ruleCategory?.ruleTypeOptions || []"
+              [fieldName]="'ruleType'"
+              [className]="'height-dropdown'"
+              (changeDropdown)="updateRuleType($event)"
+            >
+            </app-sd-base-dropdown>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="group">
+      <div class="top-title" *ngIf="ruleType?.ruleType">Configure Filter</div>
+      <div class="form-area" *ngIf="ruleSubCategory === 'Number'">
+        <div class="data-row flex filter-row">
+          <div class="lefts">
+            <div class="top-area">
+              {{ ruleType?.ruleType }}
+            </div>
+            <app-sd-base-dropdown
+              [selectedOption]="formCost.compare"
+              [options]="costDropdownOptions"
+              (changeDropdown)="changeCompare($event)"
+            >
+            </app-sd-base-dropdown>
+          </div>
+          <div class="rights">
+            <div class="top-area">
+              <div class="checkbox-wrap modal-checkbox">
+                <input type="checkbox" id="total-cost-check-all" [(ngModel)]="formCost.checkAll" />
+                <label for="total-cost-check-all">All Values</label>
+              </div>
+            </div>
+            <div
+              class="tool-inputs"
+              *ngIf="
+                formCost.compare === 'Equal To' ||
+                formCost.compare === 'Greater Than' ||
+                formCost.compare === 'Less Than'
+              "
+            >
+              <div class="inputs" [class.error]="formCost.singleInputError">
+                <a href="javascript:;" class="btn-minu" (click)="clickMinuCost()"> </a>
+                <input
+                  type="text"
+                  mask="separator"
+                  thousandSeparator=","
+                  prefix="$"
+                  [(ngModel)]="formCost.singleInput"
+                  (ngModelChange)="onInputChanges()"
+                />
+                <a href="javascript:;" class="btn-add" (click)="clickAddCost()"> </a>
+              </div>
+            </div>
+            <div class="two-line-inputs flex" *ngIf="formCost.compare === 'Between'">
+              <div class="inputs" [class.error]="formCost.firstInputError">
+                <input
+                  type="text"
+                  mask="separator"
+                  thousandSeparator=","
+                  prefix="$"
+                  [(ngModel)]="formCost.firstInput"
+                  (ngModelChange)="onInputChanges()"
+                />
+              </div>
+              <span class="to-line">-</span>
+              <div class="inputs" [class.error]="formCost.secondInputError">
+                <input
+                  type="text"
+                  mask="separator"
+                  thousandSeparator=","
+                  prefix="$"
+                  [(ngModel)]="formCost.secondInput"
+                  (ngModelChange)="onInputChanges()"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-area" *ngIf="ruleSubCategory === 'DateRange'">
+        <div class="data-row flex filter-row">
+          <div class="lefts">
+            <div class="top-area">
+              {{ ruleType?.ruleType }}
+            </div>
+            <app-sd-base-dropdown
+              [selectedOption]="formDate.type"
+              [options]="dateDropdownOptions"
+              (changeDropdown)="formDate.type = $event"
+            >
+            </app-sd-base-dropdown>
+          </div>
+          <div class="rights">
+            <div class="top-area">
+              <div class="checkbox-wrap modal-checkbox">
+                <input type="checkbox" id="date-check-all" [(ngModel)]="formDate.checkAll" />
+                <label for="date-check-all">All</label>
+              </div>
+            </div>
+
+            <div class="from-to-inputs flex">
+              <div class="groups flex">
+                <div class="left-txt">From</div>
+                <div class="inputs date-inputs">
+                  <input
+                    type="text"
+                    value="01/20/2017"
+                    readonly
+                    [(ngModel)]="formDate.from"
+                    (ngModelChange)="onInputChanges()"
+                    ngbDatepicker
+                    #dateFrom="ngbDatepicker"
+                    (click)="dateFrom.toggle()"
+                  />
+                  <a href="javascript:;" class="icons btn-calender" (click)="dateFrom.toggle()"></a>
+                </div>
+              </div>
+              <div class="groups flex">
+                <div class="left-txt">To</div>
+                <div class="inputs date-inputs">
+                  <input
+                    type="text"
+                    value="01/20/2018"
+                    readonly
+                    [(ngModel)]="formDate.to"
+                    (ngModelChange)="onInputChanges()"
+                    ngbDatepicker
+                    #dateTo="ngbDatepicker"
+                    (click)="dateTo.toggle()"
+                  />
+                  <a href="javascript:;" class="icons btn-calender" (click)="dateTo.toggle()"></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-area acme-date-time" *ngIf="ruleSubCategory === 'DateTimeRange'">
+        <div class="data-row flex filter-row">
+          <div class="lefts">
+            <div class="top-area">
+              {{ ruleType?.ruleType }}
+            </div>
+            <app-sd-base-dropdown
+              [selectedOption]="formDateTime.type"
+              [options]="dateTimeDropdownOptions"
+              (changeDropdown)="formDateTime.type = $event"
+            >
+            </app-sd-base-dropdown>
+          </div>
+          <div class="rights">
+            <div class="top-area">
+              <div class="checkbox-wrap modal-checkbox">
+                <input type="checkbox" id="date-time-check-all" [(ngModel)]="formDateTime.checkAll" />
+                <label for="date-time-check-all">All</label>
+              </div>
+            </div>
+            <div class="from-to-area">
+              <div class="groups flex">
+                <div class="txt">From</div>
+                <div class="from-items flex">
+                  <div class="inputs date-inputs">
+                    <input
+                      type="text"
+                      value="01/20/2017"
+                      readonly
+                      [(ngModel)]="formDateTime.fromDate"
+                      (ngModelChange)="onInputChanges()"
+                      ngbDatepicker
+                      #dateTimeFrom="ngbDatepicker"
+                      (click)="dateTimeFrom.toggle()"
+                    />
+                    <a href="javascript:;" class="icons btn-calender" (click)="dateTimeFrom.toggle()"></a>
+                  </div>
+                  <app-sd-base-dropdown
+                    [placeholder]="'Select'"
+                    [selectedOption]="formDateTime.fromTime"
+                    [options]="timeHourDropdownOptions"
+                    (changeDropdown)="formDateTime.fromTime = $event; onInputChanges()"
+                  >
+                  </app-sd-base-dropdown>
+                </div>
+              </div>
+              <div class="groups flex">
+                <div class="txt">To</div>
+                <div class="from-items flex">
+                  <div class="inputs date-inputs">
+                    <input
+                      type="text"
+                      value="01/20/2018"
+                      readonly
+                      [(ngModel)]="formDateTime.toDate"
+                      (ngModelChange)="onInputChanges()"
+                      ngbDatepicker
+                      #dateTimeTo="ngbDatepicker"
+                      (click)="dateTimeTo.toggle()"
+                    />
+                    <a href="javascript:;" class="icons btn-calender" (click)="dateTimeTo.toggle()"></a>
+                  </div>
+                  <app-sd-base-dropdown
+                    [placeholder]="'Select'"
+                    [selectedOption]="formDateTime.toTime"
+                    [options]="timeHourDropdownOptions"
+                    (changeDropdown)="formDateTime.toTime = $event; onInputChanges()"
+                  >
+                  </app-sd-base-dropdown>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-area acme-percent" *ngIf="ruleSubCategory === 'Percent'">
+        <div class="data-row flex filter-row">
+          <div class="lefts">
+            <div class="top-area">
+              {{ ruleType?.ruleType }}
+            </div>
+            <app-sd-base-dropdown
+              [selectedOption]="formPercent.compare"
+              [options]="percentDropdownOptions"
+              (changeDropdown)="changeCompare($event)"
+            >
+            </app-sd-base-dropdown>
+          </div>
+          <div class="rights">
+            <div class="top-area">
+              <div class="checkbox-wrap modal-checkbox">
+                <input type="checkbox" id="percent-check-all" [(ngModel)]="formPercent.checkAll" />
+                <label for="percent-check-all">All Values</label>
+              </div>
+            </div>
+            <div
+              class="tool-inputs"
+              *ngIf="
+                formPercent.compare === 'Equal To' ||
+                formPercent.compare === 'Greater Than' ||
+                formPercent.compare === 'Less Than'
+              "
+            >
+              <div class="inputs">
+                <a href="javascript:;" class="btn-minu" (click)="clickMinuPercent()"> </a>
+                <input
+                  type="text"
+                  mask="percent"
+                  [dropSpecialCharacters]="false"
+                  suffix="%"
+                  (ngModelChange)="onInputChanges()"
+                  [(ngModel)]="formPercent.singleInput"
+                />
+                <a href="javascript:;" class="btn-add" (click)="clickAddPercent()"> </a>
+              </div>
+            </div>
+            <div class="two-line-inputs flex" *ngIf="formPercent.compare === 'Between'">
+              <div class="inputs">
+                <input
+                  type="text"
+                  mask="percent"
+                  [dropSpecialCharacters]="false"
+                  suffix="%"
+                  (ngModelChange)="onInputChanges()"
+                  [(ngModel)]="formPercent.firstInput"
+                />
+              </div>
+              <span class="to-line">-</span>
+              <div class="inputs">
+                <input
+                  type="text"
+                  mask="percent"
+                  [dropSpecialCharacters]="false"
+                  suffix="%"
+                  (ngModelChange)="onInputChanges()"
+                  [(ngModel)]="formPercent.secondInput"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-area last-name" *ngIf="ruleSubCategory === 'Text'">
+        <div class="data-row flex-start filter-row">
+          <div class="lefts">
+            <div class="top-area">
+              {{ ruleType?.ruleType }}
+            </div>
+            <app-sd-base-dropdown
+              [selectedOption]="formTextName.compareLeft"
+              [options]="textNameLeftDropdownOptions"
+              (changeDropdown)="changeCompare($event, 'left')"
+            >
+            </app-sd-base-dropdown>
+          </div>
+          <div class="rights">
+            <div class="top-area">
+              <div class="checkbox-wrap modal-checkbox">
+                <input type="checkbox" id="text-name-check-all" [(ngModel)]="formTextName.checkAll" />
+                <label for="text-name-check-all">All Values</label>
+              </div>
+            </div>
+            <div class="two-inputs flex">
+              <app-sd-base-dropdown
+                [selectedOption]="formTextName.compareRight"
+                [options]="textNameRightDropdownOptions"
+                (changeDropdown)="changeCompare($event, 'right')"
+              >
+              </app-sd-base-dropdown>
+
+              <div class="inputs" *ngIf="formTextName.compareRight === 'Single value'">
+                <input
+                  type="text"
+                  maxlength="100"
+                  [(ngModel)]="formTextName.singleInput"
+                  (ngModelChange)="onInputChanges()"
+                />
+              </div>
+
+              <div class="between-inputs flex" *ngIf="formTextName.compareRight === 'Between'">
+                <div class="inputs">
+                  <input
+                    type="text"
+                    maxlength="100"
+                    [(ngModel)]="formTextName.firstInput"
+                    (ngModelChange)="onInputChanges()"
+                  />
+                </div>
+                <span class="txt">and</span>
+                <div class="inputs">
+                  <input
+                    type="text"
+                    maxlength="100"
+                    [(ngModel)]="formTextName.secondInput"
+                    (ngModelChange)="onInputChanges()"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-area state-from" *ngIf="ruleSubCategory === 'Values'">
+        <div class="data-row flex filter-row">
+          <div class="lefts">
+            <div class="top-area">
+              {{ ruleType?.ruleType }}
+            </div>
+            <app-sd-base-dropdown
+              [selectedOption]="formValues.compareLeft"
+              [options]="textStateLeftDropdownOptions"
+              (changeDropdown)="formValues.compareLeft = $event"
+            >
+            </app-sd-base-dropdown>
+          </div>
+          <div class="rights">
+            <app-sd-base-dropdown
+              [selectedOption]="formValues.compareRight"
+              [options]="textStateRightDropdownOptions"
+              (changeDropdown)="formValues.compareRight = $event"
+            >
+            </app-sd-base-dropdown>
+          </div>
+        </div>
+        <div class="search-select-box flex">
+          <div class="left-search">
+            <div class="search-inputs inputs">
+              <input type="text" placeholder="Search..." [(ngModel)]="valuesSearchText" />
+              <a href="javascript:;" class="icons btn-search"></a>
+            </div>
+            <div class="search-auto">
+              <div class="select-all">
+                <div class="checkbox-wrap modal-checkbox select-all-check">
+                  <input
+                    type="checkbox"
+                    id="text-state-select-all"
+                    [(ngModel)]="valuesSelectAllChecked"
+                    (click)="clickCheckAllValues()"
+                  />
+                  <label for="text-state-select-all">Select all</label>
+                </div>
+              </div>
+              <div class="search-list">
+                <ul>
+                  <ng-container *ngFor="let item of valuesOptions; let i = index">
+                    <li *ngIf="isUnderSearch(i)">
+                      <div class="checkbox-wrap modal-checkbox">
+                        <input
+                          type="checkbox"
+                          id="state-check-{{ i }}"
+                          [ngModel]="isCheckedValue(i)"
+                          (click)="clickCheckValue(i)"
+                        />
+                        <label for="state-check-{{ i }}">{{ item.displayValue }}</label>
+                      </div>
+                    </li>
+                  </ng-container>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="right-selected">
+            <div class="top-line flex-grid">
+              <div class="left-txt">
+                {{ formValues.selected.length > 0 ? formValues.selected.length + ' selected' : 'None selected' }}
+              </div>
+              <a href="javascript:;" class="blue-link" (click)="clickClearAllValues()"> Clear all </a>
+            </div>
+            <div class="selected-list">
+              <ul>
+                <li *ngFor="let item of formValues.selected; let i = index">
+                  <div class="new-york flex-grid">
+                    <div class="left-txt">
+                      {{ item.displayValue }}
+                    </div>
+                    <a href="javascript:;" class="icons icon-del" (click)="clickDeleteValue(i)"> </a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="error-msg" *ngIf="errorMsg">{{ errorMsg }}</div>
+    <div class="bottom-btns flex-grid pt-30">
+      <div class="lefts">
+        <a
+          href="javascript:;"
+          *ngIf="modalData.name !== 'modal-windows-filter-administration-wizard-edit'"
+          class="btn-add"
+          [class.disabled]="!enableAddRule()"
+          (click)="clickAddRule()"
+        >
+          <i class="icons icon-add"></i>
+          Add Rule
+        </a>
+      </div>
+      <div class="rights">
+        <a href="javascript:;" class="btn blue-links" (click)="closeModal()"> Cancel </a>
+        <a href="javascript:;" class="btn btn-blue" [class.disabled]="!enableAddRule()" (click)="save()"> Save </a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end .modal-windows-filter-administration-wizard -->

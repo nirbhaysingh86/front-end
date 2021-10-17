@@ -1,0 +1,334 @@
+{
+  "dataMyWorklistResearchPaymentAdjustmentsTabPaymentDetails": [
+    {
+      "id": 1,
+      "fieldList": [
+        {
+          "fieldType": "label-center",
+          "fieldName": "Paid By",
+          "fieldValue": "Payer 1",
+          "hasCheckAll": false,
+          "columnWidth": 133,
+          "footerContent": "TOTAL"
+        },
+        {
+          "fieldType": "label",
+          "fieldName": "Payment Type",
+          "fieldValue": "Contractual",
+          "hasCheckAll": false,
+          "columnWidth": 133,
+          "footerContent": ""
+        },
+        {
+          "fieldType": "label",
+          "fieldName": "Import Date",
+          "fieldValue": "05/20/2021",
+          "hasCheckAll": false,
+          "columnWidth": 133,
+          "footerContent": ""
+        },
+        {
+          "fieldType": "label",
+          "fieldName": "Posting Date",
+          "fieldValue": "05/21/2021",
+          "hasCheckAll": false,
+          "columnWidth": 133,
+          "footerContent": ""
+        },
+        {
+          "fieldType": "label-center",
+          "fieldName": "Amount",
+          "fieldValue": "$50.00",
+          "hasCheckAll": false,
+          "columnWidth": 133,
+          "footerContent": "currency"
+        },
+        {
+          "fieldType": "label-right",
+          "fieldName": "Excluded Amount",
+          "fieldValue": "$0.00",
+          "hasCheckAll": false,
+          "columnWidth": 133,
+          "footerContent": "currency"
+        },
+        {
+          "fieldType": "label",
+          "fieldName": "Adjustment Code",
+          "fieldValue": "303",
+          "hasCheckAll": false,
+          "columnWidth": 133,
+          "footerContent": ""
+        },
+        {
+          "fieldType": "label",
+          "fieldName": "Adjustment Code Des",
+          "fieldValue": "ADJ Managed Lorem",
+          "hasCheckAll": false,
+          "columnWidth": 133,
+          "footerContent": ""
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "fieldList": [
+        {
+          "fieldValue": "Payer 1"
+        },
+        {
+          "fieldValue": "Contractual"
+        },
+        {
+          "fieldValue": "05/20/2021"
+        },
+        {
+          "fieldValue": "05/21/2021"
+        },
+        {
+          "fieldValue": "$50.00"
+        },
+        {
+          "fieldValue": "$0.00"
+        },
+        {
+          "fieldValue": "303"
+        },
+        {
+          "fieldValue": "ADJ Managed Lorem"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "fieldList": [
+        {
+          "fieldValue": "Payer 1"
+        },
+        {
+          "fieldValue": "Contractual"
+        },
+        {
+          "fieldValue": "05/20/2021"
+        },
+        {
+          "fieldValue": "05/21/2021"
+        },
+        {
+          "fieldValue": "$50.00"
+        },
+        {
+          "fieldValue": "$0.00"
+        },
+        {
+          "fieldValue": "303"
+        },
+        {
+          "fieldValue": "ADJ Managed Lorem"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "fieldList": [
+        {
+          "fieldValue": "Payer 1"
+        },
+        {
+          "fieldValue": "Contractual"
+        },
+        {
+          "fieldValue": "05/20/2021"
+        },
+        {
+          "fieldValue": "05/21/2021"
+        },
+        {
+          "fieldValue": "$50.00"
+        },
+        {
+          "fieldValue": "$0.00"
+        },
+        {
+          "fieldValue": "303"
+        },
+        {
+          "fieldValue": "ADJ Managed Lorem"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "fieldList": [
+        {
+          "fieldValue": "Payer 1"
+        },
+        {
+          "fieldValue": "Contractual"
+        },
+        {
+          "fieldValue": "05/20/2021"
+        },
+        {
+          "fieldValue": "05/21/2021"
+        },
+        {
+          "fieldValue": "$50.00"
+        },
+        {
+          "fieldValue": "$0.00"
+        },
+        {
+          "fieldValue": "303"
+        },
+        {
+          "fieldValue": "ADJ Managed Lorem"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "fieldList": [
+        {
+          "fieldValue": "Payer 1"
+        },
+        {
+          "fieldValue": "Contractual"
+        },
+        {
+          "fieldValue": "05/20/2021"
+        },
+        {
+          "fieldValue": "05/21/2021"
+        },
+        {
+          "fieldValue": "$50.00"
+        },
+        {
+          "fieldValue": "$0.00"
+        },
+        {
+          "fieldValue": "303"
+        },
+        {
+          "fieldValue": "ADJ Managed Lorem"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "fieldList": [
+        {
+          "fieldValue": "Payer 1"
+        },
+        {
+          "fieldValue": "Contractual"
+        },
+        {
+          "fieldValue": "05/20/2021"
+        },
+        {
+          "fieldValue": "05/21/2021"
+        },
+        {
+          "fieldValue": "$50.00"
+        },
+        {
+          "fieldValue": "$0.00"
+        },
+        {
+          "fieldValue": "303"
+        },
+        {
+          "fieldValue": "ADJ Managed Lorem"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "fieldList": [
+        {
+          "fieldValue": "Payer 1"
+        },
+        {
+          "fieldValue": "Contractual"
+        },
+        {
+          "fieldValue": "05/20/2021"
+        },
+        {
+          "fieldValue": "05/21/2021"
+        },
+        {
+          "fieldValue": "$50.00"
+        },
+        {
+          "fieldValue": "$0.00"
+        },
+        {
+          "fieldValue": "303"
+        },
+        {
+          "fieldValue": "ADJ Managed Lorem"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "fieldList": [
+        {
+          "fieldValue": "Payer 2"
+        },
+        {
+          "fieldValue": "Contractual"
+        },
+        {
+          "fieldValue": "05/20/2021"
+        },
+        {
+          "fieldValue": "05/21/2021"
+        },
+        {
+          "fieldValue": "$50.00"
+        },
+        {
+          "fieldValue": "$0.00"
+        },
+        {
+          "fieldValue": "303"
+        },
+        {
+          "fieldValue": "ADJ Managed Lorem"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "fieldList": [
+        {
+          "fieldValue": "Payer 2"
+        },
+        {
+          "fieldValue": "Actual Payment"
+        },
+        {
+          "fieldValue": "05/20/2021"
+        },
+        {
+          "fieldValue": "05/21/2021"
+        },
+        {
+          "fieldValue": "$50.00"
+        },
+        {
+          "fieldValue": "$0.00"
+        },
+        {
+          "fieldValue": "303"
+        },
+        {
+          "fieldValue": "ADJ Managed Lorem"
+        }
+      ]
+    }
+  ]
+}

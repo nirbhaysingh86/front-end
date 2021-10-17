@@ -1,0 +1,10 @@
+*.lint.ts
+.cache/**
+.vscode/**
+dist*/**
+build/**
+coverage/**
+package.json
+package-lock.json
+yarn.lock
+dist

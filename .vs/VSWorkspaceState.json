@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\json-data",
+    "\\src",
+    "\\src\\app",
+    "\\src\\app\\components",
+    "\\src\\app\\components\\modal-windows",
+    "\\src\\app\\components\\modal-windows\\modal-windows-other-payer-transactions",
+    "\\src\\app\\components\\my-worklist-menu-secondary",
+    "\\src\\app\\model",
+    "\\src\\config"
+  ],
+  "SelectedNode": "\\src\\config\\configuration.ts",
+  "PreviewInSolutionExplorer": false
+}

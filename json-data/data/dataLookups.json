@@ -1,0 +1,32 @@
+{
+  "dataLookups": {
+    "revenueCPTCode": ["03631123456", "03631123460", "03631123463", "03631123465", "03631123481"],
+    "chargeCode": ["03631123456", "03631123460", "03631123463", "03631123465", "03631123482"],
+    "icdVersion": ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"],
+    "modifier": ["00", "01", "02"],
+    "facility": ["Facility 1", "Facility 2", "Facility 3"],
+    "service": ["Inpatient", "Patient"],
+    "orgCode": ["Acme Org 1", "Acme Org 2", "Acme Org 3"],
+    "patientType": ["Type", "Option 1", "Option 2"],
+    "dischargeType": ["Lorem", "Option 1", "Option 2"],
+    "admissionSource": ["Source 1", "Source 2", "Source 3"],
+    "costServiceCenter": ["Service Center 1", "Service Center 2", "Service Center 3"],
+    "billingStatusID": ["Status 1", "Status 2", "Status 3"],
+    "clinicCategoryID": ["Category 1", "Category 2", "Category 3"],
+    "facilityServiceID": ["Facility 1", "Facility 2", "Facility 3"],
+    "programCodeID": ["Program 1", "Program 2", "Program 3"],
+    "auditor": ["Unassigned", "Option 1", "Option 2"],
+    "agency": ["Option 1", "Option 2"],
+    "responsibility": ["Payer 1", "Payer 2", "Payer 3"],
+    "paidBy": ["Payer 1", "Payer 2", "Payer 3"],
+    "paymentType": [
+      "All",
+      "Actual Payment",
+      "Contractual",
+      "Est Pay/Allowable",
+      "Write-Off",
+      "Miscellaneous",
+      "Payer Allowable"
+    ]
+  }
+}

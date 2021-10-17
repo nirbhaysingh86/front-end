@@ -1,0 +1,80 @@
+<div class="modal-default modal-windows-payment-detail">
+  <div class="modal-mains">
+    <a href="javascript:;" class="btn-close" (click)="closeModal(false)"> </a>
+    <div class="title">Payment Detail</div>
+    <div class="group">
+      <div class="top-tools flex-grid">
+        <div class="lefts flex">
+          <div class="dropdown-area flex">
+            <div class="txt">Paid By</div>
+            <div class="dropdown">
+              <app-sd-base-dropdown [selectedOption]="paidBySelection"
+                                    [options]="paidBy"
+                                    [placeholder]="'Select'"
+                                    (changeDropdown)="paidBySelection = $event; updateFilter()">
+              </app-sd-base-dropdown>
+            </div>
+          </div>
+          <div class="dropdown-area flex">
+            <div class="txt">PaymentType</div>
+            <div class="dropdown">
+              <app-sd-base-dropdown [placeholder]="'Select'"
+                                    [selectedOption]="selectedLimits.paymentStatus"
+                                    [options]="viewLimitOptions.paymentStatus"
+                                    [fieldName]="'description'"
+                                    (changeDropdown)="paymentTypeSelection = $event; updateFilter()">
+              </app-sd-base-dropdown>
+            </div>
+          </div>
+        </div>
+        <div class="rights">
+          <ul class="flex">
+            <li>
+              <a href="javascript:;" class="icon-txt">
+                <i class="icons icon-filter"></i>
+                <span class="txt"> Filter </span>
+              </a>
+            </li>
+            <li>
+              <a href="javascript:;" class="icon-txt">
+                <i class="icons icon-group"></i>
+                <span class="txt"> Group </span>
+              </a>
+            </li>
+            <li>
+              <a href="javascript:;" class="icon-txt">
+                <i class="icons icon-new"></i>
+                <span class="txt"> New </span>
+              </a>
+            </li>
+            <li>
+              <a href="javascript:;" class="icon-txt" [class.disabled]="!isRowSelected">
+                <i class="icons icon-edit"></i>
+                <span class="txt"> Edit </span>
+              </a>
+            </li>
+            <li>
+              <a href="javascript:;"
+                 class="icon-txt"
+                 [class.disabled]="!isRowSelected"
+                 (click)="clickDeletePayment.emit(selectedRow)">
+                <i class="icons icon-delete"></i>
+                <span class="txt"> Delete </span>
+              </a>
+            </li>
+            <li>
+              <a href="javascript:;" class="icon-txt">
+                <i class="icons icon-help"></i>
+                <span class="txt"> Help </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="table-area">
+        <app-sd-common-table [dataList]="dataList" [header]="headers.paymentDetails" (clickRow)="getSelectedRowValues($event)" *ngIf="dataList.length > 0"> </app-sd-common-table>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end .modal-windows-payment-detail -->

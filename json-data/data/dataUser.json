@@ -1,0 +1,14 @@
+{
+  "dataUser": [
+    {
+      "id": 1,
+      "username": "johndoe",
+      "password": "123456789"
+    },
+    {
+      "id": 2,
+      "username": "mike",
+      "password": "12345"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+<div class="modal-default modal-windows-other-payer-transactions">
+  <div class="modal-mains">
+    <a href="javascript:;" class="btn-close" (click)="closeModal(false)"> </a>
+    <div class="title">Other Payer Transactions</div>
+    <div class="group">
+      <div class="top-tools flex-grid">
+        <div class="lefts">
+          <ul class="flex">
+            <li>
+              <a href="javascript:;" class="icon-txt">
+                <i class="icons icon-filter"></i>
+                <span class="txt"> Filter </span>
+              </a>
+            </li>
+            <li>
+              <a href="javascript:;"   [class.disabled]="!isRowSelected" class="icon-txt"
+                (click)="saveOtherTransactions.emit(selectedRow)">
+                <i class="icons icon-save"></i>
+                <span class="txt"> Save </span>
+              </a>
+            </li>
+            <li>
+              <a href="javascript:;" class="icon-txt disabled">
+                <i class="icons icon-undo"></i>
+                <span class="txt"> Undo </span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="javascript:;"
+                class="icon-txt"
+                [class.disabled]="!isRowSelected"
+                (click)="clickDeleteTransactions.emit(selectedRow)"
+              >
+                <i class="icons icon-delete"></i>
+                <span class="txt"> Delete </span>
+              </a>
+            </li>
+            <li>
+              <a href="javascript:;" [class.disabled]="!isRowSelected" class="icon-txt" (click)="clickCommitTransactions.emit(selectedRow)">
+                <i class="icons icon-post"></i>
+                <span class="txt"> Post </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="rights">
+          <div class="dropdown-area flex">
+            <div class="txt">Transaction File Type</div>
+            <div class="dropdown">
+              <app-sd-base-dropdown
+                [selectedOption]="transactionFileTypeSelection"
+                [options]="transactionFileTypeDropdownOptions"
+                [placeholder]="'Select'"
+                (changeDropdown)="transactionFileTypeSelection = $event; updateFilter()"
+              >
+              </app-sd-base-dropdown>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="table-area">
+        <app-sd-common-table [dataList]="dataList" [header]="headers.paymentDetailsOther" (clickRow)="getSelectedRowValues($event)" *ngIf="dataList.length > 0"></app-sd-common-table>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end .modal-windows-other-payer-transactions -->

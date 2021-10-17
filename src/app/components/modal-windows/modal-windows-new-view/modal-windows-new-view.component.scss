@@ -1,0 +1,61 @@
+@import '../../../../styles/variables';
+
+// .modal-windows-new-view
+.modal-windows-new-view {
+  .modal-mains {
+    .group {
+      .top-title {
+        color: #131523;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 28px;
+        margin-bottom: 20px;
+      }
+      .line {
+        width: 100%;
+        height: 1px;
+        background: #f1f1f1;
+        margin: 20px 0;
+      }
+    }
+    .form-area {
+      .data-row {
+        margin-bottom: 16px;
+        .left-txt {
+          flex: 0 0 125px;
+          max-width: 125px;
+          color: #2f4259;
+          font-size: 13px;
+          font-weight: 400;
+          letter-spacing: -0.2px;
+          line-height: 20px;
+          &.flex-start {
+            align-self: flex-start;
+          }
+        }
+        .inputs {
+          height: 32px;
+        }
+        .right-area {
+          flex: 1;
+        }
+        .top-area {
+          color: #2f4259;
+          font-size: 13px;
+          font-weight: 400;
+          letter-spacing: -0.2px;
+          line-height: 20px;
+          margin-bottom: 6px;
+        }
+      }
+    }
+    .bottom-btns {
+      .btn {
+        min-width: auto;
+        .btn-blue {
+          margin-left: 20px;
+        }
+      }
+    }
+  }
+}

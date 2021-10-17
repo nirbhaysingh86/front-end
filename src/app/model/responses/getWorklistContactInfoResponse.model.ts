@@ -1,0 +1,45 @@
+export interface ContactInfoResponse {
+  id: number;
+  actualPatientId: string;
+  facilityName: string;
+  taxId: number;
+  npi: string;
+  payeeName: string;
+  payerPhone: string;
+  subscriberID: string;
+  insuredSsn: string;
+  insuredGroupName: string;
+  patientName: string;
+  dateOfBirth?: Date;
+  accountNumber: string;
+  totalCharges: string;
+  insuredName: string;
+  admitDate?: Date;
+  dischargeDate?: Date;
+  patientType: string;
+  medicalRecordNo: string;
+  socialSecurityNo: string;
+  auditStatus: string;
+  reviewCategory: string;
+  varianceCategory: string;
+  closedResult: string;
+  committedAmount: string;
+  assignedReviewer: string;
+  argument: string;
+  auditor: string;
+  reviewReason: string;
+  varCatSuggestion: string;
+  closedReason: string;
+  pursuingReason: string;
+  followUpDate?: Date;
+  eventDate?: Date;
+  startDate?: Date;
+  agency: string;
+  reviewStage: string;
+  responsibility: string;
+  type: string;
+  duration: string;
+  note: string;
+}
+
+export type GetWorklistContactInfoResponseModel = ContactInfoResponse[];

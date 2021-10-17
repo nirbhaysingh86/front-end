@@ -1,0 +1,26 @@
+@import '../../../styles/variables';
+
+/* .line-bar */
+.line-bar {
+  height: 1px;
+  background: #526f93;
+  position: relative;
+  margin: 0 0 20px 0;
+  width: 100%;
+  &.collapsed {
+    .btn-expend {
+      transform: rotateX(180deg);
+    }
+  }
+  .btn-expend {
+    position: absolute;
+    left: 50%;
+    margin-left: 12px;
+    background: url(/assets/i/btn-expend.svg) center center no-repeat;
+    background-size: 23px 23px;
+    display: block;
+    width: 24px;
+    height: 24px;
+    top: -12px;
+  }
+}

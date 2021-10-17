@@ -1,0 +1,146 @@
+{
+  "dataMyWorklistResearchPaymentAdjustmentsTabOtherPayerTransactions": [
+    {
+      "id": 1,
+      "fieldList": [
+        {
+          "fieldType": "label",
+          "fieldName": "Account Number",
+          "fieldValue": "123456789",
+          "hasCheckAll": false,
+          "columnWidth": 133,
+          "footerContent": "TOTAL"
+        },
+        {
+          "fieldType": "label-editable-input",
+          "fieldName": "Adjust Code",
+          "fieldValue": "A123",
+          "hasCheckAll": false,
+          "columnWidth": 133,
+          "footerContent": ""
+        },
+        {
+          "fieldType": "label",
+          "fieldName": "Adjust Code Description",
+          "fieldValue": "Acme",
+          "hasCheckAll": false,
+          "columnWidth": 133,
+          "footerContent": ""
+        },
+        {
+          "fieldType": "label",
+          "fieldName": "Adjustment Type",
+          "fieldValue": "Lorem ipsum dolor",
+          "hasCheckAll": false,
+          "columnWidth": 133,
+          "footerContent": ""
+        },
+        {
+          "fieldType": "label",
+          "fieldName": "Posting Code",
+          "fieldValue": "1122334456789",
+          "hasCheckAll": false,
+          "columnWidth": 133,
+          "footerContent": ""
+        },
+        {
+          "fieldType": "label-editable-payer-dropdown",
+          "fieldName": "Payer ID",
+          "fieldValue": "P123",
+          "hasCheckAll": false,
+          "columnWidth": 133,
+          "footerContent": ""
+        },
+        {
+          "fieldType": "label",
+          "fieldName": "Plan ID",
+          "fieldValue": "9999",
+          "hasCheckAll": false,
+          "columnWidth": 133,
+          "footerContent": ""
+        },
+        {
+          "fieldType": "label",
+          "fieldName": "Amount",
+          "fieldValue": "$1,000.00",
+          "hasCheckAll": false,
+          "columnWidth": 133,
+          "footerContent": "currency"
+        },
+        {
+          "fieldType": "label",
+          "fieldName": "Import Date",
+          "fieldValue": "01/01/2021",
+          "hasCheckAll": false,
+          "columnWidth": 133,
+          "footerContent": ""
+        },
+        {
+          "fieldType": "label",
+          "fieldName": "Transaction File Type",
+          "fieldValue": "Inpatient Payment",
+          "hasCheckAll": false,
+          "columnWidth": 133,
+          "footerContent": ""
+        },
+        {
+          "fieldType": "label",
+          "fieldName": "Column 1",
+          "fieldValue": "",
+          "hasCheckAll": false,
+          "columnWidth": 133,
+          "footerContent": ""
+        },
+        {
+          "fieldType": "label",
+          "fieldName": "Column 2",
+          "fieldValue": "",
+          "hasCheckAll": false,
+          "columnWidth": 133,
+          "footerContent": ""
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "fieldList": [
+        {
+          "fieldValue": "123456789"
+        },
+        {
+          "fieldValue": "A123"
+        },
+        {
+          "fieldValue": "Acme"
+        },
+        {
+          "fieldValue": "Lorem ipsum dolor"
+        },
+        {
+          "fieldValue": "1122334456789"
+        },
+        {
+          "fieldValue": "P123"
+        },
+        {
+          "fieldValue": "9999"
+        },
+        {
+          "fieldValue": "$1,000.00"
+        },
+        {
+          "fieldValue": "01/01/2021"
+        },
+        {
+          "fieldValue": "Combined Inpat/Outpat Claim Adjustment File"
+        },
+        {
+          "fieldValue": ""
+        },
+        {
+          "fieldValue": ""
+        }
+      ]
+    }
+  ]
+}

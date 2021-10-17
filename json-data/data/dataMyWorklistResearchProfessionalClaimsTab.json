@@ -1,0 +1,132 @@
+{
+  "dataMyWorklistResearchProfessionalClaimsTab": [
+    {
+      "id": 1,
+      "fieldList": [
+        {
+          "fieldType": "label-expand-arrow",
+          "fieldName": "Patient Cntrl #",
+          "fieldValue": "34",
+          "hasCheckAll": false,
+          "columnWidth": 133,
+          "footerContent": "TOTAL"
+        },
+        {
+          "fieldType": "label",
+          "fieldName": "Primary Payer",
+          "fieldValue": "John",
+          "hasCheckAll": false,
+          "columnWidth": 133,
+          "footerContent": ""
+        },
+        {
+          "fieldType": "label",
+          "fieldName": "Destination Payer",
+          "fieldValue": "Jane ",
+          "hasCheckAll": false,
+          "columnWidth": 133,
+          "footerContent": ""
+        },
+        {
+          "fieldType": "label",
+          "fieldName": "Destination Payer Responsibility",
+          "fieldValue": "Primary",
+          "hasCheckAll": false,
+          "columnWidth": 196,
+          "footerContent": ""
+        },
+        {
+          "fieldType": "label",
+          "fieldName": "Claim Freq. Type",
+          "fieldValue": "Admit Thru Discharge",
+          "hasCheckAll": false,
+          "columnWidth": 133,
+          "footerContent": ""
+        },
+        {
+          "fieldType": "label",
+          "fieldName": "Billing Date",
+          "fieldValue": "1/10/2021",
+          "hasCheckAll": false,
+          "columnWidth": 133,
+          "footerContent": ""
+        },
+        {
+          "fieldType": "input-box",
+          "fieldName": "Claim Number",
+          "fieldValue": "123124123",
+          "hasCheckAll": false,
+          "columnWidth": 133,
+          "footerContent": ""
+        },
+        {
+          "fieldType": "label",
+          "fieldName": "Statement From Date",
+          "fieldValue": "1/10/2021",
+          "hasCheckAll": false,
+          "columnWidth": 133,
+          "footerContent": ""
+        },
+        {
+          "fieldType": "label",
+          "fieldName": "Statement To Date",
+          "fieldValue": "1/15/2021",
+          "hasCheckAll": false,
+          "columnWidth": 133,
+          "footerContent": ""
+        },
+        {
+          "fieldType": "label",
+          "fieldName": "Total Charges",
+          "fieldValue": "$660.50",
+          "hasCheckAll": false,
+          "columnWidth": 133,
+          "footerContent": "currency"
+        },
+        {
+          "fieldType": "label",
+          "fieldName": "Line Count",
+          "fieldValue": "1",
+          "hasCheckAll": false,
+          "columnWidth": 133,
+          "footerContent": ""
+        }
+      ],
+      "expandData": {
+        "areaTitle": "",
+        "fieldList": [
+          {
+            "fieldType": "label",
+            "fieldName": "Line #",
+            "fieldValue": "1"
+          },
+          {
+            "fieldType": "label",
+            "fieldName": "Service Date",
+            "fieldValue": "1/4/2021"
+          },
+          {
+            "fieldType": "label",
+            "fieldName": "HCPCS",
+            "fieldValue": "99205"
+          },
+          {
+            "fieldType": "label",
+            "fieldName": "Mod",
+            "fieldValue": ""
+          },
+          {
+            "fieldType": "label",
+            "fieldName": "Qty",
+            "fieldValue": "1.0"
+          },
+          {
+            "fieldType": "label",
+            "fieldName": "Charges",
+            "fieldValue": "$400.00"
+          }
+        ]
+      }
+    }
+  ]
+}

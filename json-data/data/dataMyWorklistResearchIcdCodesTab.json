@@ -1,0 +1,91 @@
+{
+  "dataMyWorklistResearchIcdCodesTab": [
+    {
+      "id": 1,
+      "fieldList": [
+        {
+          "fieldType": "label",
+          "fieldName": "ICD Code",
+          "fieldValue": "R05",
+          "hasCheckAll": false,
+          "columnWidth": 153,
+          "footerContent": ""
+        },
+        {
+          "fieldType": "label",
+          "fieldName": "ICD Code Version",
+          "fieldValue": "10",
+          "hasCheckAll": false,
+          "columnWidth": 153,
+          "footerContent": ""
+        },
+        {
+          "fieldType": "label",
+          "fieldName": "Description",
+          "fieldValue": "Cough",
+          "hasCheckAll": false,
+          "columnWidth": 270,
+          "footerContent": ""
+        },
+        {
+          "fieldType": "label",
+          "fieldName": "Type",
+          "fieldValue": "Diagnosis",
+          "hasCheckAll": false,
+          "columnWidth": 300,
+          "footerContent": ""
+        },
+        {
+          "fieldType": "label",
+          "fieldName": "Rank",
+          "fieldValue": "1",
+          "hasCheckAll": false,
+          "columnWidth": 153,
+          "footerContent": ""
+        },
+        {
+          "fieldType": "label",
+          "fieldName": "POA",
+          "fieldValue": "Y",
+          "hasCheckAll": false,
+          "columnWidth": 153,
+          "footerContent": ""
+        },
+        {
+          "fieldType": "label",
+          "fieldName": "Transaction ID",
+          "fieldValue": "1",
+          "hasCheckAll": false,
+          "columnWidth": 343,
+          "footerContent": ""
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "fieldList": [
+        {
+          "fieldValue": "R10"
+        },
+        {
+          "fieldValue": "9"
+        },
+        {
+          "fieldValue": "Itch"
+        },
+        {
+          "fieldValue": "Diagnosis"
+        },
+        {
+          "fieldValue": "2"
+        },
+        {
+          "fieldValue": "N"
+        },
+        {
+          "fieldValue": "2"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,106 @@
+<div class="modal-default modal-windows-new-view">
+  <div class="modal-mains">
+    <a href="javascript:;" class="btn-close" (click)="closeModal()"> </a>
+    <div class="title">New View</div>
+    <div class="group">
+      <div class="top-title">View Description</div>
+      <div class="form-area">
+        <div class="data-row flex">
+          <div class="left-txt">View Name</div>
+          <div class="right-area">
+            <div class="inputs">
+              <input type="text" maxlength="100" [(ngModel)]="viewName" />
+            </div>
+          </div>
+        </div>
+        <div class="data-row flex">
+          <div class="left-txt flex-start">Description</div>
+          <div class="right-area">
+            <div class="textareas small">
+              <textarea maxlength="500" [(ngModel)]="description"></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="line"></div>
+    </div>
+    <div class="group">
+      <div class="top-title">Default Limits</div>
+      <div class="form-area">
+        <div class="data-row flex">
+          <div class="left-txt">Auditor</div>
+          <div class="right-area">
+            <app-sd-base-dropdown
+              [selectedOption]="auditor"
+              [options]="limitOptions.auditor"
+              [fieldName]="'description'"
+              (changeDropdown)="auditor = $event"
+            >
+            </app-sd-base-dropdown>
+          </div>
+        </div>
+        <div class="data-row flex">
+          <div class="left-txt">Follow-Up</div>
+          <div class="right-area">
+            <app-sd-base-dropdown
+              [selectedOption]="followUp"
+              [options]="limitOptions.followUp"
+              [fieldName]="'description'"
+              (changeDropdown)="followUp = $event"
+            >
+            </app-sd-base-dropdown>
+          </div>
+        </div>
+        <div class="data-row flex">
+          <div class="left-txt">Status</div>
+          <div class="right-area">
+            <app-sd-base-dropdown
+              [selectedOption]="status"
+              [options]="limitOptions.status"
+              [fieldName]="'description'"
+              (changeDropdown)="status = $event"
+            >
+            </app-sd-base-dropdown>
+          </div>
+        </div>
+        <div class="data-row flex">
+          <div class="left-txt">Account Age</div>
+          <div class="right-area">
+            <app-sd-base-dropdown
+              [selectedOption]="accountAge"
+              [options]="limitOptions.accountAge"
+              [fieldName]="'description'"
+              (changeDropdown)="accountAge = $event"
+            >
+            </app-sd-base-dropdown>
+          </div>
+        </div>
+        <div class="data-row flex">
+          <div class="left-txt">Hidden Records</div>
+          <div class="right-area">
+            <app-sd-base-dropdown
+              [selectedOption]="hiddenRecords"
+              [options]="limitOptions.hiddenRecords"
+              [fieldName]="'description'"
+              (changeDropdown)="hiddenRecords = $event"
+            >
+            </app-sd-base-dropdown>
+          </div>
+        </div>
+        <div class="data-row flex">
+          <div class="checkbox-wrap modal-checkbox">
+            <input type="checkbox" id="checkUseThisAsMyDefaultView" [(ngModel)]="checkUseThisAsMyDefaultView" />
+            <label for="checkUseThisAsMyDefaultView">Use this as my default view</label>
+          </div>
+        </div>
+        <div class="bottom-btns flex-end">
+          <a href="javascript:;" class="btn blue-links" (click)="closeModal()"> Cancel </a>
+          <a href="javascript:;" class="btn btn-blue" [class.disabled]="!isFormValid()" (click)="createView()">
+            {{ modalData.name === 'modal-windows-new-view' ? 'Create View' : 'Save View' }}
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end .modal-windows-new-view -->

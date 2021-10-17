@@ -1,0 +1,109 @@
+<header class="view-admin-menu flex-grid">
+  <div class="lefts flex">
+    <div class="logo-area" [class.show-logo]="!menuCollapsed">
+      <a href="javascript:;" class="btn-logo flex">
+        <img src="/assets/i/logo.svg" alt="img" />
+        <span class="txt"> LogoName </span>
+      </a>
+    </div>
+  </div>
+  <div class="right-areas flex">
+    <a href="javascript:;" class="btn-menu flex" (click)="clickMenu.emit()">
+      <i class="icons icon-menu"></i>
+      Menu
+    </a>
+    <span class="line"></span>
+    <a href="javascript:;" class="btn-add flex" (click)="clickNewView.emit()">
+      <i class="icons icon-add"></i>
+      New View
+    </a>
+    <div class="three-icon-txt">
+      <ul class="flex">
+        <li>
+          <a
+            href="javascript:;"
+            class="icon-txt"
+            [class.disabled]="!hasSelection"
+            (click)="hasSelection && clickEdit.emit()"
+          >
+            <i class="icons icon-edit"></i>
+            Edit
+          </a>
+        </li>
+        <li>
+          <a
+            href="javascript:;"
+            class="icon-txt icon-delete"
+            [class.disabled]="!hasSelection"
+            (click)="hasSelection && clickDelete.emit()"
+          >
+            <i class="icons icon-del"></i>
+            Delete
+          </a>
+        </li>
+        <li>
+          <a href="javascript:;" class="icon-txt icon-apply" [class.disabled]="!hasData">
+            <i class="icons icon-apply"></i>
+            Apply
+          </a>
+        </li>
+      </ul>
+    </div>
+    <span class="line"></span>
+    <div class="tip-module-list">
+      <ul class="flex">
+        <li>
+          <div class="tip-module">
+            <span class="tip-title">
+              <i class="icons icon-filter"></i>
+              Filter
+              <a href="javascript:;" class="icons btn-down"></a>
+            </span>
+            <div class="tip-panel">
+              <i class="top-trans"></i>
+              <ul>
+                <li>
+                  <a href="javascript:;" class="tab-items active">Placeholder</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="tip-module help-tip-module" [class.open]="isOpenedHelp" (clickOutside)="isOpenedHelp = false">
+            <a href="javascript:;" class="tip-title" (click)="clickHelp()">
+              <i class="icons icon-help"></i>
+              Help
+              <span class="icons btn-down"></span>
+            </a>
+            <div class="tip-panel">
+              <i class="top-trans"></i>
+              <ul class="bottom-border">
+                <li>
+                  <a href="javascript:;" class="tab-items">Contents</a>
+                </li>
+                <li>
+                  <a href="javascript:;" class="tab-items">Overview</a>
+                </li>
+              </ul>
+              <ul class="bottom-border">
+                <li>
+                  <a href="javascript:;" class="tab-items">Technical Support</a>
+                </li>
+                <li>
+                  <a href="javascript:;" class="tab-items">About</a>
+                </li>
+              </ul>
+              <ul>
+                <li>
+                  <a (click)="clickLogout.emit()" class="tab-items">Logout</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!--end .right-users-->
+</header>

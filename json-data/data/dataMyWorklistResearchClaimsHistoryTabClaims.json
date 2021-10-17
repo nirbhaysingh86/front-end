@@ -1,0 +1,258 @@
+{
+  "dataMyWorklistResearchClaimsHistoryTabClaims": [
+    {
+      "id": 1,
+      "fieldList": [
+        {
+          "fieldType": "label-expand-arrow",
+          "fieldName": "Patient Cntrl #",
+          "fieldValue": "30",
+          "hasCheckAll": false,
+          "columnWidth": 133,
+          "footerContent": "TOTAL"
+        },
+        {
+          "fieldType": "label",
+          "fieldName": "Primary Payer",
+          "fieldValue": "John",
+          "hasCheckAll": false,
+          "columnWidth": 133,
+          "footerContent": ""
+        },
+        {
+          "fieldType": "label",
+          "fieldName": "Destination Payer",
+          "fieldValue": "Jane ",
+          "hasCheckAll": false,
+          "columnWidth": 133,
+          "footerContent": ""
+        },
+        {
+          "fieldType": "label",
+          "fieldName": "Destination Payer Responsibility",
+          "fieldValue": "Primary",
+          "hasCheckAll": false,
+          "columnWidth": 133,
+          "footerContent": ""
+        },
+        {
+          "fieldType": "label",
+          "fieldName": "Type of Bill",
+          "fieldValue": "130",
+          "hasCheckAll": false,
+          "columnWidth": 133,
+          "footerContent": ""
+        },
+        {
+          "fieldType": "label",
+          "fieldName": "Claim Freq. Type",
+          "fieldValue": "Admit Thru Discharge",
+          "hasCheckAll": false,
+          "columnWidth": 133,
+          "footerContent": ""
+        },
+        {
+          "fieldType": "label",
+          "fieldName": "Billing Date",
+          "fieldValue": "1/10/2021",
+          "hasCheckAll": false,
+          "columnWidth": 133,
+          "footerContent": ""
+        },
+        {
+          "fieldType": "input-box",
+          "fieldName": "Claim Number",
+          "fieldValue": "123124123",
+          "hasCheckAll": false,
+          "columnWidth": 133,
+          "footerContent": ""
+        },
+        {
+          "fieldType": "label",
+          "fieldName": "Statement From Date",
+          "fieldValue": "1/10/2021",
+          "hasCheckAll": false,
+          "columnWidth": 133,
+          "footerContent": ""
+        },
+        {
+          "fieldType": "label",
+          "fieldName": "Statement To Date",
+          "fieldValue": "1/15/2021",
+          "hasCheckAll": false,
+          "columnWidth": 133,
+          "footerContent": ""
+        },
+        {
+          "fieldType": "label",
+          "fieldName": "Total Charges",
+          "fieldValue": "$660.50",
+          "hasCheckAll": false,
+          "columnWidth": 133,
+          "footerContent": ""
+        },
+        {
+          "fieldType": "label",
+          "fieldName": "Total Non-Covered",
+          "fieldValue": "",
+          "hasCheckAll": false,
+          "columnWidth": 133,
+          "footerContent": ""
+        },
+        {
+          "fieldType": "label",
+          "fieldName": "Patient Est. Amt Due",
+          "fieldValue": "20",
+          "hasCheckAll": false,
+          "columnWidth": 133,
+          "footerContent": ""
+        },
+        {
+          "fieldType": "label",
+          "fieldName": "Line Count",
+          "fieldValue": "1",
+          "hasCheckAll": false,
+          "columnWidth": 133,
+          "footerContent": ""
+        }
+      ],
+      "expandData": {
+        "areaTitle": "",
+        "fieldList": [
+          {
+            "fieldType": "label",
+            "fieldName": "Line #",
+            "fieldValue": "1"
+          },
+          {
+            "fieldType": "label",
+            "fieldName": "Service Date",
+            "fieldValue": "1/4/2021"
+          },
+          {
+            "fieldType": "label",
+            "fieldName": "Rev",
+            "fieldValue": "0324 "
+          },
+          {
+            "fieldType": "label",
+            "fieldName": "HCPCS",
+            "fieldValue": "71046 - XRay Chest 2 views"
+          },
+          {
+            "fieldType": "label",
+            "fieldName": "Mod",
+            "fieldValue": "None"
+          },
+          {
+            "fieldType": "label",
+            "fieldName": "Qty",
+            "fieldValue": "1.0"
+          },
+          {
+            "fieldType": "label",
+            "fieldName": "Charges",
+            "fieldValue": "$1000.00"
+          },
+          {
+            "fieldType": "label",
+            "fieldName": "Non-Covered Charges",
+            "fieldValue": "$0.00"
+          }
+        ]
+      }
+    },
+    {
+      "id": 2,
+      "fieldList": [
+        {
+          "fieldValue": "34"
+        },
+        {
+          "fieldValue": "Peter"
+        },
+        {
+          "fieldValue": "Jane"
+        },
+        {
+          "fieldValue": "Primary"
+        },
+        {
+          "fieldValue": "130"
+        },
+        {
+          "fieldValue": "Admit Thru Discharge"
+        },
+        {
+          "fieldValue": "1/10/2021"
+        },
+        {
+          "fieldValue": "123124123"
+        },
+        {
+          "fieldValue": "1/10/2021"
+        },
+        {
+          "fieldValue": "1/15/2021"
+        },
+        {
+          "fieldValue": "$500.00"
+        },
+        {
+          "fieldValue": ""
+        },
+        {
+          "fieldValue": "20"
+        },
+        {
+          "fieldValue": "1"
+        }
+      ],
+      "expandData": {
+        "areaTitle": "",
+        "fieldList": [
+          {
+            "fieldType": "label",
+            "fieldName": "Line #",
+            "fieldValue": "1"
+          },
+          {
+            "fieldType": "label",
+            "fieldName": "Service Date",
+            "fieldValue": "1/4/2021"
+          },
+          {
+            "fieldType": "label",
+            "fieldName": "Rev",
+            "fieldValue": "0324 "
+          },
+          {
+            "fieldType": "label",
+            "fieldName": "HCPCS",
+            "fieldValue": "71046 - XRay Chest 2 views"
+          },
+          {
+            "fieldType": "label",
+            "fieldName": "Mod",
+            "fieldValue": "None"
+          },
+          {
+            "fieldType": "label",
+            "fieldName": "Qty",
+            "fieldValue": "1.0"
+          },
+          {
+            "fieldType": "label",
+            "fieldName": "Charges",
+            "fieldValue": "$1000.00"
+          },
+          {
+            "fieldType": "label",
+            "fieldName": "Non-Covered Charges",
+            "fieldValue": "$0.00"
+          }
+        ]
+      }
+    }
+  ]
+}

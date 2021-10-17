@@ -1,0 +1,921 @@
+<div class="modal-default modal-windows-add-patient-account">
+  <div class="modal-mains">
+    <a href="javascript:;" class="btn-close" (click)="closeModal(false)"> </a>
+    <div class="blue-bg">
+      <div class="top-bar">
+        <div class="title">Add Patient Account</div>
+      </div>
+      <div class="blue-tabs">
+        <ul>
+          <li>
+            <a href="javascript:;" class="tab-items" [class.current]="tabIndex === 0" (click)="tabIndex = 0">
+              Billing Info
+            </a>
+          </li>
+          <li>
+            <a href="javascript:;" class="tab-items" [class.current]="tabIndex === 1" (click)="tabIndex = 1">
+              Demographics
+            </a>
+          </li>
+          <li>
+            <a href="javascript:;" class="tab-items" [class.current]="tabIndex === 2" (click)="tabIndex = 2">
+              Insured Info
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="tab-content tab-billing-info" *ngIf="tabIndex === 0">
+      <div class="scroll-box">
+        <div class="row">
+          <div class="col col-md-4">
+            <div class="group">
+              <div class="form-area">
+                <div class="data-row flex">
+                  <div class="left-txt">Account Number</div>
+                  <div class="right-area">
+                    <div class="inputs disabled">
+                      <input type="text" disabled [(ngModel)]="dataListPatientAccount.billingInfo.accountNumber" />
+                    </div>
+                  </div>
+                </div>
+                <div class="data-row flex">
+                  <div class="left-txt flex-start">Facility</div>
+                  <div class="right-area">
+                    <app-sd-base-dropdown
+                      [selectedOption]="dataListPatientAccount.billingInfo.facility"
+                      [options]="dataListLookups['facility']"
+                      [placeholder]="'Select'"
+                      (changeDropdown)="dataListPatientAccount.billingInfo.facility = $event"
+                    >
+                    </app-sd-base-dropdown>
+                  </div>
+                </div>
+                <div class="data-row flex">
+                  <div class="left-txt">Service</div>
+                  <div class="right-area">
+                    <app-sd-base-dropdown
+                      [selectedOption]="dataListPatientAccount.billingInfo.service"
+                      [options]="dataListLookups['service']"
+                      [placeholder]="'Select'"
+                      (changeDropdown)="dataListPatientAccount.billingInfo.service = $event"
+                    >
+                    </app-sd-base-dropdown>
+                  </div>
+                </div>
+                <div class="data-row flex">
+                  <div class="left-txt">Admission Date</div>
+                  <div class="right-area">
+                    <div class="inputs date-inputs">
+                      <input
+                        type="text"
+                        readonly
+                        [(ngModel)]="dataListPatientAccount.billingInfo.admissionDate"
+                        ngbDatepicker
+                        #admissionDate="ngbDatepicker"
+                        (click)="admissionDate.toggle()"
+                      />
+                      <a href="javascript:;" class="icons btn-calender" (click)="admissionDate.toggle()"> </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="data-row flex">
+                  <div class="left-txt">Discharge Date</div>
+                  <div class="right-area">
+                    <div class="inputs date-inputs">
+                      <input
+                        type="text"
+                        readonly
+                        [(ngModel)]="dataListPatientAccount.billingInfo.dischargeDate"
+                        ngbDatepicker
+                        #dischargeDate="ngbDatepicker"
+                        (click)="dischargeDate.toggle()"
+                      />
+                      <a href="javascript:;" class="icons btn-calender" (click)="dischargeDate.toggle()"> </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="data-row flex">
+                  <div class="left-txt">Billing Date</div>
+                  <div class="right-area">
+                    <div class="inputs date-inputs">
+                      <input
+                        type="text"
+                        readonly
+                        [(ngModel)]="dataListPatientAccount.billingInfo.billingDate"
+                        ngbDatepicker
+                        #billingDate="ngbDatepicker"
+                        (click)="billingDate.toggle()"
+                      />
+                      <a href="javascript:;" class="icons btn-calender" (click)="billingDate.toggle()"> </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="data-row flex">
+                  <div class="left-txt">Primary Grouper DRG</div>
+                  <div class="right-area">
+                    <div class="inputs">
+                      <input type="text" [(ngModel)]="dataListPatientAccount.billingInfo.primaryGrouperDRG" />
+                    </div>
+                  </div>
+                </div>
+                <div class="data-row flex">
+                  <div class="left-txt">State Grouper DRG</div>
+                  <div class="right-area">
+                    <div class="inputs">
+                      <input type="text" [(ngModel)]="dataListPatientAccount.billingInfo.stateGrouperDRG" />
+                    </div>
+                  </div>
+                </div>
+                <div class="data-row flex">
+                  <div class="left-txt">Expanded Grouper DRG</div>
+                  <div class="right-area">
+                    <div class="inputs">
+                      <input type="text" [(ngModel)]="dataListPatientAccount.billingInfo.expandedGrouperDRG" />
+                    </div>
+                  </div>
+                </div>
+                <div class="data-row flex">
+                  <div class="left-txt">Payer Used DRG</div>
+                  <div class="right-area">
+                    <div class="inputs">
+                      <input type="text" [(ngModel)]="dataListPatientAccount.billingInfo.payerUsedDRG" />
+                    </div>
+                  </div>
+                </div>
+                <div class="data-row flex">
+                  <div class="left-txt">APR DRG Mortality ID</div>
+                  <div class="right-area">
+                    <div class="inputs">
+                      <input
+                        type="text"
+                        appPositiveNumberOnly
+                        [(ngModel)]="dataListPatientAccount.billingInfo.aprDRGMortalityID"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="data-row flex">
+                  <div class="left-txt">APR DRG Severity ID</div>
+                  <div class="right-area">
+                    <div class="inputs">
+                      <input
+                        type="text"
+                        appPositiveNumberOnly
+                        [(ngModel)]="dataListPatientAccount.billingInfo.aprDRGSeverityID"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="data-row flex">
+                  <div class="left-txt">Standard DRG Weight</div>
+                  <div class="right-area">
+                    <div class="inputs">
+                      <input type="text" [(ngModel)]="dataListPatientAccount.billingInfo.standardDRGWeight" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col col-md-4">
+            <div class="group">
+              <div class="form-area">
+                <div class="data-row flex">
+                  <div class="left-txt">Org Code 1</div>
+                  <div class="right-area">
+                    <app-sd-base-dropdown
+                      [selectedOption]="dataListPatientAccount.billingInfo.orgCode1"
+                      [options]="dataListLookups['orgCode']"
+                      [placeholder]="'Select'"
+                      (changeDropdown)="dataListPatientAccount.billingInfo.orgCode1 = $event"
+                    >
+                    </app-sd-base-dropdown>
+                  </div>
+                </div>
+                <div class="data-row flex">
+                  <div class="left-txt">Org Code 2</div>
+                  <div class="right-area">
+                    <app-sd-base-dropdown
+                      [selectedOption]="dataListPatientAccount.billingInfo.orgCode2"
+                      [options]="dataListLookups['orgCode']"
+                      [placeholder]="'Select'"
+                      (changeDropdown)="dataListPatientAccount.billingInfo.orgCode2 = $event"
+                    >
+                    </app-sd-base-dropdown>
+                  </div>
+                </div>
+                <div class="data-row flex">
+                  <div class="left-txt">Patient Type</div>
+                  <div class="right-area">
+                    <app-sd-base-dropdown
+                      [selectedOption]="dataListPatientAccount.billingInfo.patientType"
+                      [options]="dataListLookups['patientType']"
+                      [placeholder]="'Select'"
+                      (changeDropdown)="dataListPatientAccount.billingInfo.patientType = $event"
+                    >
+                    </app-sd-base-dropdown>
+                  </div>
+                </div>
+                <div class="data-row flex">
+                  <div class="left-txt">Discharge Type</div>
+                  <div class="right-area">
+                    <app-sd-base-dropdown
+                      [selectedOption]="dataListPatientAccount.billingInfo.dischargeType"
+                      [options]="dataListLookups['dischargeType']"
+                      [placeholder]="'Select'"
+                      (changeDropdown)="dataListPatientAccount.billingInfo.dischargeType = $event"
+                    >
+                    </app-sd-base-dropdown>
+                  </div>
+                </div>
+                <div class="data-row flex">
+                  <div class="left-txt">Admission Source</div>
+                  <div class="right-area">
+                    <app-sd-base-dropdown
+                      [selectedOption]="dataListPatientAccount.billingInfo.admissionSource"
+                      [options]="dataListLookups['admissionSource']"
+                      [placeholder]="'Select'"
+                      (changeDropdown)="dataListPatientAccount.billingInfo.admissionSource = $event"
+                    >
+                    </app-sd-base-dropdown>
+                  </div>
+                </div>
+                <div class="data-row flex">
+                  <div class="left-txt">Professional Fees</div>
+                  <div class="right-area">
+                    <div class="inputs">
+                      <input
+                        type="text"
+                        appPositiveNumberPriceOnly
+                        [(ngModel)]="dataListPatientAccount.billingInfo.professionalFees"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="data-row flex">
+                  <div class="left-txt">Total Days</div>
+                  <div class="right-area">
+                    <div class="inputs">
+                      <input
+                        type="text"
+                        appPositiveNumberOnly
+                        [(ngModel)]="dataListPatientAccount.billingInfo.totalDays"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="data-row flex">
+                  <div class="left-txt">Total Charges</div>
+                  <div class="right-area">
+                    <div class="inputs">
+                      <input
+                        type="text"
+                        appPositiveNumberPriceOnly
+                        [(ngModel)]="dataListPatientAccount.billingInfo.totalCharges"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="data-row flex">
+                  <div class="left-txt">Surgical Time (mins)</div>
+                  <div class="right-area">
+                    <div class="inputs">
+                      <input
+                        type="text"
+                        appPositiveNumberOnly
+                        [(ngModel)]="dataListPatientAccount.billingInfo.surgicalTime"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="data-row flex">
+                  <div class="left-txt">Room & Board</div>
+                  <div class="right-area">
+                    <div class="inputs">
+                      <input
+                        type="text"
+                        appPositiveNumberPriceOnly
+                        [(ngModel)]="dataListPatientAccount.billingInfo.roomBoard"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="data-row flex">
+                  <div class="left-txt">Skilled Nursing Units</div>
+                  <div class="right-area">
+                    <div class="inputs">
+                      <input
+                        type="text"
+                        appPositiveNumberOnly
+                        [(ngModel)]="dataListPatientAccount.billingInfo.skilledNursingUnits"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="data-row flex">
+                  <div class="left-txt">Obs. Room Charges</div>
+                  <div class="right-area">
+                    <div class="inputs">
+                      <input
+                        type="text"
+                        appPositiveNumberPriceOnly
+                        [(ngModel)]="dataListPatientAccount.billingInfo.obsRoomCharges"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="data-row flex">
+                  <div class="left-txt">Obs. Time (hrs)</div>
+                  <div class="right-area">
+                    <div class="inputs">
+                      <input
+                        type="text"
+                        appPositiveNumberOnly
+                        [(ngModel)]="dataListPatientAccount.billingInfo.obsTime"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col col-md-4">
+            <div class="group">
+              <div class="form-area">
+                <div class="data-row flex">
+                  <div class="left-txt">Recov. Rm Charges</div>
+                  <div class="right-area">
+                    <div class="inputs">
+                      <input
+                        type="text"
+                        appPositiveNumberPriceOnly
+                        [(ngModel)]="dataListPatientAccount.billingInfo.recovRmCharges"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="data-row flex">
+                  <div class="left-txt">Recov. Time (hrs)</div>
+                  <div class="right-area">
+                    <div class="inputs">
+                      <input
+                        type="text"
+                        appPositiveNumberOnly
+                        [(ngModel)]="dataListPatientAccount.billingInfo.recovTime"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="data-row flex">
+                  <div class="left-txt">Rev Code Count</div>
+                  <div class="right-area">
+                    <div class="tool-inputs">
+                      <div class="inputs">
+                        <a href="javascript:;" class="btn-minu" (click)="clickMinuRevCodeCount()"> </a>
+                        <input
+                          type="text"
+                          appPositiveNumberOnly
+                          [(ngModel)]="dataListPatientAccount.billingInfo.revCodeCount"
+                        />
+                        <a href="javascript:;" class="btn-add" (click)="clickAddRevCodeCount()"> </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="data-row flex">
+                  <div class="left-txt">Cost/Service Center</div>
+                  <div class="right-area">
+                    <app-sd-base-dropdown
+                      [selectedOption]="dataListPatientAccount.billingInfo.costServiceCenter"
+                      [options]="dataListLookups['costServiceCenter']"
+                      [placeholder]="'Select'"
+                      (changeDropdown)="dataListPatientAccount.billingInfo.costServiceCenter = $event"
+                    >
+                    </app-sd-base-dropdown>
+                  </div>
+                </div>
+                <div class="data-row flex">
+                  <div class="left-txt">Non-Billable Charges</div>
+                  <div class="right-area">
+                    <div class="inputs">
+                      <input
+                        type="text"
+                        appPositiveNumberPriceOnly
+                        [(ngModel)]="dataListPatientAccount.billingInfo.nonBillableCharges"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="data-row flex">
+                  <div class="left-txt">Billing Status ID</div>
+                  <div class="right-area">
+                    <app-sd-base-dropdown
+                      [selectedOption]="dataListPatientAccount.billingInfo.billingStatusID"
+                      [options]="dataListLookups['billingStatusID']"
+                      [placeholder]="'Select'"
+                      (changeDropdown)="dataListPatientAccount.billingInfo.billingStatusID = $event"
+                    >
+                    </app-sd-base-dropdown>
+                  </div>
+                </div>
+                <div class="data-row flex">
+                  <div class="left-txt">Clinic Category ID</div>
+                  <div class="right-area">
+                    <app-sd-base-dropdown
+                      [selectedOption]="dataListPatientAccount.billingInfo.clinicCategoryID"
+                      [options]="dataListLookups['clinicCategoryID']"
+                      [placeholder]="'Select'"
+                      (changeDropdown)="dataListPatientAccount.billingInfo.clinicCategoryID = $event"
+                    >
+                    </app-sd-base-dropdown>
+                  </div>
+                </div>
+                <div class="data-row flex">
+                  <div class="left-txt">Facility Service ID</div>
+                  <div class="right-area">
+                    <app-sd-base-dropdown
+                      [selectedOption]="dataListPatientAccount.billingInfo.facilityServiceID"
+                      [options]="dataListLookups['facilityServiceID']"
+                      [placeholder]="'Select'"
+                      (changeDropdown)="dataListPatientAccount.billingInfo.facilityServiceID = $event"
+                    >
+                    </app-sd-base-dropdown>
+                  </div>
+                </div>
+                <div class="data-row flex">
+                  <div class="left-txt">Program Code ID</div>
+                  <div class="right-area">
+                    <app-sd-base-dropdown
+                      [selectedOption]="dataListPatientAccount.billingInfo.programCodeID"
+                      [options]="dataListLookups['programCodeID']"
+                      [placeholder]="'Select'"
+                      (changeDropdown)="dataListPatientAccount.billingInfo.programCodeID = $event"
+                    >
+                    </app-sd-base-dropdown>
+                  </div>
+                </div>
+                <div class="data-row flex">
+                  <div class="left-txt">Federal Tax ID</div>
+                  <div class="right-area">
+                    <div class="inputs">
+                      <input
+                        type="text"
+                        appPositiveNumberOnly
+                        [(ngModel)]="dataListPatientAccount.billingInfo.federalTaxID"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="data-row flex">
+                  <div class="left-txt">State MH Bed Days</div>
+                  <div class="right-area">
+                    <div class="tool-inputs">
+                      <div class="inputs">
+                        <a href="javascript:;" class="btn-minu" (click)="clickMinuStateMHBedDays()"> </a>
+                        <input
+                          type="text"
+                          appPositiveNumberOnly
+                          [(ngModel)]="dataListPatientAccount.billingInfo.stateMHBedDays"
+                        />
+                        <a href="javascript:;" class="btn-add" (click)="clickAddStateMHBedDays()"> </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-content tab-demographics-info" *ngIf="tabIndex === 1">
+      <div class="scroll-box">
+        <div class="group-wrap">
+          <div class="form-title">Patient</div>
+          <div class="row">
+            <div class="col col-md-4">
+              <div class="group">
+                <div class="form-area">
+                  <div class="data-row flex">
+                    <div class="left-txt">Last Name</div>
+                    <div class="right-area">
+                      <div class="inputs">
+                        <input type="text" [(ngModel)]="dataListPatientAccount.demographics.patient.lastName" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="data-row flex">
+                    <div class="left-txt flex-start">First Name</div>
+                    <div class="right-area">
+                      <div class="inputs">
+                        <input type="text" [(ngModel)]="dataListPatientAccount.demographics.patient.firstName" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="data-row flex">
+                    <div class="left-txt">MI</div>
+                    <div class="right-area">
+                      <div class="inputs w63">
+                        <input type="text" [(ngModel)]="dataListPatientAccount.demographics.patient.mi" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="data-row flex">
+                    <div class="left-txt">Suffix</div>
+                    <div class="right-area">
+                      <div class="inputs w63">
+                        <input type="text" [(ngModel)]="dataListPatientAccount.demographics.patient.suffix" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="data-row flex">
+                    <div class="left-txt flex-start">Address</div>
+                    <div class="right-area">
+                      <div class="textareas small">
+                        <textarea [(ngModel)]="dataListPatientAccount.demographics.patient.address"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col col-md-4">
+              <div class="group">
+                <div class="form-area">
+                  <div class="data-row flex">
+                    <div class="left-txt">Apt/Suite</div>
+                    <div class="right-area">
+                      <div class="inputs">
+                        <input type="text" [(ngModel)]="dataListPatientAccount.demographics.patient.aptSuite" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="data-row flex">
+                    <div class="left-txt">City</div>
+                    <div class="right-area">
+                      <div class="inputs">
+                        <input type="text" [(ngModel)]="dataListPatientAccount.demographics.patient.city" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="data-row flex">
+                    <div class="left-txt">State</div>
+                    <div class="right-area">
+                      <app-sd-base-dropdown
+                        [selectedOption]="dataListPatientAccount.demographics.patient.state"
+                        [options]="stateOptions"
+                        [placeholder]="'Select'"
+                        (changeDropdown)="dataListPatientAccount.demographics.patient.state = $event"
+                      >
+                      </app-sd-base-dropdown>
+                    </div>
+                  </div>
+                  <div class="data-row flex">
+                    <div class="left-txt">Zip</div>
+                    <div class="right-area">
+                      <div class="inputs w63">
+                        <input
+                          type="text"
+                          appPositiveNumberOnly
+                          [(ngModel)]="dataListPatientAccount.demographics.patient.zip"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="data-row flex">
+                    <div class="left-txt">SSN</div>
+                    <div class="right-area">
+                      <div class="inputs">
+                        <input type="text" [(ngModel)]="dataListPatientAccount.demographics.patient.ssn" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="data-row flex">
+                    <div class="left-txt">DOB</div>
+                    <div class="right-area">
+                      <div class="inputs date-inputs">
+                        <input
+                          type="text"
+                          readonly
+                          [(ngModel)]="dataListPatientAccount.demographics.patient.dob"
+                          ngbDatepicker
+                          #dobDate="ngbDatepicker"
+                          (click)="dobDate.toggle()"
+                        />
+                        <a href="javascript:;" class="icons btn-calender" (click)="dobDate.toggle()"> </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col col-md-4">
+              <div class="group">
+                <div class="form-area">
+                  <div class="data-row flex">
+                    <div class="left-txt">Age</div>
+                    <div class="right-area">
+                      <div class="inputs w63">
+                        <input
+                          type="text"
+                          appPositiveNumberOnly
+                          [(ngModel)]="dataListPatientAccount.demographics.patient.age"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="data-row flex">
+                    <div class="left-txt">Sex</div>
+                    <div class="right-area w100">
+                      <div class="three-radio">
+                        <div class="radio-wrap" *ngFor="let item of sexOptions; let i = index">
+                          <input
+                            type="radio"
+                            id="radio-sex-{{ i }}"
+                            name="sex"
+                            [value]="item"
+                            [(ngModel)]="dataListPatientAccount.demographics.patient.sex"
+                          />
+                          <label for="radio-sex-{{ i }}">{{ item }}</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="data-row flex">
+                    <div class="left-txt">Marital Status</div>
+                    <div class="right-area">
+                      <app-sd-base-dropdown
+                        [selectedOption]="dataListPatientAccount.demographics.patient.maritalStatus"
+                        [options]="maritalStatusDropdownOptions"
+                        [placeholder]="'Select'"
+                        (changeDropdown)="dataListPatientAccount.demographics.patient.maritalStatus = $event"
+                      >
+                      </app-sd-base-dropdown>
+                    </div>
+                  </div>
+                  <div class="data-row flex">
+                    <div class="left-txt">Employer</div>
+                    <div class="right-area">
+                      <app-sd-base-dropdown
+                        [selectedOption]="dataListPatientAccount.demographics.patient.employer"
+                        [options]="employerDropdownOptions"
+                        [placeholder]="'Select'"
+                        (changeDropdown)="dataListPatientAccount.demographics.patient.employer = $event"
+                      >
+                      </app-sd-base-dropdown>
+                    </div>
+                  </div>
+                  <div class="data-row flex">
+                    <div class="left-txt">Adult Peds Flag</div>
+                    <div class="right-area">
+                      <div class="inputs">
+                        <input type="text" [(ngModel)]="dataListPatientAccount.demographics.patient.adultPedsFlag" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="data-row flex">
+                    <div class="left-txt">Patient File ID</div>
+                    <div class="right-area">
+                      <div class="inputs">
+                        <input
+                          type="text"
+                          appPositiveNumberOnly
+                          [(ngModel)]="dataListPatientAccount.demographics.patient.patientFileID"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="group-wrap">
+          <div class="form-title">Responsible Party</div>
+          <div class="row">
+            <div class="col col-md-4">
+              <div class="group">
+                <div class="form-area">
+                  <div class="data-row flex">
+                    <div class="left-txt">Last Name</div>
+                    <div class="right-area">
+                      <div class="inputs">
+                        <input
+                          type="text"
+                          [(ngModel)]="dataListPatientAccount.demographics.responsibleParty.lastName"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="data-row flex">
+                    <div class="left-txt">First Name</div>
+                    <div class="right-area">
+                      <div class="inputs">
+                        <input
+                          type="text"
+                          [(ngModel)]="dataListPatientAccount.demographics.responsibleParty.firstName"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="data-row flex">
+                    <div class="left-txt">MI</div>
+                    <div class="right-area">
+                      <div class="inputs w63">
+                        <input type="text" [(ngModel)]="dataListPatientAccount.demographics.responsibleParty.mi" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col col-md-4">
+              <div class="group">
+                <div class="form-area">
+                  <div class="data-row flex">
+                    <div class="left-txt flex-start">Address Line 1</div>
+                    <div class="right-area">
+                      <div class="textareas small">
+                        <textarea [(ngModel)]="dataListPatientAccount.demographics.responsibleParty.addressLine1">
+                        </textarea>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="data-row flex">
+                    <div class="left-txt flex-start">Address Line 2</div>
+                    <div class="right-area">
+                      <div class="textareas small">
+                        <textarea [(ngModel)]="dataListPatientAccount.demographics.responsibleParty.addressLine2">
+                        </textarea>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col col-md-4">
+              <div class="group">
+                <div class="form-area">
+                  <div class="data-row flex">
+                    <div class="left-txt">City</div>
+                    <div class="right-area">
+                      <div class="inputs">
+                        <input type="text" [(ngModel)]="dataListPatientAccount.demographics.responsibleParty.city" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="data-row flex">
+                    <div class="left-txt flex-start">State</div>
+                    <div class="right-area">
+                      <app-sd-base-dropdown
+                        [selectedOption]="dataListPatientAccount.demographics.responsibleParty.state"
+                        [options]="stateOptions"
+                        [placeholder]="'Select'"
+                        (changeDropdown)="dataListPatientAccount.demographics.responsibleParty.state = $event"
+                      >
+                      </app-sd-base-dropdown>
+                    </div>
+                  </div>
+                  <div class="data-row flex">
+                    <div class="left-txt">Zip</div>
+                    <div class="right-area">
+                      <div class="inputs w63">
+                        <input
+                          type="text"
+                          appPositiveNumberOnly
+                          [(ngModel)]="dataListPatientAccount.demographics.responsibleParty.zip"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-content tab-Insured Info" *ngIf="tabIndex === 2">
+      <div class="scroll-box">
+        <div class="group-wrap">
+          <div class="row">
+            <div class="col col-md-4">
+              <div class="group">
+                <div class="form-area">
+                  <div class="data-row flex">
+                    <div class="left-txt">Subsriber ID</div>
+                    <div class="right-area">
+                      <div class="inputs">
+                        <input
+                          type="text"
+                          appPositiveNumberOnly
+                          [(ngModel)]="dataListPatientAccount.insuredInfo.subsriberID"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="data-row flex">
+                    <div class="left-txt flex-start">Claim Number</div>
+                    <div class="right-area">
+                      <div class="inputs">
+                        <input type="text" [(ngModel)]="dataListPatientAccount.insuredInfo.claimNumber" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="data-row flex">
+                    <div class="left-txt flex-start">Invoice ID</div>
+                    <div class="right-area">
+                      <div class="inputs">
+                        <input
+                          type="text"
+                          appPositiveNumberOnly
+                          [(ngModel)]="dataListPatientAccount.insuredInfo.invoiceID"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col col-md-4">
+              <div class="group">
+                <div class="form-area">
+                  <div class="data-row flex">
+                    <div class="left-txt">Insured Last Name</div>
+                    <div class="right-area">
+                      <div class="inputs">
+                        <input type="text" [(ngModel)]="dataListPatientAccount.insuredInfo.insuredLastName" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="data-row flex">
+                    <div class="left-txt">Insured First Name</div>
+                    <div class="right-area">
+                      <div class="inputs">
+                        <input type="text" [(ngModel)]="dataListPatientAccount.insuredInfo.insuredFirstName" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="data-row flex">
+                    <div class="left-txt">Insured Initial</div>
+                    <div class="right-area">
+                      <div class="inputs">
+                        <input type="text" [(ngModel)]="dataListPatientAccount.insuredInfo.insuredInitial" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col col-md-4">
+              <div class="group">
+                <div class="form-area">
+                  <div class="data-row flex">
+                    <div class="left-txt">Insured Group Name</div>
+                    <div class="right-area">
+                      <div class="inputs">
+                        <input type="text" [(ngModel)]="dataListPatientAccount.insuredInfo.insuredGroupName" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="data-row flex">
+                    <div class="left-txt">Relation of Insured</div>
+                    <div class="right-area">
+                      <div class="inputs">
+                        <input type="text" [(ngModel)]="dataListPatientAccount.insuredInfo.relationOfInsured" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="data-row flex">
+                    <div class="left-txt">Insured SSN</div>
+                    <div class="right-area">
+                      <div class="inputs">
+                        <input type="text" [(ngModel)]="dataListPatientAccount.insuredInfo.insuredSSN" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bottom-btns flex-end">
+      <a href="javascript:;" class="btn blue-links" (click)="closeModal(false)"> Close </a>
+      <a href="javascript:;" class="btn btn-blue" [class.disabled]="!isFormValid()" (click)="closeModal(true)">
+        Save
+      </a>
+    </div>
+  </div>
+</div>
+<!-- end .modal-windows-add-patient-account -->

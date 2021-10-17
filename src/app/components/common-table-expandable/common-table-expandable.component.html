@@ -1,0 +1,414 @@
+<div class="table-data">
+  <div class="table-wrap">
+    <div class="table-head">
+      <div class="row-th">
+        <div
+          class="col-th default-min-width"
+          [style.minWidth]="columnItem.columnWidth + 'px'"
+          [class.w94-percentage]="last"
+          *ngFor="let columnItem of header.fieldList; let columnIndex = index; let last = last"
+        >
+          <container-element [ngSwitch]="columnItem.hasCheckAll">
+            <ng-container *ngSwitchCase="true">
+              <div class="spacing" (click)="clickSort(columnItem.fieldName)">
+                <div class="checkbox-wrap blue-check">
+                  <input
+                    type="checkbox"
+                    id="check-all-{{ columnIndex }}"
+                    [(ngModel)]="checkAll"
+                    (click)="clickCheckAll()"
+                  />
+                  <label for="check-all-{{ columnIndex }}">
+                    {{ columnItem.fieldName }}
+                  </label>
+                </div>
+                <a
+                  href="javascript:;"
+                  class="btn-sort"
+                  [class.asc]="sortData.sortOrder === 'asc'"
+                  [class.desc]="sortData.sortOrder === 'desc'"
+                  *ngIf="sortData.sortColumn === columnItem.fieldName"
+                >
+                </a>
+              </div>
+            </ng-container>
+            <ng-container *ngSwitchCase="false">
+              <div class="spacing" (click)="clickSort(columnItem.fieldName)">
+                {{ columnItem.fieldName }}
+                <a
+                  href="javascript:;"
+                  class="btn-sort"
+                  [class.asc]="sortData.sortOrder === 'asc'"
+                  [class.desc]="sortData.sortOrder === 'desc'"
+                  *ngIf="sortData.sortColumn === columnItem.fieldName"
+                >
+                </a>
+                <div class="inputs" *ngIf="isShownFilter">
+                  <input type="text" placeholder="Find..." />
+                </div>
+              </div>
+            </ng-container>
+          </container-element>
+        </div>
+      </div>
+      <!-- end .row-th -->
+    </div>
+    <div
+      class="expend-wrap"
+      [class.active]="item.checked"
+      (click)="clickSingleSelection(rowIndex)"
+      *ngFor="let item of dataList; let rowIndex = index"
+      (clickOutside)="shownPopupIndex = -1"
+    >
+      <div class="row-td">
+        <div
+          class="col-td default-min-width"
+          [style.minWidth]="columnItem.columnWidth + 'px'"
+          [class.w94-percentage]="last"
+          *ngFor="let columnItem of item.fieldList; let columnIndex = index; let last = last"
+        >
+          <div class="spacing">
+            <container-element [ngSwitch]="header.fieldList[columnIndex].fieldType">
+              <ng-container *ngSwitchCase="'label-checkbox'">
+                <div class="spacing">
+                  <div class="checkbox-wrap" (click)="$event.stopPropagation()">
+                    <input
+                      type="checkbox"
+                      id="check-row-{{ rowIndex }}"
+                      [(ngModel)]="item.checked"
+                      (click)="clickSingleSelection(rowIndex)"
+                    />
+                    <label for="check-row-{{ rowIndex }}">{{ columnItem.fieldValue }}</label>
+                  </div>
+                </div>
+              </ng-container>
+
+              <ng-container *ngSwitchCase="'label-payment-status'">
+                <div class="spacing">
+                  <span
+                    class="status-txt"
+                    [class.red]="columnItem.fieldValue === 'Over Paid'"
+                    [class.green]="columnItem.fieldValue === 'Paid'"
+                  >
+                    {{ columnItem.fieldValue }}
+                  </span>
+                </div>
+              </ng-container>
+
+              <ng-container *ngSwitchCase="'label-audit-status'">
+                <div class="spacing">
+                  <span class="status-txt" [class.orange]="columnItem.fieldValue === 'Pending'">
+                    {{ columnItem.fieldValue }}
+                  </span>
+                </div>
+              </ng-container>
+
+              <ng-container *ngSwitchCase="'action-checkbox'">
+                <div class="spacing center">
+                  <div class="checkbox-wrap no-txt" (click)="$event.stopPropagation()">
+                    <input
+                      type="checkbox"
+                      id="check-row-{{ rowIndex }}"
+                      [(ngModel)]="columnItem.fieldValue"
+                      (click)="clickSingleCheck(rowIndex, columnIndex)"
+                    />
+                    <label for="check-row-{{ rowIndex }}">&nbsp;</label>
+                  </div>
+                </div>
+              </ng-container>
+
+              <ng-container *ngSwitchCase="'label-center'">
+                <div class="spacing align-center">
+                  {{ columnItem.fieldValue }}
+                </div>
+              </ng-container>
+
+              <ng-container *ngSwitchCase="'label-info-right'">
+                <div class="spacing align-right">
+                  {{ columnItem.fieldValue }}
+                  <a href="javascript:;" class="icons icon-info"></a>
+                </div>
+              </ng-container>
+
+              <ng-container *ngSwitchCase="'label-right'">
+                <div class="spacing align-right">
+                  {{ columnItem.fieldValue }}
+                </div>
+              </ng-container>
+
+              <ng-container *ngSwitchCase="'label-link'">
+                <a href="javascript:;" class="spacing">
+                  {{ columnItem.fieldValue }}
+                </a>
+              </ng-container>
+
+              <ng-container *ngSwitchCase="'label-expand-arrow'">
+                <div class="spacing">
+                  <a
+                    href="javascript:;"
+                    class="expand-icon"
+                    [class.expanded]="item.expanded"
+                    (click)="clickExpandArrow(rowIndex)"
+                    >&nbsp;</a
+                  >
+                  {{ columnItem.fieldValue }}
+                </div>
+              </ng-container>
+
+              <ng-container *ngSwitchCase="'label'">
+                <div class="spacing">
+                  {{ columnItem.fieldValue }}
+                </div>
+              </ng-container>
+
+              <ng-container *ngSwitchCase="'input-box'">
+                <div class="spacing">
+                  <div class="inputs">
+                    <input type="text" [(ngModel)]="columnItem.fieldValue" />
+                  </div>
+                </div>
+              </ng-container>
+
+              <ng-container *ngSwitchDefault>
+                <div class="spacing">
+                  {{ columnItem.fieldValue }}
+                </div>
+              </ng-container>
+            </container-element>
+          </div>
+        </div>
+      </div>
+      <div class="expend-panel" *ngIf="item.expandData && item.expanded">
+        <div class="expend-table" *ngIf="expandedType === 'ClaimsHistoryClaims'">
+          <div class="expend-row-th">
+            <div class="expend-col-th align-right w110">
+              <div class="spacing">Line #</div>
+            </div>
+            <div class="expend-col-th">
+              <div class="spacing">Service Date</div>
+            </div>
+            <div class="expend-col-th">
+              <div class="spacing">Rev</div>
+            </div>
+            <div class="expend-col-th">
+              <div class="spacing">HCPCS</div>
+            </div>
+            <div class="expend-col-th">
+              <div class="spacing">Mod</div>
+            </div>
+            <div class="expend-col-th">
+              <div class="spacing">Qty</div>
+            </div>
+            <div class="expend-col-th align-right">
+              <div class="spacing">Charges</div>
+            </div>
+            <div class="expend-col-th w20">
+              <div class="spacing">Non Covered Charges</div>
+            </div>
+          </div>
+          <div class="expend-row-td" *ngFor="let expandItem of item.expandData">
+            <div class="expend-col-td align-right w110">
+              <div class="spacing">{{ expandItem.fieldList[0].fieldValue }}</div>
+            </div>
+            <div class="expend-col-td">
+              <div class="spacing">{{ expandItem.fieldList[1].fieldValue }}</div>
+            </div>
+            <div class="expend-col-td">
+              <div class="spacing">{{ expandItem.fieldList[2].fieldValue }}</div>
+            </div>
+            <div class="expend-col-td">
+              <div class="spacing">{{ expandItem.fieldList[3].fieldValue }}</div>
+            </div>
+            <div class="expend-col-td">
+              <div class="spacing">{{ expandItem.fieldList[4].fieldValue }}</div>
+            </div>
+            <div class="expend-col-td">
+              <div class="spacing">{{ expandItem.fieldList[5].fieldValue }}</div>
+            </div>
+            <div class="expend-col-td align-right">
+              <div class="spacing">{{ expandItem.fieldList[6].fieldValue }}</div>
+            </div>
+            <div class="expend-col-td w20">
+              <div class="spacing">{{ expandItem.fieldList[7].fieldValue }}</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="expend-table" *ngIf="expandedType === 'ProfessionalClaims'">
+          <div class="expend-row-th">
+            <div class="expend-col-th align-right w110">
+              <div class="spacing">Line #</div>
+            </div>
+            <div class="expend-col-th">
+              <div class="spacing">Service Date</div>
+            </div>
+            <div class="expend-col-th">
+              <div class="spacing">HCPCS</div>
+            </div>
+            <div class="expend-col-th">
+              <div class="spacing">Mod</div>
+            </div>
+            <div class="expend-col-th">
+              <div class="spacing">Qty</div>
+            </div>
+            <div class="expend-col-th">
+              <div class="spacing">Charges</div>
+            </div>
+          </div>
+          <div class="expend-row-td" *ngFor="let expandItem of item.expandData">
+            <div class="expend-col-td align-right w110">
+              <div class="spacing">{{ expandItem.fieldList[0].fieldValue }}</div>
+            </div>
+            <div class="expend-col-td">
+              <div class="spacing">{{ expandItem.fieldList[1].fieldValue }}</div>
+            </div>
+            <div class="expend-col-td">
+              <div class="spacing">{{ expandItem.fieldList[2].fieldValue }}</div>
+            </div>
+            <div class="expend-col-td">
+              <div class="spacing">{{ expandItem.fieldList[3].fieldValue }}</div>
+            </div>
+            <div class="expend-col-td">
+              <div class="spacing">{{ expandItem.fieldList[4].fieldValue }}</div>
+            </div>
+            <div class="expend-col-td">
+              <div class="spacing">{{ expandItem.fieldList[5].fieldValue }}</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="expend-table" *ngIf="expandedType === 'ClaimsHistoryRemits'">
+          <div class="expend-row-th">
+            <div class="expend-col-th">
+              <div class="spacing pl60">Claim Adjustment Reason Code Details</div>
+            </div>
+            <div class="expend-col-th">
+              <div class="spacing">Remark Code Details</div>
+            </div>
+          </div>
+          <div class="expend-row-td" *ngFor="let expandItem of item.expandData">
+            <div class="expend-col-td">
+              <div class="spacing pl60">{{ expandItem.fieldList[0].fieldValue }}</div>
+            </div>
+            <div class="expend-col-td">
+              <div class="spacing flex-grid">
+                <div class="left-txt">
+                  {{ expandItem.fieldList[1].fieldValue }}
+                </div>
+                <a href="javascript:;" class="btn-print">
+                  <i class="icons icon-print"></i>
+                  <span class="txt"> Print image </span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="table-footer">
+      <div class="row-td" *ngIf="header.fieldList[0]?.footerContent !== ''">
+        <div class="col-td" *ngFor="let columnItem of header.fieldList; let columnIndex = index">
+          <div
+            class="spacing"
+            [class.align-right]="
+              columnItem.fieldType === 'label-right' ||
+              columnItem.fieldType === 'label-info-right' ||
+              columnItem.fieldType === 'label-info-right-payment-details-popup' ||
+              columnItem.fieldType === 'label-info-right-other-payer-popup'
+            "
+          >
+            <ng-container *ngIf="columnItem.footerContent === 'TOTAL'">
+              {{ columnItem.footerContent }}
+            </ng-container>
+
+            <ng-container *ngIf="columnItem.footerContent === 'currency'">
+              {{ getTotalValue(columnIndex, columnItem.footerContent) | currency }}
+            </ng-container>
+
+            <ng-container *ngIf="columnItem.footerContent === 'number'">
+              {{ getTotalValue(columnIndex, columnItem.footerContent) | number }}
+            </ng-container>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row-popup" *ngIf="popupToShow === 'revenue-cpt-popup' && shownPopupIndex === 0">
+    <div class="icon-txt-list">
+      <ul>
+        <li>
+          <a href="javascript:;" class="icon-txt">
+            <i class="icons icon-copy"></i>
+            <span class="txt"> Copy Cell Value </span>
+          </a>
+        </li>
+        <li>
+          <a href="javascript:;" class="icon-txt" (click)="clickFilter()">
+            <i class="icons icon-file-record"></i>
+            <span class="txt"> Filter Records </span>
+          </a>
+        </li>
+        <li>
+          <a href="javascript:;" class="icon-txt">
+            <i class="icons icon-restore"></i>
+            <span class="txt"> Restore Default Layout </span>
+          </a>
+        </li>
+      </ul>
+      <div class="line"></div>
+      <ul>
+        <li>
+          <a href="javascript:;" class="icon-txt">
+            <i class="icons icon-add"></i>
+            <span class="txt"> Add New </span>
+          </a>
+        </li>
+        <li>
+          <a href="javascript:;" class="icon-txt red" (click)="clickFilter()">
+            <i class="icons icon-del"></i>
+            <span class="txt"> Delete </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="row-popup" *ngIf="popupToShow === 'charge-code-popup' && shownPopupIndex === 0">
+    <div class="icon-txt-list">
+      <ul>
+        <li>
+          <a href="javascript:;" class="icon-txt">
+            <i class="icons icon-copy"></i>
+            <span class="txt"> Copy Cell Value </span>
+          </a>
+        </li>
+        <li>
+          <a href="javascript:;" class="icon-txt" (click)="clickFilter()">
+            <i class="icons icon-file-record"></i>
+            <span class="txt"> Filter Records </span>
+          </a>
+        </li>
+        <li>
+          <a href="javascript:;" class="icon-txt">
+            <i class="icons icon-restore"></i>
+            <span class="txt"> Restore Default Layout </span>
+          </a>
+        </li>
+      </ul>
+      <div class="line"></div>
+      <ul>
+        <li>
+          <a href="javascript:;" class="icon-txt">
+            <i class="icons icon-add"></i>
+            <span class="txt"> Add New </span>
+          </a>
+        </li>
+        <li>
+          <a href="javascript:;" class="icon-txt red" (click)="clickFilter()">
+            <i class="icons icon-del"></i>
+            <span class="txt"> Delete </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

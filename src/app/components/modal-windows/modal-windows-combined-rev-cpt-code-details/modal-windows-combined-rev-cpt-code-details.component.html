@@ -1,0 +1,239 @@
+<div class="modal-default modal-windows-combined-rev-cpt-code-details">
+  <div class="modal-mains">
+    <a href="javascript:;" class="btn-close" (click)="closeModal(false)"> </a>
+    <div class="title">Combined Rev/CPT Code Details</div>
+    <div class="contact-info-area">
+      <div class="scroll-box">
+        <div class="group-wrap">
+          <a href="javascript:;" class="form-title">Add/Edit Combined Rev/CPT Code Record</a>
+          <div class="row">
+            <div class="col col-md-4">
+              <div class="group">
+                <div class="form-area">
+                  <div class="data-row flex">
+                    <div class="left-txt">Revenue Code</div>
+                    <div class="right-area">
+                      <div class="inputs border-disabled">
+                        <input type="text" [(ngModel)]="dataListDetails.fieldList[0]['fieldValue']" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="data-row flex">
+                    <div class="left-txt flex-start">Description</div>
+                    <div class="right-area">
+                      <div class="textareas small disabled">
+                        <textarea [(ngModel)]="dataListDetails.fieldList[1]['fieldValue']"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="data-row flex">
+                    <div class="left-txt">Transaction ID</div>
+                    <div class="right-area">
+                      <div class="inputs border-disabled">
+                        <input type="text" [(ngModel)]="dataListDetails.fieldList[13]['fieldValue']" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="data-row flex">
+                    <div class="left-txt">CPT Code</div>
+                    <div class="right-area">
+                      <div class="inputs border-disabled">
+                        <input type="text" [(ngModel)]="dataListDetails.fieldList[2]['fieldValue']" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="data-row flex">
+                    <div class="left-txt flex-start">Description</div>
+                    <div class="right-area">
+                      <div class="textareas small disabled">
+                        <textarea [(ngModel)]="dataListDetails.fieldList[5]['fieldValue']"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="data-row flex">
+                    <div class="left-txt">Service Date</div>
+                    <div class="right-area">
+                      <div class="inputs date-inputs w110 border-disabled">
+                        <input type="text" readonly [(ngModel)]="dataListDetails.fieldList[6]['fieldValue']" />
+                        <a href="javascript:;" class="icons btn-calender"></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col col-md-4">
+              <div class="group">
+                <div class="form-area">
+                  <div class="data-row flex">
+                    <div class="left-txt">Modifier 1</div>
+                    <div class="right-area">
+                      <app-sd-base-dropdown
+                        [selectedOption]="
+                          dataListDetails.fieldList[3]['fieldValue'] === ''
+                            ? 'Select'
+                            : dataListDetails.fieldList[3]['fieldValue'] + ' - Total Component'
+                        "
+                        [options]="modifier"
+                        (changeDropdown)="dataListDetails.fieldList[3]['fieldValue'] = $event"
+                      >
+                      </app-sd-base-dropdown>
+                    </div>
+                  </div>
+                  <div class="data-row flex">
+                    <div class="left-txt">Modifier 2</div>
+                    <div class="right-area">
+                      <app-sd-base-dropdown
+                        [selectedOption]="
+                          dataListDetails.fieldList[4]['fieldValue'] === ''
+                            ? 'Select'
+                            : dataListDetails.fieldList[4]['fieldValue'] + ' - Total Component'
+                        "
+                        [options]="modifier"
+                        (changeDropdown)="dataListDetails.fieldList[4]['fieldValue'] = $event"
+                      >
+                      </app-sd-base-dropdown>
+                    </div>
+                  </div>
+                  <div class="data-row flex">
+                    <div class="left-txt">Service Type</div>
+                    <div class="right-area">
+                      <app-sd-base-dropdown
+                        [selectedOption]="
+                          dataListDetails.fieldList[14]['fieldValue'] === ''
+                            ? 'Select'
+                            : dataListDetails.fieldList[14]['fieldValue']
+                        "
+                        [options]="serviceTypeDropdownOptions"
+                        (changeDropdown)="dataListDetails.fieldList[14]['fieldValue'] = $event"
+                      >
+                      </app-sd-base-dropdown>
+                    </div>
+                  </div>
+                  <div class="data-row flex">
+                    <div class="left-txt">Physician ID</div>
+                    <div class="right-area">
+                      <div class="inputs">
+                        <input
+                          type="text"
+                          appPositiveNumberOnly
+                          [(ngModel)]="dataListDetails.fieldList[15]['fieldValue']"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="data-row flex">
+                    <div class="left-txt">Point of Service</div>
+                    <div class="right-area">
+                      <app-sd-base-dropdown
+                        [selectedOption]="
+                          dataListDetails.fieldList[16]['fieldValue'] === ''
+                            ? 'Select'
+                            : dataListDetails.fieldList[16]['fieldValue']
+                        "
+                        [options]="pointOfServiceDropdownOptions"
+                        (changeDropdown)="dataListDetails.fieldList[16]['fieldValue'] = $event"
+                      >
+                      </app-sd-base-dropdown>
+                    </div>
+                  </div>
+                  <div class="data-row flex">
+                    <div class="left-txt">Units</div>
+                    <div class="right-area">
+                      <div class="tool-inputs">
+                        <div class="inputs">
+                          <a href="javascript:;" class="btn-minu" (click)="clickMinuUnits()"> </a>
+                          <input
+                            type="text"
+                            appPositiveNumberOnly
+                            [(ngModel)]="dataListDetails.fieldList[7]['fieldValue']"
+                          />
+                          <a href="javascript:;" class="btn-add" (click)="clickAddUnits()"> </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col col-md-4">
+              <div class="group">
+                <div class="form-area">
+                  <div class="data-row flex">
+                    <div class="left-txt">Charges</div>
+                    <div class="right-area">
+                      <div class="inputs">
+                        <input
+                          type="text"
+                          appPositiveNumberPriceOnly
+                          [(ngModel)]="dataListDetails.fieldList[8]['fieldValue']"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="data-row flex">
+                    <div class="left-txt">Denied Charges</div>
+                    <div class="right-area">
+                      <div class="inputs">
+                        <input
+                          type="text"
+                          appPositiveNumberPriceOnly
+                          [(ngModel)]="dataListDetails.fieldList[9]['fieldValue']"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="data-row flex">
+                    <div class="left-txt">Non-Covered Charges</div>
+                    <div class="right-area">
+                      <div class="inputs">
+                        <input
+                          type="text"
+                          appPositiveNumberPriceOnly
+                          [(ngModel)]="dataListDetails.fieldList[10]['fieldValue']"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="data-row flex">
+                    <div class="left-txt">Non-Billed Charges</div>
+                    <div class="right-area">
+                      <div class="inputs">
+                        <input
+                          type="text"
+                          appPositiveNumberPriceOnly
+                          [(ngModel)]="dataListDetails.fieldList[11]['fieldValue']"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="data-row flex">
+                    <div class="left-txt">Cost</div>
+                    <div class="right-area">
+                      <div class="inputs">
+                        <input
+                          type="text"
+                          appPositiveNumberPriceOnly
+                          [(ngModel)]="dataListDetails.fieldList[12]['fieldValue']"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="bottom-btns flex-end">
+        <a href="javascript:;" class="btn blue-links" (click)="closeModal(false)"> Close </a>
+        <a href="javascript:;" class="btn btn-blue" [class.disabled]="!isFormValid()" (click)="closeModal(true)">
+          Save
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end .modal-windows-combined-rev-cpt-code-details -->

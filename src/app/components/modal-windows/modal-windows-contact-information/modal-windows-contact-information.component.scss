@@ -1,0 +1,115 @@
+@import '../../../../styles/variables';
+
+// .modal-windows-contact-information
+.modal-windows-contact-information {
+  .modal-mains {
+    width: 960px;
+    padding: 0;
+    .top-bar {
+      padding: 12px 70px 12px 28px;
+      .title {
+        color: #fff;
+      }
+      .right-page {
+        .btn-arrow {
+          width: 12px;
+          height: 12px;
+          display: inline-block;
+          vertical-align: middle;
+          &.btn-prev {
+            background: url(/assets/i/white-prev-arrow.svg) center center no-repeat;
+            background-size: 6px 11px;
+          }
+          &.btn-next {
+            background: url(/assets/i/white-next-arrow.svg) center center no-repeat;
+            background-size: 6px 11px;
+          }
+        }
+        .circle-num {
+          width: 24px;
+          height: 23px;
+          border: 1px solid rgba(255, 255, 255, 0.5);
+          border-radius: 100%;
+          display: inline-block;
+          vertical-align: middle;
+          text-align: center;
+          font-size: 12px;
+          font-weight: 400;
+          line-height: 23px;
+          color: #fff;
+          margin: 0 5px;
+        }
+      }
+    }
+    .group {
+    }
+    .btn-close {
+      background: url(/assets/i/white-close.svg) center center no-repeat;
+      background-size: 10px 10px;
+      top: 19px;
+      right: 19px;
+    }
+    .blue-bg {
+      background: #194d8d;
+      border-radius: 3px 3px 0 0;
+      .title {
+        margin-bottom: 0;
+      }
+    }
+    .group-wrap {
+      margin-bottom: 15px;
+    }
+    .inputs {
+      padding: 0 9px;
+      width: 140px;
+      &.disabled {
+        background: #f5f5f5;
+        border: 0;
+        input {
+          color: #999;
+        }
+      }
+    }
+    .dropdown-toggle {
+      width: 140px;
+    }
+    .right-area {
+      width: 140px;
+      &.w100 {
+        flex: 1;
+        margin-right: -16px;
+        width: 100%;
+      }
+      &.width-full {
+        margin-right: 30px;
+        width: 100%;
+      }
+    }
+    .scroll-box {
+      padding: 22px 28px 10px;
+      max-height: 542px;
+      overflow-y: auto;
+      min-height: 242px;
+    }
+    .form-title {
+      color: #2f4259;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 28px;
+      text-decoration: underline;
+      margin-bottom: 10px;
+      display: block;
+    }
+    .form-area {
+      .data-row {
+        margin-bottom: 16px;
+      }
+    }
+    .bottom-btns {
+      padding: 9px 31px;
+      box-shadow: 0 -1px 4px rgba(38, 44, 71, 0.16);
+      border-radius: 0 0 4px 4px;
+      background-color: #f8f8f8;
+    }
+  }
+}

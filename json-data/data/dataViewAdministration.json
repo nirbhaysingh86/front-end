@@ -1,0 +1,247 @@
+{
+  "dataViewAdministration": [
+    {
+      "id": 1,
+      "fieldList": [
+        {
+          "fieldType": "label",
+          "fieldName": "View Name",
+          "fieldValue": "My Last Quick Search",
+          "hasCheckAll": false,
+          "columnWidth": null,
+          "footerContent": ""
+        },
+        {
+          "fieldType": "label",
+          "fieldName": "View Description",
+          "fieldValue": "My Last Quick Search",
+          "hasCheckAll": false,
+          "columnWidth": null,
+          "footerContent": ""
+        },
+        {
+          "fieldType": "label",
+          "fieldName": "Auditor",
+          "fieldValue": "All Records",
+          "hasCheckAll": false,
+          "columnWidth": null,
+          "footerContent": ""
+        },
+        {
+          "fieldType": "label",
+          "fieldName": "Follow-Up",
+          "fieldValue": "All Records",
+          "hasCheckAll": false,
+          "columnWidth": null,
+          "footerContent": ""
+        },
+        {
+          "fieldType": "label",
+          "fieldName": "Status",
+          "fieldValue": "Exclude Closed",
+          "hasCheckAll": false,
+          "columnWidth": null,
+          "footerContent": ""
+        },
+        {
+          "fieldType": "label",
+          "fieldName": "Account Age",
+          "fieldValue": "Within 2 years",
+          "hasCheckAll": false,
+          "columnWidth": null,
+          "footerContent": ""
+        },
+        {
+          "fieldType": "label",
+          "fieldName": "Hidden Records",
+          "fieldValue": "Exclude",
+          "hasCheckAll": false,
+          "columnWidth": null,
+          "footerContent": ""
+        },
+        {
+          "fieldType": "action-checkbox",
+          "fieldName": "Default View",
+          "fieldValue": false,
+          "hasCheckAll": false,
+          "columnWidth": null,
+          "footerContent": ""
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "fieldList": [
+        {
+          "fieldValue": "Aetna Test"
+        },
+        {
+          "fieldValue": "Aetna Test"
+        },
+        {
+          "fieldValue": "All Records"
+        },
+        {
+          "fieldValue": "All Records"
+        },
+        {
+          "fieldValue": "Include All"
+        },
+        {
+          "fieldValue": "All Records"
+        },
+        {
+          "fieldValue": "Exclude"
+        },
+        {
+          "fieldValue": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "fieldList": [
+        {
+          "fieldValue": "Automated Variances 17 Apr 2019 105348993"
+        },
+        {
+          "fieldValue": "Automated Variances"
+        },
+        {
+          "fieldValue": "All Records"
+        },
+        {
+          "fieldValue": "All Records"
+        },
+        {
+          "fieldValue": "Include All"
+        },
+        {
+          "fieldValue": "All Records"
+        },
+        {
+          "fieldValue": "Exclude"
+        },
+        {
+          "fieldValue": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "fieldList": [
+        {
+          "fieldValue": "Denial by CAS - Billing Error 17 Apr 2019 105348840"
+        },
+        {
+          "fieldValue": "Denial by CAS"
+        },
+        {
+          "fieldValue": "All Records"
+        },
+        {
+          "fieldValue": "All Records"
+        },
+        {
+          "fieldValue": "Include All"
+        },
+        {
+          "fieldValue": "All Records"
+        },
+        {
+          "fieldValue": "Exclude"
+        },
+        {
+          "fieldValue": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "fieldList": [
+        {
+          "fieldValue": "Denial by CAS - Timely Filling 17 Apr 2019 105348823"
+        },
+        {
+          "fieldValue": "Denial by CAS - Timely Filling"
+        },
+        {
+          "fieldValue": "All Records"
+        },
+        {
+          "fieldValue": "All Records"
+        },
+        {
+          "fieldValue": "Include All"
+        },
+        {
+          "fieldValue": "All Records"
+        },
+        {
+          "fieldValue": "Exclude"
+        },
+        {
+          "fieldValue": false
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "fieldList": [
+        {
+          "fieldValue": "Denial by CAS - Medical Necessity 17 Apr 2019 105348760 "
+        },
+        {
+          "fieldValue": "Denial by CAS"
+        },
+        {
+          "fieldValue": "All Records"
+        },
+        {
+          "fieldValue": "All Records"
+        },
+        {
+          "fieldValue": "Include All"
+        },
+        {
+          "fieldValue": "All Records"
+        },
+        {
+          "fieldValue": "Exclude"
+        },
+        {
+          "fieldValue": false
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "fieldList": [
+        {
+          "fieldValue": "View"
+        },
+        {
+          "fieldValue": "View"
+        },
+        {
+          "fieldValue": "All Records"
+        },
+        {
+          "fieldValue": "All Records"
+        },
+        {
+          "fieldValue": "Include All"
+        },
+        {
+          "fieldValue": "All Records"
+        },
+        {
+          "fieldValue": "Exclude"
+        },
+        {
+          "fieldValue": false
+        }
+      ]
+    }
+  ]
+}

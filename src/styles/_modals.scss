@@ -1,0 +1,155 @@
+// .modal-default
+.modal-default {
+  background-color: rgba(20, 26, 34, 0.84);
+  position: fixed;
+  left: 0;
+  top: 0;
+  overflow-y: auto;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  .modal-mains {
+    margin: 100px auto;
+    width: 540px;
+    box-shadow: 0 2px 10px rgba(38, 44, 71, 0.16);
+    border-radius: 4px;
+    background-color: #ffffff;
+    padding: 13px 28px;
+    position: relative;
+    .btn-close {
+      position: absolute;
+      right: 15px;
+      top: 15px;
+      width: 16px;
+      height: 16px;
+      background: url(/assets/i/btn-close.svg) center center no-repeat;
+      background-size: 10px 10px;
+      display: inline-block;
+    }
+    .inputs {
+      height: 32px;
+      padding: 0 9px;
+      input {
+        font-size: 13px;
+      }
+      &.date-inputs {
+        width: 110px;
+      }
+    }
+    .textareas {
+      textarea {
+        font-size: 13px;
+        padding: 0;
+      }
+    }
+    .tool-inputs {
+      .inputs {
+        position: relative;
+        height: 32px;
+        padding: 0 32px;
+        .btn-minu,
+        .btn-add {
+          position: absolute;
+          top: 0;
+          width: 32px;
+          height: 32px;
+        }
+        input {
+          text-align: center;
+          padding: 0 20px;
+        }
+        .btn-minu {
+          background: url(/assets/i/btn-minu.svg) left center no-repeat;
+          background-size: 32px 32px;
+          left: 0;
+        }
+        .btn-add {
+          background: url(/assets/i/btn-add.svg) left center no-repeat;
+          background-size: 32px 32px;
+          right: 0;
+        }
+      }
+    }
+    .left-txt {
+      margin-right: 14px;
+      color: #2f4259;
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: -0.2px;
+      line-height: 17px;
+      max-width: 95px;
+      flex: 0 0 95px;
+      margin-right: 14px;
+      &.flex-start {
+        align-self: flex-start;
+      }
+    }
+    .btn-calender {
+      position: absolute;
+      right: 0;
+      height: 32px;
+      width: 32px;
+      top: 0;
+      background: url(/assets/i/icon-calendar.svg) center center no-repeat;
+      background-size: 15px 16px;
+    }
+    .title {
+      color: #131523;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 28px;
+      margin-bottom: 20px;
+    }
+    .label-txt {
+      color: #2f4259;
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: -0.2px;
+      line-height: 20px;
+      margin-bottom: 2px;
+    }
+    //.d-inline-block
+    ::ng-deep {
+      .d-inline-block {
+        display: block !important;
+        &.dropup,
+        &.dropdown {
+          display: block;
+          .btn.btn-outline-primary {
+            height: 32px;
+            &.dropdown-toggle {
+              &::after {
+                width: 32px;
+                height: 32px;
+              }
+            }
+          }
+        }
+      }
+    }
+    .bottom-btns {
+      display: flex;
+      .btn {
+        min-width: 87px;
+      }
+      .blue-links {
+        padding: 2px 5px;
+        min-width: 60px;
+      }
+
+      &.flex-end {
+        justify-content: flex-end;
+      }
+      &.pt-30 {
+        padding-top: 30px;
+      }
+      .btn-blue-border {
+        font-weight: 400;
+      }
+      .btn-blue {
+        margin-left: 10px;
+        font-weight: 400;
+      }
+    }
+  }
+}

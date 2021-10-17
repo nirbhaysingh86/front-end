@@ -1,0 +1,41 @@
+@import '../../../../styles/variables';
+
+// .modal-windows-confirm
+.modal-windows-confirm {
+  .modal-mains {
+    width: 460px;
+    .title {
+      margin-bottom: 0;
+    }
+    .group {
+      .confirmation-main {
+        min-height: 115px;
+        .icons {
+          width: 40px;
+          height: 40px;
+          margin-right: 16px;
+          &.icon-question {
+            background: url(/assets/i/icon-question.svg) left center no-repeat;
+            background-size: 40px 40px;
+          }
+        }
+        .txt {
+          color: #2f4259;
+          font-size: 14px;
+          font-weight: 400;
+          letter-spacing: -0.22px;
+          line-height: 20px;
+        }
+      }
+    }
+    .bottom-btns {
+      margin: 15px -28px -13px;
+      padding: 10px 30px;
+      border-radius: 4px;
+      background-color: #f8f8f8;
+      .btn {
+        min-width: 87px;
+      }
+    }
+  }
+}

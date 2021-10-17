@@ -1,0 +1,45 @@
+<div class="login-bg">
+  <div class="login-mains">
+    <div class="logo-top">
+      <div class="logo-img">
+        <img src="/assets/i/logo.svg" alt="svg" />
+      </div>
+      <div class="blue-txt">LogoName</div>
+    </div>
+    <div class="white-panel">
+      <div class="bold-title">Login</div>
+      <div class="form-area">
+        <div class="form-group">
+          <div class="label-txt" *ngIf="formData.username !== ''">Username</div>
+          <div class="inputs">
+            <input type="text" placeholder="Username" [(ngModel)]="formData.username" (keyup)="showError = false" />
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="label-txt" *ngIf="formData.password !== ''">Password</div>
+          <div class="inputs">
+            <input type="password" placeholder="Password" [(ngModel)]="formData.password" (keyup)="showError = false" />
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="label-txt" *ngIf="formData.serverName !== ''">Server Name</div>
+          <div class="inputs">
+            <input type="text" placeholder="Server Name" [(ngModel)]="formData.serverName" />
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="label-txt" *ngIf="formData.databaseName !== ''">Database Name</div>
+          <div class="inputs">
+            <input type="text" placeholder="Database Name" [(ngModel)]="formData.databaseName" />
+          </div>
+        </div>
+      </div>
+      <div class="error-txt" *ngIf="showError">Wrong username and password.</div>
+      <div class="bottom-btn">
+        <a href="javascript:;" class="btn btn-login" [class.disabled]="!isFormValid()" (click)="clickLogin()">
+          Log In
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

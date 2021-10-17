@@ -1,0 +1,51 @@
+{
+  "dataContactInformation": {
+    "insuranceInformation": {
+      "facilityName": "FacName_name",
+      "taxID": "AD-12031230",
+      "npi": "13-1321",
+      "payeeName": "John Doe",
+      "payerPhone": "",
+      "subscriberID": "32093021",
+      "insuredSSN": "",
+      "insuredGroupName": "GroupName"
+    },
+    "visitInformation": {
+      "patientName": "Theresa Reed",
+      "dateOfBirth": "05/29/1959",
+      "accountNumber": "13-1321",
+      "totalCharges": "$1500.00",
+      "insuredName": "John Doe",
+      "admitDate": "04/25/2021",
+      "dischargeDate": "04/29/2021",
+      "patientType": "32093021",
+      "medicalRecordNo": "",
+      "socialSecurityNo": "GroupName"
+    },
+    "recoveryInformation": {
+      "auditStatus": "Pending",
+      "reviewCateogry": "",
+      "varianceCategory": "13-1321",
+      "closedResult": "Pending",
+      "committedAmount": "",
+      "assignedReviewer": "Unassigned",
+      "auditor": "Unassigned",
+      "reviewReason": "",
+      "varCatSuggestion": "None",
+      "closedReason": "No Value",
+      "pursuingReason": "$0.00",
+      "follwUpDate": "",
+      "eventDate": "",
+      "startDate": "",
+      "agency": "",
+      "reviewStage": "No Value",
+      "argument": ""
+    },
+    "contactLog": {
+      "responsibility": "Payer 1",
+      "type": "Automated Variable",
+      "duration": "1",
+      "note": ""
+    }
+  }
+}

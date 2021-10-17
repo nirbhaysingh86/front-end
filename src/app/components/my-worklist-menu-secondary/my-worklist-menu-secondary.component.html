@@ -1,0 +1,120 @@
+<div class="table-top flex-grid">
+  <div class="lefts flex">
+    <div class="group">
+      <div class="label-txt">Auditor</div>
+      <app-sd-base-dropdown
+        [selectedOption]="selectedLimits.auditor"
+        [options]="viewLimitOptions.auditor"
+        [fieldName]="'description'"
+        (changeDropdown)="changeLimit('auditor', $event)"
+      >
+      </app-sd-base-dropdown>
+    </div>
+    <div class="group">
+      <div class="label-txt">Follow-Up</div>
+      <app-sd-base-dropdown
+        [selectedOption]="selectedLimits.followUp"
+        [options]="viewLimitOptions.followUp"
+        [fieldName]="'description'"
+        (changeDropdown)="changeLimit('followUp', $event)"
+      >
+      </app-sd-base-dropdown>
+    </div>
+    <div class="group">
+      <div class="label-txt">Status</div>
+      <app-sd-base-dropdown
+        [selectedOption]="selectedLimits.status"
+        [options]="viewLimitOptions.status"
+        [fieldName]="'description'"
+        (changeDropdown)="changeLimit('status', $event)"
+      >
+      </app-sd-base-dropdown>
+    </div>
+    <div class="group">
+      <div class="label-txt">Account Age</div>
+      <app-sd-base-dropdown
+        [selectedOption]="selectedLimits.accountAge"
+        [options]="viewLimitOptions.accountAge"
+        [fieldName]="'description'"
+        (changeDropdown)="changeLimit('accountAge', $event)"
+      >
+      </app-sd-base-dropdown>
+    </div>
+    <div class="group">
+      <div class="label-txt">Hidden Records</div>
+      <app-sd-base-dropdown
+        [selectedOption]="selectedLimits.hiddenRecords"
+        [options]="viewLimitOptions.hiddenRecords"
+        [fieldName]="'description'"
+        (changeDropdown)="changeLimit('hiddenRecords', $event)"
+      >
+      </app-sd-base-dropdown>
+    </div>
+  </div>
+  <div class="rights">
+    <div class="tip-module" [class.open]="isOpened" (clickOutside)="isOpened = false">
+      <a href="javascript:;" class="icons icon-manage" (click)="clickManageColumn(false)"> Manage Columns </a>
+      <div class="tip-panel">
+        <i class="top-trans"></i>
+        <div class="top-title">Manage Columns</div>
+        <div class="select-box">
+          <div class="gray-txt">Select a column configuration:</div>
+          <app-sd-base-dropdown
+            [className]="'height-dropdown'"
+            [selectedOption]="columnConfiguration"
+            [options]="dataListColumnSettings"
+            [fieldName]="'name'"
+            (changeDropdown)="columnConfiguration = $event"
+          >
+          </app-sd-base-dropdown>
+        </div>
+        <div class="select-show-list" *ngIf="columnConfiguration">
+          <div class="top-select flex-grid">
+            <div class="left-txt">Select a columns to show:</div>
+            <div class="right-links flex">
+              <a
+                href="javascript:;"
+                class="icons icon-top"
+                [class.disabled]="fieldSelectionIndex === -1 || fieldSelectionIndex === 0"
+                (click)="clickUpArrow()"
+              >
+              </a>
+              <a
+                href="javascript:;"
+                class="icons icon-down"
+                [class.disabled]="
+                  fieldSelectionIndex === -1 || fieldSelectionIndex === columnConfiguration.columns.length - 1
+                "
+                (click)="clickDownArrow()"
+              >
+              </a>
+            </div>
+          </div>
+          <div class="list-area">
+            <ul [sortablejs]="columnConfiguration.columns">
+              <li *ngFor="let columnItem of columnConfiguration.columns; let columnIndex = index">
+                <div
+                  class="items"
+                  [class.active]="fieldSelectionIndex === columnIndex"
+                  (click)="fieldSelectionIndex = fieldSelectionIndex === columnIndex ? -1 : columnIndex"
+                >
+                  <a href="javascript:;" class="icons btn-move" (click)="$event.stopPropagation()"> </a>
+                  <div class="checkbox-wrap blue-checkbox" (click)="$event.stopPropagation()">
+                    <input type="checkbox" id="check-column-{{ columnIndex }}" [(ngModel)]="columnItem.isVisible" />
+                    <label for="check-column-{{ columnIndex }}">
+                      {{ columnItem.fieldName }}
+                    </label>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="bottom-btns">
+            <a href="javascript:;" class="btn blue-links" (click)="clickManageColumn(false)"> Cancel </a>
+            <a href="javascript:;" class="btn btn-blue" (click)="clickManageColumn(true)"> Save </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

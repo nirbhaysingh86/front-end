@@ -1,0 +1,279 @@
+{
+  "dataMyWorklistResearchDetailReimbTab": [
+    {
+      "id": 1,
+      "fieldList": [
+        {
+          "fieldType": "label",
+          "fieldName": "Code Type",
+          "fieldValue": "CPT",
+          "hasCheckAll": false,
+          "columnWidth": 133,
+          "footerContent": "TOTAL"
+        },
+        {
+          "fieldType": "label",
+          "fieldName": "Service Type",
+          "fieldValue": "",
+          "hasCheckAll": false,
+          "columnWidth": 133,
+          "footerContent": ""
+        },
+        {
+          "fieldType": "label",
+          "fieldName": "Item",
+          "fieldValue": "36415",
+          "hasCheckAll": false,
+          "columnWidth": 133,
+          "footerContent": ""
+        },
+        {
+          "fieldType": "label",
+          "fieldName": "Service Pay/Group",
+          "fieldValue": "Lab Services",
+          "hasCheckAll": false,
+          "columnWidth": 133,
+          "footerContent": ""
+        },
+        {
+          "fieldType": "label",
+          "fieldName": "Service Date",
+          "fieldValue": "03/10/2021",
+          "hasCheckAll": false,
+          "columnWidth": 133,
+          "footerContent": ""
+        },
+        {
+          "fieldType": "label-right",
+          "fieldName": "Adjusted Charges",
+          "fieldValue": "$10.00",
+          "hasCheckAll": false,
+          "columnWidth": 133,
+          "footerContent": "currency"
+        },
+        {
+          "fieldType": "label",
+          "fieldName": "Units",
+          "fieldValue": "1",
+          "hasCheckAll": false,
+          "columnWidth": 133,
+          "footerContent": ""
+        },
+        {
+          "fieldType": "label",
+          "fieldName": "Reimb Method",
+          "fieldValue": "",
+          "hasCheckAll": false,
+          "columnWidth": 133,
+          "footerContent": ""
+        },
+        {
+          "fieldType": "label",
+          "fieldName": "PPC",
+          "fieldValue": "",
+          "hasCheckAll": false,
+          "columnWidth": 133,
+          "footerContent": ""
+        },
+        {
+          "fieldType": "label",
+          "fieldName": "Rate",
+          "fieldValue": "",
+          "hasCheckAll": false,
+          "columnWidth": 133,
+          "footerContent": ""
+        },
+        {
+          "fieldType": "label-right",
+          "fieldName": "Std Expected Reimbursement",
+          "fieldValue": "$30.00",
+          "hasCheckAll": false,
+          "columnWidth": 133,
+          "footerContent": "currency"
+        },
+        {
+          "fieldType": "label-right",
+          "fieldName": "Terms Differential",
+          "fieldValue": "$0.00",
+          "hasCheckAll": false,
+          "columnWidth": 133,
+          "footerContent": "currency"
+        },
+        {
+          "fieldType": "label-right",
+          "fieldName": "Column 1",
+          "fieldValue": "",
+          "hasCheckAll": false,
+          "columnWidth": 133,
+          "footerContent": ""
+        },
+        {
+          "fieldType": "label-right",
+          "fieldName": "Column 2",
+          "fieldValue": "",
+          "hasCheckAll": false,
+          "columnWidth": 133,
+          "footerContent": ""
+        },
+        {
+          "fieldType": "label-right",
+          "fieldName": "Column 3",
+          "fieldValue": "",
+          "hasCheckAll": false,
+          "columnWidth": 133,
+          "footerContent": ""
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "fieldList": [
+        {
+          "fieldValue": "CPT"
+        },
+        {
+          "fieldValue": ""
+        },
+        {
+          "fieldValue": "2399"
+        },
+        {
+          "fieldValue": "Lab Services"
+        },
+        {
+          "fieldValue": "03/10/2021"
+        },
+        {
+          "fieldValue": "$10.00"
+        },
+        {
+          "fieldValue": "1"
+        },
+        {
+          "fieldValue": ""
+        },
+        {
+          "fieldValue": ""
+        },
+        {
+          "fieldValue": ""
+        },
+        {
+          "fieldValue": "$30.00"
+        },
+        {
+          "fieldValue": "$0.00"
+        },
+        {
+          "fieldValue": ""
+        },
+        {
+          "fieldValue": ""
+        },
+        {
+          "fieldValue": ""
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "fieldList": [
+        {
+          "fieldValue": "CPT"
+        },
+        {
+          "fieldValue": ""
+        },
+        {
+          "fieldValue": "23213"
+        },
+        {
+          "fieldValue": "Lab Services"
+        },
+        {
+          "fieldValue": "03/10/2021"
+        },
+        {
+          "fieldValue": "$10.00"
+        },
+        {
+          "fieldValue": "1"
+        },
+        {
+          "fieldValue": ""
+        },
+        {
+          "fieldValue": ""
+        },
+        {
+          "fieldValue": ""
+        },
+        {
+          "fieldValue": "$30.00"
+        },
+        {
+          "fieldValue": "$0.00"
+        },
+        {
+          "fieldValue": ""
+        },
+        {
+          "fieldValue": ""
+        },
+        {
+          "fieldValue": ""
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "fieldList": [
+        {
+          "fieldValue": "CPT"
+        },
+        {
+          "fieldValue": ""
+        },
+        {
+          "fieldValue": "12312"
+        },
+        {
+          "fieldValue": "Lab Services"
+        },
+        {
+          "fieldValue": "03/10/2021"
+        },
+        {
+          "fieldValue": "$10.00"
+        },
+        {
+          "fieldValue": "1"
+        },
+        {
+          "fieldValue": ""
+        },
+        {
+          "fieldValue": ""
+        },
+        {
+          "fieldValue": ""
+        },
+        {
+          "fieldValue": "$30.00"
+        },
+        {
+          "fieldValue": "$0.00"
+        },
+        {
+          "fieldValue": ""
+        },
+        {
+          "fieldValue": ""
+        },
+        {
+          "fieldValue": ""
+        }
+      ]
+    }
+  ]
+}

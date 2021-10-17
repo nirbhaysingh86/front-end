@@ -1,0 +1,100 @@
+@import '../../../../styles/variables';
+
+// .modal-windows-payment-detail
+.modal-windows-payment-detail {
+  .modal-mains {
+    padding: 0;
+    width: 960px;
+    .title {
+      padding: 13px 28px;
+      margin-bottom: 0;
+    }
+    .btn-close {
+      top: 19px;
+      right: 19px;
+    }
+    .top-tools {
+      box-shadow: 0 1px 4px rgba(21, 34, 50, 0.08);
+      border: 1px solid #e9e9e9;
+      background-color: #ffffff;
+      height: 51px;
+      padding: 4px 27px;
+      .icon-txt {
+        margin-right: 24px;
+        display: flex;
+        align-items: center;
+        color: #404040;
+        font-size: 14px;
+        font-weight: 400;
+        &.disabled {
+          opacity: 0.6;
+          cursor: default;
+        }
+      }
+      .icons {
+        width: 16px;
+        height: 16px;
+        margin-right: 3px;
+      }
+      .icon-filter {
+        background: url(/assets/i/filter-dark.svg) center center no-repeat;
+        background-size: 12px 12px;
+      }
+      .icon-group {
+        background: url(/assets/i/group.svg) center center no-repeat;
+        background-size: 16px 16px;
+      }
+      .icon-new {
+        background: url(/assets/i/new.svg) center center no-repeat;
+        background-size: 16px 16px;
+      }
+      .icon-edit {
+        background: url(/assets/i/edit-two.svg) center center no-repeat;
+        background-size: 16px 16px;
+      }
+      .icon-delete {
+        background: url(/assets/i/delete.svg) center center no-repeat;
+        background-size: 16px 16px;
+      }
+      .icon-help {
+        background: url(/assets/i/help-dark.svg) center center no-repeat;
+        background-size: 16px 16px;
+      }
+      .dropdown-area {
+        margin-right: 20px;
+        .txt {
+          color: #526f93;
+          font-size: 12px;
+          font-weight: 600;
+          line-height: 20px;
+          margin-right: 18px;
+        }
+        .dropdown {
+          width: 108px;
+          ::ng-deep {
+            .d-inline-block.dropup .btn.btn-outline-primary,
+            .d-inline-block.dropdown .btn.btn-outline-primary {
+              font-size: 12px;
+              padding: 0 32px 0 9px;
+              min-width: auto;
+            }
+          }
+        }
+      }
+    }
+    .form-area {
+      .data-row {
+        margin-bottom: 16px;
+      }
+    }
+    .table-area {
+      ::ng-deep {
+        .table-data {
+          // overflow-y: auto;
+          // max-height: 360px;
+          // height: 360px;
+        }
+      }
+    }
+  }
+}

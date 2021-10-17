@@ -1,0 +1,241 @@
+{
+  "dataMyWorklistResearchPaymentAdjustmentsTab": [
+    {
+      "id": 1,
+      "fieldList": [
+        {
+          "fieldType": "label-center",
+          "fieldName": "Paid By",
+          "fieldValue": "Patient",
+          "hasCheckAll": false,
+          "columnWidth": 143,
+          "footerContent": "TOTAL"
+        },
+        {
+          "fieldType": "label",
+          "fieldName": "PayerID",
+          "fieldValue": "N/A",
+          "hasCheckAll": false,
+          "columnWidth": 143,
+          "footerContent": ""
+        },
+        {
+          "fieldType": "label",
+          "fieldName": "Payer Name",
+          "fieldValue": "N/A ",
+          "hasCheckAll": false,
+          "columnWidth": 143,
+          "footerContent": ""
+        },
+        {
+          "fieldType": "label",
+          "fieldName": "Contract Name",
+          "fieldValue": "N/A ",
+          "hasCheckAll": false,
+          "columnWidth": 229,
+          "footerContent": ""
+        },
+        {
+          "fieldType": "label",
+          "fieldName": "Payment Date",
+          "fieldValue": "3/21/2017",
+          "hasCheckAll": false,
+          "columnWidth": 143,
+          "footerContent": ""
+        },
+        {
+          "fieldType": "label-info-right-payment-details-popup",
+          "fieldName": "Est Pay/Allowable",
+          "fieldValue": "$0.00",
+          "hasCheckAll": false,
+          "columnWidth": 143,
+          "footerContent": "currency"
+        },
+        {
+          "fieldType": "label-info-right-other-payer-popup",
+          "fieldName": "Actual Payment",
+          "fieldValue": "$1,188.00",
+          "hasCheckAll": false,
+          "columnWidth": 143,
+          "footerContent": "currency"
+        },
+        {
+          "fieldType": "label-right",
+          "fieldName": "Write-Off",
+          "fieldValue": "$0.00",
+          "hasCheckAll": false,
+          "columnWidth": 197,
+          "footerContent": "currency"
+        },
+        {
+          "fieldType": "label-right",
+          "fieldName": "Balance Due",
+          "fieldValue": "($1,188.00)",
+          "hasCheckAll": false,
+          "columnWidth": 133,
+          "footerContent": "currency"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "fieldList": [
+        {
+          "fieldValue": "Payer 1"
+        },
+        {
+          "fieldValue": "M235"
+        },
+        {
+          "fieldValue": "MCARE MEDICARE"
+        },
+        {
+          "fieldValue": "Medicare off 2016/01/01"
+        },
+        {
+          "fieldValue": "9/20/2016"
+        },
+        {
+          "fieldValue": "$8,162.90"
+        },
+        {
+          "fieldValue": "$8,105.73"
+        },
+        {
+          "fieldValue": "$0.00"
+        },
+        {
+          "fieldValue": "$57.17"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "fieldList": [
+        {
+          "fieldValue": "Payer 2"
+        },
+        {
+          "fieldValue": "211"
+        },
+        {
+          "fieldValue": "SELF PAY AFTER MIKE"
+        },
+        {
+          "fieldValue": "Medicare - Self Pay"
+        },
+        {
+          "fieldValue": ""
+        },
+        {
+          "fieldValue": "$1,288.00"
+        },
+        {
+          "fieldValue": "$0.00"
+        },
+        {
+          "fieldValue": "$0.00"
+        },
+        {
+          "fieldValue": "$1,288.00"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "fieldList": [
+        {
+          "fieldValue": "Payer 3"
+        },
+        {
+          "fieldValue": "A103"
+        },
+        {
+          "fieldValue": "SELF PAY AFTER INTER"
+        },
+        {
+          "fieldValue": "cash"
+        },
+        {
+          "fieldValue": ""
+        },
+        {
+          "fieldValue": "$0.00"
+        },
+        {
+          "fieldValue": "$0.00"
+        },
+        {
+          "fieldValue": "$0.00"
+        },
+        {
+          "fieldValue": "$0.00"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "fieldList": [
+        {
+          "fieldValue": "Payer 4"
+        },
+        {
+          "fieldValue": "N/A"
+        },
+        {
+          "fieldValue": "N/A"
+        },
+        {
+          "fieldValue": "N/A"
+        },
+        {
+          "fieldValue": ""
+        },
+        {
+          "fieldValue": "$0.00"
+        },
+        {
+          "fieldValue": "$0.00"
+        },
+        {
+          "fieldValue": "$0.00"
+        },
+        {
+          "fieldValue": "$0.00"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "fieldList": [
+        {
+          "fieldValue": "Other Payers"
+        },
+        {
+          "fieldValue": "N/A"
+        },
+        {
+          "fieldValue": "N/A"
+        },
+        {
+          "fieldValue": "N/A"
+        },
+        {
+          "fieldValue": "5/31/2017"
+        },
+        {
+          "fieldValue": ""
+        },
+        {
+          "fieldValue": "$100.00"
+        },
+        {
+          "fieldValue": ""
+        },
+        {
+          "fieldValue": "($100.00)"
+        }
+      ]
+    }
+  ]
+}

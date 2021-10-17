@@ -1,0 +1,41 @@
+<div class="modal-default modal-windows-add-revenue-cpt">
+  <div class="modal-mains">
+    <a href="javascript:;" class="btn-close" (click)="closeModal(false)"> </a>
+    <div class="title">Add Revenue/CPT</div>
+    <div class="group">
+      <div class="form-area">
+        <div class="data-row">
+          <div class="label-txt">Revenue/CPT Code</div>
+          <div class="search-wrap open">
+            <div class="search-inputs inputs">
+              <input
+                type="text"
+                appPositiveNumberOnly
+                placeholder="Search..."
+                (keyup)="isTyping = true"
+                [(ngModel)]="formData.name"
+              />
+              <span class="icons btn-search"></span>
+            </div>
+            <div class="search-auto" *ngIf="isTyping && isFormValid()">
+              <ul>
+                <li [class.hide]="!isShownOption(item)" *ngFor="let item of revenueCPTCode; let i = index">
+                  <a href="javascript:;" class="select-item" (click)="formData.name = item; isTyping = false">
+                    {{ item }}
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="bottom-btns flex-end">
+          <a href="javascript:;" class="btn blue-links" (click)="closeModal(false)"> Close </a>
+          <a href="javascript:;" class="btn btn-blue" [class.disabled]="!isFormValid()" (click)="closeModal(true)">
+            Add
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end .modal-windows-add-revenue-cpt -->

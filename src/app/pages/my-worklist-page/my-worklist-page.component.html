@@ -1,0 +1,123 @@
+<div class="content" [class.open-left]="!menuCollapsed">
+  <app-sd-left-sidebar [menuCollapsed]="menuCollapsed"> </app-sd-left-sidebar>
+
+  <app-sd-my-worklist-menu
+    [menuCollapsed]="menuCollapsed"
+    [hasSelectedAccounts]="!!selectedRow"
+    [isShownResearch]="isShownResearch"
+    (clickMenu)="clickMenu()"
+    (toggleResearch)="isShownResearch = !isShownResearch"
+    (clickMenuOptions)="clickMenuOptions($event)"
+    (clickLogout)="clickLogout()"
+    [viewOptions]="viewOptions"
+    [selectedView]="selectedView"
+    (selectedViewChange)="onViewChange($event)"
+    [layoutOptions]="layoutOptions"
+    [selectedLayout]="selectedLayout"
+    (selectedLayoutChange)="onLayoutChange($event)"
+    (createLayout)="showLayoutDetailsModal()"
+    (editLayout)="editLayout()"
+    (setDefaultLayout)="setDefaultLayout()"
+    (deleteLayout)="showDeleteLayoutConfirm()"
+  >
+  </app-sd-my-worklist-menu>
+
+  <app-sd-my-worklist-menu-secondary
+    [viewLimitOptions]="viewLimitOptions"
+    [selectedLimits]="selectedLimits"
+    (selectedLimitsChange)="onLimitsChange($event)"
+    [dataListColumnSettings]="layoutOptions"
+    [selectedLayout]="selectedLayout"
+    (clickSaveColumnSettings)="clickSaveColumnSettings($event)"
+    *ngIf="layoutOptions.length > 0"
+  >
+  </app-sd-my-worklist-menu-secondary>
+
+  <div class="padding-main">
+    <div style="width: 100%; height: 1100px">
+      <as-split direction="vertical">
+        <as-split-area [minSize]="20" [size]="72">
+          <app-sd-common-table
+            [dataList]="dataListShown"
+            [sortData]="sortData"
+            [sortable]="true"
+            [hasWidthSetting]="true"
+            [header]="worklistTableHeader"
+            (changeSort)="changeSort($event)"
+            (clickRow)="toggleRow($event)"
+            *ngIf="dataListShown.length"
+          >
+          </app-sd-common-table>
+
+          <app-sd-pagination
+            [pagePerNumberDropdownOptions]="pagePerNumberDropdownOptions"
+            [pageData]="pageData"
+            (changePagination)="changePagination($event)"
+            *ngIf="dataListShown.length"
+          >
+          </app-sd-pagination>
+        </as-split-area>
+        <as-split-area [visible]="isShownResearch && !!selectedRow" [minSize]="20" [size]="28">
+          <app-sd-my-worklist-research
+            [researchTabIndex]="researchTabIndex"
+            [dataListLookups]="dataListLookups"
+            [data]="researchData"
+            [selectedOrginRow]="selectedRow"
+            (clickTab)="researchTabIndex = $event; loadResearch()"
+            (saveChargeCodeDetails)="saveChargeCodeDetails($event)"
+            (saveContactInfo)="saveContactInfo($event)"
+            (removeChargeCodeDetails)="removeChargeCodeDetails($event)"
+            *ngIf="isShownResearch && !!selectedRow && !collapsedDraggableLine"
+          >
+          </app-sd-my-worklist-research>
+        </as-split-area>
+      </as-split>
+    </div>
+
+    <app-sd-draggable-line
+      [collapsedDraggableLine]="collapsedDraggableLine"
+      (clickDraggableLine)="clickDraggableLine()"
+      *ngIf="isShownResearch && !!selectedRow && false"
+    >
+    </app-sd-draggable-line>
+  </div>
+</div>
+
+<app-sd-modal-windows-create-simulator-dataset
+  *ngIf="modalData['name'] === 'modal-windows-create-simulator-dataset'"
+  [modalData]="modalData"
+  (closeModalWindow)="closeModalWindow($event, 'modal-windows-create-simulator-dataset')"
+>
+</app-sd-modal-windows-create-simulator-dataset>
+
+<app-sd-modal-windows-add-patient-account
+  *ngIf="modalData['name'] === 'modal-windows-add-patient-account'"
+  [modalData]="modalData"
+  (closeModalWindow)="closeModalWindow($event, 'modal-windows-add-patient-account')"
+>
+</app-sd-modal-windows-add-patient-account>
+
+<app-sd-modal-windows-contact-information
+  *ngIf="modalData['name'] === 'modal-windows-contact-information'"
+  [modalData]="modalData"
+  (closeModalWindow)="closeModalWindow($event, 'modal-windows-contact-information')"
+>
+</app-sd-modal-windows-contact-information>
+
+<app-sd-modal-windows-confirm
+  *ngIf="modalData['name'] === 'modal-windows-confirm'"
+  [modalData]="modalData"
+  [confirmModalData]="confirmModalData"
+  (closeModalWindow)="closeModalWindow($event, 'modal-windows-confirm')"
+>
+</app-sd-modal-windows-confirm>
+<app-sd-modal-windows-edit-layout
+  *ngIf="modalData['name'] === 'modal-windows-edit-layout'"
+  [modalData]="modalData"
+  [allColumns]="allColumnsConfig"
+  [initialValue]="layoutToEdit"
+  (clickSaveLayout)="saveLayout($event)"
+  (closeModalWindow)="closeModalWindow($event, 'modal-windows-edit-layout')"
+>
+</app-sd-modal-windows-edit-layout>
+<app-sd-spinner *ngIf="spinnerService.loading"></app-sd-spinner>

@@ -1,0 +1,13 @@
+<div class="eor-contents">
+  <div class="blue-title">Explanation fo Reimbursement</div>
+  <div *ngFor="let data of dataList">
+    <div class="blue-box" *ngFor="let field of data.fieldList">
+      <div  *ngFor="let txt of field.fieldValue.split('\n\n');let textIndex=index">
+        <div class="date" *ngIf="textIndex==1">{{txt}}</div>
+        <p class="txt"  *ngIf="textIndex!=1">
+          {{txt}}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,187 @@
+<div class="modal-default modal-windows-charge-code-details">
+  <div class="modal-mains">
+    <a href="javascript:;" class="btn-close" (click)="closeModal(false)"> </a>
+    <div class="title">Charge Code Details</div>
+    <div class="contact-info-area">
+      <div class="scroll-box">
+        <div class="group-wrap">
+          <a href="javascript:;" class="form-title">Add/Edit Charge Code</a>
+          <div class="row">
+            <div class="col col-md-6">
+              <div class="group">
+                <div class="form-area">
+                  <div class="data-row flex">
+                    <div class="left-txt">Charge Code</div>
+                    <div class="right-area">
+                      <div class="inputs">
+                        <input
+                          type="text"
+                          appPositiveNumberOnly
+                          [(ngModel)]="dataListDetails.fieldList[0]['fieldValue']"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="data-row flex">
+                    <div class="left-txt">Revenue Code</div>
+                    <div class="right-area">
+                      <div class="inputs">
+                        <input
+                          type="text"
+                          appPositiveNumberOnly
+                          [(ngModel)]="dataListDetails.fieldList[4]['fieldValue']"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="data-row flex">
+                    <div class="left-txt">Denied Charges</div>
+                    <div class="right-area">
+                      <div class="inputs">
+                        <input
+                          type="text"
+                          appPositiveNumberPriceOnly
+                          [(ngModel)]="dataListDetails.fieldList[7]['fieldValue']"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="data-row flex">
+                    <div class="left-txt flex-start">Description</div>
+                    <div class="right-area">
+                      <div class="textareas small">
+                        <textarea [(ngModel)]="dataListDetails.fieldList[1]['fieldValue']"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="data-row flex">
+                    <div class="left-txt">CPT Code</div>
+                    <div class="right-area">
+                      <div class="inputs">
+                        <input
+                          type="text"
+                          appPositiveNumberOnly
+                          [(ngModel)]="dataListDetails.fieldList[11]['fieldValue']"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="data-row flex">
+                    <div class="left-txt">Non-Cover Charges</div>
+                    <div class="right-area">
+                      <div class="inputs">
+                        <input
+                          type="text"
+                          appPositiveNumberPriceOnly
+                          [(ngModel)]="dataListDetails.fieldList[8]['fieldValue']"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col col-md-6">
+              <div class="group">
+                <div class="form-area">
+                  <div class="data-row flex">
+                    <div class="left-txt">Transaction Id</div>
+                    <div class="right-area">
+                      <div class="inputs">
+                        <input
+                          type="text"
+                          appPositiveNumberOnly
+                          [(ngModel)]="dataListDetails.fieldList[2]['fieldValue']"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="data-row flex">
+                    <div class="left-txt">Units</div>
+                    <div class="right-area">
+                      <div class="tool-inputs">
+                        <div class="inputs">
+                          <a href="javascript:;" class="btn-minu" (click)="clickMinuUnits()"></a>
+                          <input
+                            type="text"
+                            appPositiveNumberOnly
+                            [(ngModel)]="dataListDetails.fieldList[5]['fieldValue']"
+                          />
+                          <a href="javascript:;" class="btn-add" (click)="clickAddUnits()"> </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="data-row flex">
+                    <div class="left-txt">Non-Bill Charges</div>
+                    <div class="right-area">
+                      <div class="inputs">
+                        <input
+                          type="text"
+                          mask="separator"
+                          thousandSeparator=","
+                          prefix="$"
+                          [(ngModel)]="dataListDetails.fieldList[10]['fieldValue']"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="data-row flex">
+                    <div class="left-txt">Service Date</div>
+                    <div class="right-area">
+                      <div class="inputs date-inputs">
+                        <input
+                          type="text"
+                          readonly
+                          [(ngModel)]="serviceDateValue"
+                          (dateSelect)="dateSelect()"
+                          ngbDatepicker
+                          #serviceDate="ngbDatepicker"
+                          (click)="serviceDate.toggle()"
+                        />
+                        <a href="javascript:;" class="icons btn-calender" (click)="serviceDate.toggle()"></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="data-row flex">
+                    <div class="left-txt">Charges</div>
+                    <div class="right-area">
+                      <div class="inputs">
+                        <input
+                          type="text"
+                          appPositiveNumberPriceOnly
+                          [(ngModel)]="dataListDetails.fieldList[6]['fieldValue']"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="data-row flex">
+                    <div class="left-txt">Cost</div>
+                    <div class="right-area">
+                      <div class="inputs">
+                        <input
+                          type="text"
+                          appPositiveNumberPriceOnly
+                          [(ngModel)]="dataListDetails.fieldList[9]['fieldValue']"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="bottom-btns flex-end">
+        <a href="javascript:;" class="btn blue-links" (click)="closeModal(false)"> Close </a>
+        <a href="javascript:;" class="btn btn-blue" [class.disabled]="!isFormValid()" (click)="closeModal(true)">
+          Save
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end .modal-windows-charge-code-details -->

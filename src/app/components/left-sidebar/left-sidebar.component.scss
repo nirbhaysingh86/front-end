@@ -1,0 +1,126 @@
+@import '../../../styles/variables';
+
+.open-left {
+  .left-aside {
+    width: 220px;
+    .nav-group {
+      .title {
+        .short-txt {
+          display: none;
+        }
+        .long-txt {
+          display: block;
+        }
+      }
+      .nav-list {
+        border-radius: 0;
+        .tab-items {
+          .txt {
+            display: inline-block;
+            margin-left: 4px;
+          }
+        }
+      }
+    }
+  }
+}
+// .left-aside
+.left-aside {
+  width: 64px;
+  height: 100%;
+  overflow-y: auto;
+  position: fixed;
+  left: 0;
+  top: 48px;
+  z-index: 1000;
+  background-color: #edeff2;
+  box-shadow: inset -1px 0 0 #c8ccd1;
+  padding: 18px 10px;
+  .nav-group {
+    margin-bottom: 20px;
+    .title {
+      color: #404040;
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 16px;
+      margin-bottom: 12px;
+      padding: 0 5px;
+      text-transform: uppercase;
+      .short-txt {
+        display: block;
+        text-align: center;
+      }
+      .long-txt {
+        display: none;
+      }
+    }
+    .nav-list {
+      background-color: #fff;
+      border-radius: 4px;
+      overflow: hidden;
+      .tab-items {
+        display: block;
+        padding: 10px;
+        &.current {
+          background-color: #194d8d;
+          .txt {
+            color: #fff;
+          }
+          .icons {
+            &.icon-worklist {
+              background: url(/assets/i/worklist-white.svg) center center no-repeat;
+              background-size: 20px 20px;
+            }
+            &.icon-view {
+              background: url(/assets/i/view-white.svg) center center no-repeat;
+              background-size: 20px 20px;
+            }
+            &.icon-quick-search {
+              background: url(/assets/i/quick-search-white.svg) center center no-repeat;
+              background-size: 20px 20px;
+            }
+            &.icon-preferences {
+              background: url(/assets/i/preferences-white.svg) center center no-repeat;
+              background-size: 20px 20px;
+            }
+            &.icon-automated {
+              background: url(/assets/i/automated-white.svg) center center no-repeat;
+              background-size: 20px 20px;
+            }
+          }
+        }
+        .icons {
+          width: 20px;
+          height: 20px;
+          &.icon-worklist {
+            background: url(/assets/i/worklist.svg) center center no-repeat;
+            background-size: 20px 20px;
+          }
+          &.icon-view {
+            background: url(/assets/i/view.svg) center center no-repeat;
+            background-size: 20px 20px;
+          }
+          &.icon-quick-search {
+            background: url(/assets/i/quick-search.svg) center center no-repeat;
+            background-size: 20px 20px;
+          }
+          &.icon-preferences {
+            background: url(/assets/i/preferences.svg) center center no-repeat;
+            background-size: 20px 20px;
+          }
+          &.icon-automated {
+            background: url(/assets/i/automated.svg) center center no-repeat;
+            background-size: 20px 20px;
+          }
+        }
+        .txt {
+          color: #2f4259;
+          font-size: 13px;
+          font-weight: 400;
+          line-height: 20px;
+          display: none;
+        }
+      }
+    }
+  }
+}
