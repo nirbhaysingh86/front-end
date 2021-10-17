@@ -238,13 +238,14 @@
                           <div class="data-row flex">
                             <div class="left-txt flex-start">Review Category</div>
                             <div class="right-area">
+                            
                               <app-sd-base-dropdown [selectedOption]="
-                          dataListDetails.fieldList[20]['fieldValue'] === ''
+                          dataListDetails.fieldList[21]['fieldValue'] === ''
                             ? 'Select'
-                            : dataListDetails.fieldList[20]['fieldValue']
+                            : dataListDetails.fieldList[21]['fieldValue']
                         "
                                                     [options]="reviewCatDropdownOptions"
-                                                    (changeDropdown)="dataListDetails.fieldList[20]['fieldValue'] = $event">
+                                                    (changeDropdown)="dataListDetails.fieldList[21]['fieldValue'] = $event">
                               </app-sd-base-dropdown>
                             </div>
                           </div>
@@ -333,7 +334,7 @@
                             ? 'Select'
                             : dataListDetails.fieldList[27]['fieldValue']
                         "
-                                                    [options]="pointOfServiceDropdownOptions"
+                                                    [options]="reviewRegDropdownOptions"
                                                     (changeDropdown)="dataListDetails.fieldList[27]['fieldValue'] = $event">
                               </app-sd-base-dropdown>
                             </div>
